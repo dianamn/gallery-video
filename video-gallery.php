@@ -9,7 +9,9 @@ Author: http://huge-it.com/
 License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
 
 add_action('media_buttons_context', 'add_videogallery_my_custom_button');
 add_action('admin_footer', 'add_videogallery_inline_popup_content');
@@ -959,8 +961,8 @@ function huge_it_videogallery_images_list_shotrcode($atts)
     wp_enqueue_style( 'style2-os-css' );
     wp_register_style( 'lightbox-css', plugins_url('/style/lightbox.css', __FILE__) );   
     wp_enqueue_style( 'lightbox-css' );
-    wp_register_style( 'fontawesome-css', plugins_url('/style/css/font-awesome.css', __FILE__) );   
-    wp_enqueue_style( 'fontawesome-css' );
+    wp_register_style( 'hugeicons', plugins_url('/style/css/hugeicons.css', __FILE__) );   
+    wp_enqueue_style( 'hugeicons' );
 
     return huge_it_videogallery_images_list($atts['id']);
 
@@ -1299,27 +1301,25 @@ class Huge_it_videogallery_Widget extends WP_Widget {
         
 		?>
 		<p>
-			
-				<p>
-					<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
-					<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-				</p>
-				<label for="<?php echo $this->get_field_id('videogallery_id'); ?>"><?php _e('Select videogallery:', 'huge_it_videogallery'); ?></label> 
-				<select id="<?php echo $this->get_field_id('videogallery_id'); ?>" name="<?php echo $this->get_field_name('videogallery_id'); ?>">
-				
-				<?php
-				 global $wpdb;
-				$query="SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries ";
-				$rowwidget=$wpdb->get_results($query);
-				foreach($rowwidget as $rowwidgetecho){
-				
-				
-				?>
-					<option <?php if($rowwidgetecho->id == $instance['videogallery_id']){ echo 'selected'; } ?> value="<?php echo $rowwidgetecho->id; ?>"><?php echo $rowwidgetecho->name; ?></option>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+                <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+            </p>
+            <label for="<?php echo $this->get_field_id('videogallery_id'); ?>"><?php _e('Select videogallery:', 'huge_it_videogallery'); ?></label> 
+            <select id="<?php echo $this->get_field_id('videogallery_id'); ?>" name="<?php echo $this->get_field_name('videogallery_id'); ?>">
+            
+            <?php
+             global $wpdb;
+            $query="SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries ";
+            $rowwidget=$wpdb->get_results($query);
+            foreach($rowwidget as $rowwidgetecho){
+            
+            
+            ?>
+                <option <?php if($rowwidgetecho->id == $instance['videogallery_id']){ echo 'selected'; } ?> value="<?php echo $rowwidgetecho->id; ?>"><?php echo $rowwidgetecho->name; ?></option>
 
-					<?php } ?>
-				</select>
-
+                <?php } ?>
+            </select>
 		</p>
 		<?php 
 	}

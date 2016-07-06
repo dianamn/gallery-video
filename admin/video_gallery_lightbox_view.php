@@ -1,5 +1,10 @@
 <?php
-function      html_showStyles($param_values, $op_type)
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+function html_showStyles($param_values, $op_type)
 {
     ?>
 <script>
@@ -33,7 +38,7 @@ jQuery(document).ready(function () {
 			display:block;
 			background-image:url(<?php echo $path_site2; ?>/wp_banner_bg.jpg);
 			background-position:top left;
-			backround-repeat:repeat;
+			background-repeat:repeat;
 			overflow:hidden;
 		}
 		
@@ -45,14 +50,13 @@ jQuery(document).ready(function () {
 		}
 		
 		.free_version_banner .usermanual_text {
-                        font-weight: bold !important;
+			font-weight: bold !important;
 			display:block;
 			float:left;
 			width:270px;
 			margin-left:75px;
 			font-family:'Open Sans',sans-serif;
 			font-size:12px;
-			font-weight:300;
 			font-style:italic;
 			color:#ffffff;
 			line-height:10px;
@@ -82,21 +86,21 @@ jQuery(document).ready(function () {
 		.free_version_banner .get_full_version,
 		.free_version_banner .get_full_version:link,
 		.free_version_banner .get_full_version:visited {
-                        padding-left: 60px;
-                        padding-right: 4px;
+			padding-left: 60px;
+			padding-right: 4px;
 			display: inline-block;
-                        position: absolute;
-                        top: 15px;
-                        right: calc(50% - 167px);
-                        height: 38px;
-                        width: 268px;
-                        border: 1px solid rgba(255,255,255,.6);
-                        font-family: 'Open Sans',sans-serif;
-                        font-size: 23px;
-                        color: #ffffff;
-                        line-height: 43px;
-                        text-decoration: none;
-                        border-radius: 2px;
+			position: absolute;
+			top: 15px;
+			right: calc(50% - 167px);
+			height: 38px;
+			width: 268px;
+			border: 1px solid rgba(255,255,255,.6);
+			font-family: 'Open Sans',sans-serif;
+			font-size: 23px;
+			color: #ffffff;
+			line-height: 43px;
+			text-decoration: none;
+			border-radius: 2px;
 		}
 		
 		.free_version_banner .get_full_version:hover {

@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 if(function_exists('current_user_can'))
 //if(!current_user_can('manage_options')) {
     
@@ -42,8 +47,8 @@ function html_showvideogallerys( $rows,  $pageNav,$sort,$cat_row){
 				e.returnValue = false;
 
 				if (e.stopPropagation) {
-						e.stopPropagation();
-						e.preventDefault();
+					e.stopPropagation();
+					e.preventDefault();
 				}
 			}
 		}
@@ -69,7 +74,7 @@ function html_showvideogallerys( $rows,  $pageNav,$sort,$cat_row){
 		}
 		
 		.free_version_banner .usermanual_text {
-                        font-weight: bold !important;
+			font-weight: bold !important;
 			display:block;
 			float:left;
 			width:270px;
@@ -80,8 +85,8 @@ function html_showvideogallerys( $rows,  $pageNav,$sort,$cat_row){
 			font-style:italic;
 			color:#ffffff;
 			line-height:10px;
-                        margin-top: 0;
-                        padding-top: 15px;
+			margin-top: 0;
+			padding-top: 15px;
 		}
 		
 		.free_version_banner .usermanual_text a,
@@ -106,21 +111,21 @@ function html_showvideogallerys( $rows,  $pageNav,$sort,$cat_row){
 		.free_version_banner .get_full_version,
 		.free_version_banner .get_full_version:link,
 		.free_version_banner .get_full_version:visited {
-                        padding-left: 60px;
-                        padding-right: 4px;
+			padding-left: 60px;
+			padding-right: 4px;
 			display: inline-block;
-                        position: absolute;
-                        top: 15px;
-                        right: calc(50% - 167px);
-                        height: 38px;
-                        width: 268px;
-                        border: 1px solid rgba(255,255,255,.6);
-                        font-family: 'Open Sans',sans-serif;
-                        font-size: 23px;
-                        color: #ffffff;
-                        line-height: 43px;
-                        text-decoration: none;
-                        border-radius: 2px;
+			position: absolute;
+			top: 15px;
+			right: calc(50% - 167px);
+			height: 38px;
+			width: 268px;
+			border: 1px solid rgba(255,255,255,.6);
+			font-family: 'Open Sans',sans-serif;
+			font-size: 23px;
+			color: #ffffff;
+			line-height: 43px;
+			text-decoration: none;
+			border-radius: 2px;
 		}
 /***fvpps***/
 
@@ -243,79 +248,71 @@ function html_showvideogallerys( $rows,  $pageNav,$sort,$cat_row){
 				 </tr>
 				</thead>
 				<tbody>
-				 <?php 
-				 $trcount=1;
-				  for($i=0; $i<count($rows);$i++){
-					$trcount++;
-					$ka0=0;
-					$ka1=0;
-					if(isset($rows[$i-1]->id)){
-						  if($rows[$i]->sl_width==$rows[$i-1]->sl_width){
-						  $x1=$rows[$i]->id;
-						  $x2=$rows[$i-1]->id;
-						  $ka0=1;
-						  }
-						  else
-						  {
-							  $jj=2;
-							  while(isset($rows[$i-$jj]))
-							  {
-								  if($rows[$i]->sl_width==$rows[$i-$jj]->sl_width)
-								  {
-									  $ka0=1;
-									  $x1=$rows[$i]->id;
-									  $x2=$rows[$i-$jj]->id;
-									   break;
-								  }
-								$jj++;
-							  }
-						  }
-						  if($ka0){
-							$move_up='<span><a href="#reorder" onclick="return listItemTask(\''.$x1.'\',\''.$x2.'\')" title="Move Up">   <img src="'.plugins_url('images/uparrow.png',__FILE__).'" width="16" height="16" border="0" alt="Move Up"></a></span>';
-						  }
-						  else{
-							$move_up="";
-						  }
-					}else{$move_up="";}
-					
-					
-					if(isset($rows[$i+1]->id)){
-						
-						if($rows[$i]->sl_width==$rows[$i+1]->sl_width){
-						  $x1=$rows[$i]->id;
-						  $x2=$rows[$i+1]->id;
-						  $ka1=1;
+				<?php
+				$trcount = 1;
+				for ( $i = 0; $i < count( $rows ); $i ++ ) {
+					$trcount ++;
+					$ka0 = 0;
+					$ka1 = 0;
+					if ( isset( $rows[ $i - 1 ]->id ) ) {
+						if ( $rows[ $i ]->sl_width == $rows[ $i - 1 ]->sl_width ) {
+							$x1  = $rows[ $i ]->id;
+							$x2  = $rows[ $i - 1 ]->id;
+							$ka0 = 1;
+						} else {
+							$jj = 2;
+							while ( isset( $rows[ $i - $jj ] ) ) {
+								if ( $rows[ $i ]->sl_width == $rows[ $i - $jj ]->sl_width ) {
+									$ka0 = 1;
+									$x1  = $rows[ $i ]->id;
+									$x2  = $rows[ $i - $jj ]->id;
+									break;
+								}
+								$jj ++;
+							}
 						}
-						else
-						{
-							  $jj=2;
-							  while(isset($rows[$i+$jj]))
-							  {
-								  if($rows[$i]->sl_width==$rows[$i+$jj]->sl_width)
-								  {
-									  $ka1=1;
-									  $x1=$rows[$i]->id;
-									  $x2=$rows[$i+$jj]->id;
-									  break;
-								  }
-								$jj++;
-							  }
+						if ( $ka0 ) {
+							$move_up = '<span><a href="#reorder" onclick="return listItemTask(\'' . $x1 . '\',\'' . $x2 . '\')" title="Move Up"><img src="' . plugins_url( 'images/uparrow.png', __FILE__ ) . '" width="16" height="16" border="0" alt="Move Up"></a></span>';
+						} else {
+							$move_up = "";
 						}
-						
-						if($ka1){
-							$move_down='<span><a href="#reorder" onclick="return listItemTask(\''.$x1.'\',\''. $x2.'\')" title="Move Down">  <img src="'.plugins_url('images/downarrow.png',__FILE__).'" width="16" height="16" border="0" alt="Move Down"></a></span>';
-						}else{
-							$move_down="";	
+					} else {
+						$move_up = "";
+					}
+
+
+					if ( isset( $rows[ $i + 1 ]->id ) ) {
+
+						if ( $rows[ $i ]->sl_width == $rows[ $i + 1 ]->sl_width ) {
+							$x1  = $rows[ $i ]->id;
+							$x2  = $rows[ $i + 1 ]->id;
+							$ka1 = 1;
+						} else {
+							$jj = 2;
+							while ( isset( $rows[ $i + $jj ] ) ) {
+								if ( $rows[ $i ]->sl_width == $rows[ $i + $jj ]->sl_width ) {
+									$ka1 = 1;
+									$x1  = $rows[ $i ]->id;
+									$x2  = $rows[ $i + $jj ]->id;
+									break;
+								}
+								$jj ++;
+							}
+						}
+
+						if ( $ka1 ) {
+							$move_down = '<span><a href="#reorder" onclick="return listItemTask(\'' . $x1 . '\',\'' . $x2 . '\')" title="Move Down"><img src="' . plugins_url( 'images/downarrow.png', __FILE__ ) . '" width="16" height="16" border="0" alt="Move Down"></a></span>';
+						} else {
+							$move_down = "";
 						}
 					}
 
-					$uncat=$rows[$i]->par_name;
-					if(isset($rows[$i]->prod_count))
-						$pr_count=$rows[$i]->prod_count;
-					else
-						$pr_count=0;
-
-
+					$uncat = $rows[ $i ]->par_name;
+					if ( isset( $rows[ $i ]->prod_count ) ) {
+						$pr_count = $rows[ $i ]->prod_count;
+					} else {
+						$pr_count = 0;
+					}
 					?>
 					<tr <?php if($trcount%2==0){ echo 'class="has-background"';}?>>
 						<td><?php echo $rows[$i]->id; ?></td>
@@ -372,25 +369,21 @@ function submitbutton(pressbutton)
 }
 var  name_changeRight = function(e) {
 	document.getElementById("name").value = e.value;
-}
+};
 var  name_changeTop = function(e) {
 		document.getElementById("huge_it_videogallery_name").value = e.value;
 		//alert(e);
 	};
 function change_select()
 {
-		submitbutton('apply'); 
-	
+	submitbutton('apply');
 }
 jQuery(function() {
 
 	jQuery('.def_thumb').on('click',(function (){
 		jQuery(this).parents('li').find('.image-container input+input').val('');
 		submitbutton('apply');
-	}))
-	;
-
-
+	}));
 	
 	jQuery( "#images-list" ).sortable({
 	  stop: function() {
@@ -431,7 +424,7 @@ jQuery(function() {
 		}
 		
 		.free_version_banner .usermanual_text {
-                        font-weight: bold !important;
+			font-weight: bold !important;
 			display:block;
 			float:left;
 			width:270px;
@@ -468,21 +461,21 @@ jQuery(function() {
 		.free_version_banner .get_full_version,
 		.free_version_banner .get_full_version:link,
 		.free_version_banner .get_full_version:visited {
-                        padding-left: 60px;
-                        padding-right: 4px;
+			padding-left: 60px;
+			padding-right: 4px;
 			display: inline-block;
-                        position: absolute;
-                        top: 15px;
-                        right: calc(50% - 167px);
-                        height: 38px;
-                        width: 268px;
-                        border: 1px solid rgba(255,255,255,.6);
-                        font-family: 'Open Sans',sans-serif;
-                        font-size: 23px;
-                        color: #ffffff;
-                        line-height: 43px;
-                        text-decoration: none;
-                        border-radius: 2px;
+			position: absolute;
+			top: 15px;
+			right: calc(50% - 167px);
+			height: 38px;
+			width: 268px;
+			border: 1px solid rgba(255,255,255,.6);
+			font-family: 'Open Sans',sans-serif;
+			font-size: 23px;
+			color: #ffffff;
+			line-height: 43px;
+			text-decoration: none;
+			border-radius: 2px;
 		}
 		
 		.free_version_banner .get_full_version:hover {
@@ -594,7 +587,7 @@ jQuery(function() {
 					<ul id="images-list">
 					<?php
 					
-					function get_youtube_id_from_url($url){						
+					function get_youtube_id_from_url($url){
 						if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match)) {
 							return $match[1];
 						}
@@ -661,16 +654,6 @@ jQuery(function() {
 												return false;
 											  });
 
-
-
-
-
-
-
-
-
-
-
 											  jQuery('.add_media').on('click', function(){
 												_custom_media = false;
 											  });
@@ -686,29 +669,21 @@ jQuery(function() {
 
 												});
 											});
-													jQuery("input[name='thumb_id_button<?php echo $rowimages->id; ?>'], .hg_set_def_button").each(function(){
-														
-														jQuery(this).hover(function(){
-															
-																  jQuery(this).clearQueue().animate({
-																	 width: "170px", 
-																	 color:"rgba(0,0,0,1)"
-																}, 200);
-															
-															
-															
-															
-														},
-																			function(){
-															jQuery(this).animate({
-																width: "20px", 
-																color:"rgba(0,0,0,0)"   
-															}, 200);
-															
-															
-														})
-														
+												jQuery("input[name='thumb_id_button<?php echo $rowimages->id; ?>'], .hg_set_def_button").each(function(){
+
+													jQuery(this).hover(function(){
+												        jQuery(this).clearQueue().animate({
+															 width: "170px",
+															 color:"rgba(0,0,0,1)"
+														}, 200);
+													}, function(){
+														jQuery(this).animate({
+															width: "20px",
+															color:"rgba(0,0,0,0)"
+														}, 200);
 													})
+
+												})
 											});
 											</script>
 											<input type="hidden" name="imagess<?php echo $rowimages->id; ?>" value="<?php echo esc_attr($rowimages->image_url); ?>" />
@@ -800,11 +775,11 @@ jQuery(function() {
 									<div class="image-options">
 								<div>
 									<label for="titleimage<?php echo $rowimages->id; ?>">Title:</label>
-                                                                        <input  class="text_area" type="text" id="titleimage<?php echo $rowimages->id; ?>" name="titleimage<?php echo $rowimages->id; ?>" id="titleimage<?php echo $rowimages->id; ?>"  value="<?php echo htmlspecialchars(str_replace('__5_5_5__','%',$rowimages->name)); ?>">
+									<input  class="text_area" type="text" id="titleimage<?php echo $rowimages->id; ?>" name="titleimage<?php echo $rowimages->id; ?>" value="<?php echo htmlspecialchars(str_replace('__5_5_5__','%',$rowimages->name)); ?>">
 								</div>
 								<div class="description-block">
 									<label for="im_description<?php echo $rowimages->id; ?>">Description:</label>
-									<textarea id="im_description<?php echo $rowimages->id; ?>" name="im_description<?php echo $rowimages->id; ?>" ><?php echo esc_html(stripslashes(str_replace('__5_5_5__','%',$rowimages->description))); ?></textarea>
+									<textarea id="im_description<?php echo $rowimages->id; ?>" name="im_description<?php echo $rowimages->id; ?>"><?php echo esc_html(stripslashes(str_replace('__5_5_5__','%',$rowimages->description))); ?></textarea>
 								</div>
 								<div class="link-block">
 									<label for="sl_url<?php echo $rowimages->id; ?>">URL:</label>
@@ -834,241 +809,338 @@ jQuery(function() {
 			<div id="postbox-container-1" class="postbox-container">
 				<div id="side-sortables" class="meta-box-sortables ui-sortable">
 					<div id="videogallery-unique-options" class="postbox">
-					<h3 class="hndle"><span>Video Gallery Custom Options</span></h3>
-					<ul id="videogallery-unique-options-list">
-						<li>
-							<label for="huge_it_videogallery_name">Gallery Name</label>
-							<input type = "text" name="name" id="huge_it_videogallery_name" value="<?php echo esc_html(stripslashes($row->name));?>" onkeyup = "name_changeRight(this)">
-						</li>
-						<li>
-							<label for="huge_it_sl_effects">Views</label>
-							<select name="huge_it_sl_effects" id="huge_it_sl_effects">
-									<option <?php if($row->huge_it_sl_effects == '0'){ echo 'selected'; } ?>  value="0">Video Gallery/Content-Popup</option>
-									<option <?php if($row->huge_it_sl_effects == '1'){ echo 'selected'; } ?>  value="1">Content Video Slider</option>
-									<option <?php if($row->huge_it_sl_effects == '5'){ echo 'selected'; } ?>  value="5">Lightbox-Video Gallery</option>
-									<option <?php if($row->huge_it_sl_effects == '3'){ echo 'selected'; } ?>  value="3">Video Slider</option>
-									<option <?php if($row->huge_it_sl_effects == '4'){ echo 'selected'; } ?>  value="4">Thumbnails View</option>
-									<option <?php if($row->huge_it_sl_effects == '6'){ echo 'selected'; } ?>  value="6">Justified</option>
-									<option <?php if($row->huge_it_sl_effects == '7'){ echo 'selected'; } ?>  value="7">Blog Style Gallery</option>
-							</select>
-						</li>
-						<script>
-						jQuery(document).ready(function ($){
-							//alert('hi');
-							//$('div[id^="list_"]')
-                                                        if($('select[name="display_type"]').val()== 2){
-								$('li[id="content_per_page"]').hide();
-							}else{
-								$('li[id="content_per_page"]').show();
-							}
-                                                        
-							$('select[name="display_type"]').on('change' ,function(){
-								if($(this).val()== 2){
-								$('li[id="content_per_page"]').hide();
-							}else{
-								$('li[id="content_per_page"]').show();
-							}
-							})
-							  	$( 'div[id^="videogallery-current-options"]').each(function(){
-								if(!$(this).hasClass( "active" )){
-									$(this).find('ul li input[name="content_per_page"]').attr('name', '');
-									$(this).find('ul li select[name="display_type"]').attr('name', '');
-									//$(this).find('ul li select').attr('name', '');
-								}else{
-									//alert('no');
-								}
-							})
-
-							$('#videogallery-unique-options').on('change',function(){
-								$( 'div[id^="videogallery-current-options"]').each(function(){
-								if(!$(this).hasClass( "active" )){
-									$(this).find('ul li input[name="content_per_page"]').attr('name', '');
-									$(this).find('ul li select[name="display_type"]').attr('name', '');
-									//$(this).find('ul li select').attr('name', '');
-								}else{
-									//alert('no');
-								}
-							})
-							})
-                                                      
-							
-						})
-					</script>
-						<div id="videogallery-current-options-0" class="videogallery-current-options <?php if($row->huge_it_sl_effects == 0){ echo ' active'; }  ?>">
-						<ul id="view4">
-							<?php //print_r($row);?>
-							<?php //var_dump($row->display_type);?>
-							  <li>
-								<label for="display_type">Displaying Content</label>
-								<select id="display_type" name="display_type">
-
-									  <option <?php if($row->display_type == 0){ echo 'selected'; } ?>  value="0">Pagination</option>
-										<option <?php if($row->display_type == 1){ echo 'selected'; } ?>   value="1">Load More</option>
-										<option <?php if($row->display_type == 2){ echo 'selected'; } ?>   value="2">Show All</option>
-							
+						<h3 class="hndle"><span>Video Gallery Custom Options</span></h3>
+						<ul id="videogallery-unique-options-list">
+							<li>
+								<label for="huge_it_videogallery_name">Gallery Name</label>
+								<input type="text" name="name" id="huge_it_videogallery_name"
+								       value="<?php echo esc_html( stripslashes( $row->name ) ); ?>"
+								       onkeyup="name_changeRight(this)">
+							</li>
+							<li>
+								<label for="huge_it_sl_effects">Views</label>
+								<select name="huge_it_sl_effects" id="huge_it_sl_effects">
+									<option<?php if ( $row->huge_it_sl_effects == '0' ) { echo 'selected'; } ?> value="0">
+										Video Gallery/Content-Popup
+									</option>
+									<option
+										<?php if ( $row->huge_it_sl_effects == '1' ) {echo 'selected';} ?> value="1">
+										Content Video Slider
+									</option>
+									<option <?php if ( $row->huge_it_sl_effects == '5' ) {echo 'selected';} ?> value="5">
+										Lightbox-Video Gallery
+									</option>
+									<option <?php if ( $row->huge_it_sl_effects == '3' ) {echo 'selected';} ?> value="3">
+										Video Slider
+									</option>
+									<option <?php if ( $row->huge_it_sl_effects == '4' ) {echo 'selected';} ?> value="4">
+										Thumbnails View
+									</option>
+									<option <?php if ( $row->huge_it_sl_effects == '6' ) {echo 'selected';} ?> value="6">
+										Justified
+									</option>
+									<option <?php if ( $row->huge_it_sl_effects == '7' ) {echo 'selected';} ?> value="7">
+										Blog Style Gallery
+									</option>
 								</select>
-								</li>
-							<li id="content_per_page">
-								<label for="content_per_page">Videos Per Page</label>
-								<input type="text" name="content_per_page" id="content_per_page" value="<?php echo esc_html(stripslashes($row->content_per_page)); ?>" class="text_area" />
 							</li>
-							
+							<script>
+								jQuery(document).ready(function($) {
+									if ($('select[name="display_type"]').val() == 2) {
+										$('li[id="content_per_page"]').hide();
+									} else {
+										$('li[id="content_per_page"]').show();
+									}
 
-						
+									$('select[name="display_type"]').on('change', function() {
+										if ($(this).val() == 2) {
+											$('li[id="content_per_page"]').hide();
+										} else {
+											$('li[id="content_per_page"]').show();
+										}
+									});
+									$('div[id^="videogallery-current-options"]').each(function() {
+										if (!$(this).hasClass("active")) {
+											$(this).find('ul li input[name="content_per_page"]').attr('name', '');
+											$(this).find('ul li select[name="display_type"]').attr('name', '');
+											//$(this).find('ul li select').attr('name', '');
+										}
+									});
+
+									$('#videogallery-unique-options').on('change', function() {
+										$('div[id^="videogallery-current-options"]').each(function() {
+											if (!$(this).hasClass("active")) {
+												$(this).find('ul li input[name="content_per_page"]').attr('name', '');
+												$(this).find('ul li select[name="display_type"]').attr('name', '');
+												//$(this).find('ul li select').attr('name', '');
+											}
+										})
+									})
+
+
+								});
+							</script>
+							<div id="videogallery-current-options-0"
+							     class="videogallery-current-options <?php if ( $row->huge_it_sl_effects == 0 ) {
+								     echo ' active';
+							     } ?>">
+								<ul id="view4">
+									<li>
+										<label for="display_type">Displaying Content</label>
+										<select id="display_type" name="display_type">
+											<option <?php if ( $row->display_type == 0 ) {
+												echo 'selected';
+											} ?> value="0">Pagination
+											</option>
+											<option <?php if ( $row->display_type == 1 ) {
+												echo 'selected';
+											} ?> value="1">Load More
+											</option>
+											<option <?php if ( $row->display_type == 2 ) {
+												echo 'selected';
+											} ?> value="2">Show All
+											</option>
+										</select>
+									</li>
+									<li id="content_per_page">
+										<label for="content_per_page">Videos Per Page</label>
+										<input type="text" name="content_per_page" id="content_per_page"
+										       value="<?php echo esc_html( stripslashes( $row->content_per_page ) ); ?>"
+										       class="text_area"/>
+									</li>
+								</ul>
+							</div>
+							<div id="videogallery-current-options-3"
+							     class="videogallery-current-options <?php if ( $row->huge_it_sl_effects == 3 ) {
+								     echo ' active';
+							     } ?>">
+								<ul id="slider-unique-options-list">
+									<li>
+										<label for="sl_width">Width</label>
+										<input type="text" name="sl_width" id="sl_width"
+										       value="<?php echo esc_html( stripslashes( $row->sl_width ) ); ?>"
+										       class="text_area"/>
+									</li>
+									<li>
+										<label for="sl_height">Height</label>
+										<input type="text" name="sl_height" id="sl_height"
+										       value="<?php echo esc_html( stripslashes( $row->sl_height ) ); ?>"
+										       class="text_area"/>
+									</li>
+									<li>
+										<label for="pause_on_hover">Pause on hover</label>
+										<input type="hidden" value="off" name="pause_on_hover"/>
+										<input type="checkbox" name="pause_on_hover" value="on"
+										       id="pause_on_hover" <?php if ( $row->pause_on_hover == 'on' ) {
+											echo 'checked="checked"';
+										} ?> />
+									</li>
+									<li>
+										<label for="videogallery_list_effects_s">Effects</label>
+										<select name="videogallery_list_effects_s" id="videogallery_list_effects_s">
+											<option <?php if ( $row->videogallery_list_effects_s == 'none' ) {
+												echo 'selected';
+											} ?> value="none">None
+											</option>
+											<option <?php if ( $row->videogallery_list_effects_s == 'cubeH' ) {
+												echo 'selected';
+											} ?> value="cubeH">Cube Horizontal
+											</option>
+											<option <?php if ( $row->videogallery_list_effects_s == 'cubeV' ) {
+												echo 'selected';
+											} ?> value="cubeV">Cube Vertical
+											</option>
+											<option <?php if ( $row->videogallery_list_effects_s == 'fade' ) {
+												echo 'selected';
+											} ?> value="fade">Fade
+											</option>
+										</select>
+									</li>
+
+									<li>
+										<label for="sl_pausetime">Pause time</label>
+										<input type="text" name="sl_pausetime" id="sl_pausetime"
+										       value="<?php echo esc_html( stripslashes( $row->description ) ); ?>"
+										       class="text_area"/>
+									</li>
+									<li>
+										<label for="sl_changespeed">Change speed</label>
+										<input type="text" name="sl_changespeed" id="sl_changespeed"
+										       value="<?php echo esc_html( stripslashes( $row->param ) ); ?>"
+										       class="text_area"/>
+									</li>
+									<li>
+										<label for="slider_position">Slider Position</label>
+										<select name="sl_position" id="slider_position">
+											<option <?php if ( $row->sl_position == 'left' ) {
+												echo 'selected';
+											} ?> value="left">Left
+											</option>
+											<option <?php if ( $row->sl_position == 'right' ) {
+												echo 'selected';
+											} ?> value="right">Right
+											</option>
+											<option <?php if ( $row->sl_position == 'center' ) {
+												echo 'selected';
+											} ?> value="center">Center
+											</option>
+										</select>
+									</li>
+								</ul>
+							</div>
+							<div id="videogallery-current-options-4"
+							     class="videogallery-current-options <?php if ( $row->huge_it_sl_effects == 4 ) {
+								     echo ' active';
+							     } ?>">
+								<ul id="view4">
+									<li>
+										<label for="display_type">Displaying Content</label>
+										<select id="display_type" name="display_type">
+											<option <?php if ( $row->display_type == 0 ) {
+												echo 'selected';
+											} ?> value="0">Pagination
+											</option>
+											<option <?php if ( $row->display_type == 1 ) {
+												echo 'selected';
+											} ?> value="1">Load More
+											</option>
+											<option <?php if ( $row->display_type == 2 ) {
+												echo 'selected';
+											} ?> value="2">Show All
+											</option>
+										</select>
+									</li>
+									<li id="content_per_page">
+										<label for="content_per_page">Videos Per Page</label>
+										<input type="text" name="content_per_page" id="content_per_page"
+										       value="<?php echo esc_html( stripslashes( $row->content_per_page ) ); ?>"
+										       class="text_area"/>
+									</li>
+								</ul>
+							</div>
+							<div id="videogallery-current-options-5"
+							     class="videogallery-current-options <?php if ( $row->huge_it_sl_effects == 5 ) {
+								     echo ' active';
+							     } ?>">
+								<ul id="view4">
+									<li>
+										<label for="display_type">Displaying Content</label>
+										<select id="display_type" name="display_type">
+											<option <?php if ( $row->display_type == 0 ) {
+												echo 'selected';
+											} ?> value="0">Pagination
+											</option>
+											<option <?php if ( $row->display_type == 1 ) {
+												echo 'selected';
+											} ?> value="1">Load More
+											</option>
+											<option <?php if ( $row->display_type == 2 ) {
+												echo 'selected';
+											} ?> value="2">Show All
+											</option>
+										</select>
+									</li>
+									<li id="content_per_page">
+										<label for="content_per_page">Videos Per Page</label>
+										<input type="text" name="content_per_page" id="content_per_page"
+										       value="<?php echo esc_html( stripslashes( $row->content_per_page ) ); ?>"
+										       class="text_area"/>
+									</li>
+								</ul>
+							</div>
+							<div id="videogallery-current-options-6"
+							     class="videogallery-current-options <?php if ( $row->huge_it_sl_effects == 6 ) {
+								     echo ' active';
+							     } ?>">
+								<ul id="view4">
+									<li>
+										<label for="display_type">Displaying Content</label>
+										<select id="display_type" name="display_type">
+											<option <?php if ( $row->display_type == 0 ) {
+												echo 'selected';
+											} ?> value="0">Pagination
+											</option>
+											<option <?php if ( $row->display_type == 1 ) {
+												echo 'selected';
+											} ?> value="1">Load More
+											</option>
+											<option <?php if ( $row->display_type == 2 ) {
+												echo 'selected';
+											} ?> value="2">Show All
+											</option>
+										</select>
+									</li>
+									<li id="content_per_page">
+										<label for="content_per_page">Videos Per Page</label>
+										<input type="text" name="content_per_page" id="content_per_page"
+										       value="<?php echo esc_html( stripslashes( $row->content_per_page ) ); ?>"
+										       class="text_area"/>
+									</li>
+								</ul>
+							</div>
+							<div id="videogallery-current-options-7"
+							     class="videogallery-current-options <?php if ( $row->huge_it_sl_effects == 7 ) {
+								     echo ' active';
+							     } ?>">
+								<ul id="view7">
+
+									<li>
+										<label for="display_type">Displaying Content</label>
+										<select id="display_type" name="display_type">
+											<option <?php if ( $row->display_type == 0 ) {
+												echo 'selected';
+											} ?> value="0">Pagination
+											</option>
+											<option <?php if ( $row->display_type == 1 ) {
+												echo 'selected';
+											} ?> value="1">Load More
+											</option>
+											<option <?php if ( $row->display_type == 2 ) {
+												echo 'selected';
+											} ?> value="2">Show All
+											</option>
+										</select>
+									</li>
+									<li id="content_per_page">
+										<label for="content_per_page">Videos Per Page</label>
+										<input type="text" name="content_per_page" id="content_per_page"
+										       value="<?php echo esc_html( stripslashes( $row->content_per_page ) ); ?>"
+										       class="text_area"/>
+									</li>
+								</ul>
+							</div>
+
 						</ul>
-					</div>	
-					<div id="videogallery-current-options-3" class="videogallery-current-options <?php if($row->huge_it_sl_effects == 3){ echo ' active'; }  ?>">
-					<ul id="slider-unique-options-list">
-						<li>
-							<label for="sl_width">Width</label>
-							<input type="text" name="sl_width" id="sl_width" value="<?php echo esc_html(stripslashes($row->sl_width)); ?>" class="text_area" />
-						</li>
-						<li>
-							<label for="sl_height">Height</label>
-							<input type="text" name="sl_height" id="sl_height" value="<?php echo esc_html(stripslashes($row->sl_height)); ?>" class="text_area" />
-						</li>
-						<li>
-							<label for="pause_on_hover">Pause on hover</label>
-							<input type="hidden" value="off" name="pause_on_hover" />					
-							<input type="checkbox" name="pause_on_hover"  value="on" id="pause_on_hover"  <?php if($row->pause_on_hover  == 'on'){ echo 'checked="checked"'; } ?> />
-						</li>
-						<li>
-							<label for="videogallery_list_effects_s">Effects</label>
-							<select name="videogallery_list_effects_s" id="videogallery_list_effects_s">
-									<option <?php if($row->videogallery_list_effects_s == 'none'){ echo 'selected'; } ?>  value="none">None</option>
-									<option <?php if($row->videogallery_list_effects_s == 'cubeH'){ echo 'selected'; } ?>   value="cubeH">Cube Horizontal</option>
-									<option <?php if($row->videogallery_list_effects_s == 'cubeV'){ echo 'selected'; } ?>  value="cubeV">Cube Vertical</option>
-									<option <?php if($row->videogallery_list_effects_s == 'fade'){ echo 'selected'; } ?>  value="fade">Fade</option>
-							</select>
-						</li>
-
-						<li>
-							<label for="sl_pausetime">Pause time</label>
-							<input type="text" name="sl_pausetime" id="sl_pausetime" value="<?php echo esc_html(stripslashes($row->description)); ?>" class="text_area" />
-						</li>
-						<li>
-							<label for="sl_changespeed">Change speed</label>
-							<input type="text" name="sl_changespeed" id="sl_changespeed" value="<?php echo esc_html(stripslashes($row->param)); ?>" class="text_area" />
-						</li>
-						<li>
-							<label for="slider_position">Slider Position</label>
-							<select name="sl_position" id="slider_position">
-									<option <?php if($row->sl_position == 'left'){ echo 'selected'; } ?>  value="left">Left</option>
-									<option <?php if($row->sl_position == 'right'){ echo 'selected'; } ?>   value="right">Right</option>
-									<option <?php if($row->sl_position == 'center'){ echo 'selected'; } ?>  value="center">Center</option>
-							</select>
-						</li>
-					</ul>
-					</div>
-					<div id="videogallery-current-options-4" class="videogallery-current-options <?php if($row->huge_it_sl_effects == 4){ echo ' active'; }  ?>">
-						<ul id="view4">
-							<?php //print_r($row);?>
-							<?php //var_dump($row->display_type);?>
-							  <li>
-								<label for="display_type">Displaying Content</label>
-								<select id="display_type" name="display_type">
-
-									  <option <?php if($row->display_type == 0){ echo 'selected'; } ?>  value="0">Pagination</option>
-										<option <?php if($row->display_type == 1){ echo 'selected'; } ?>   value="1">Load More</option>
-										<option <?php if($row->display_type == 2){ echo 'selected'; } ?>   value="2">Show All</option>
-							
-								</select>
-								</li>
-							<li id="content_per_page">
-								<label for="content_per_page">Videos Per Page</label>
-								<input type="text" name="content_per_page" id="content_per_page" value="<?php echo esc_html(stripslashes($row->content_per_page)); ?>" class="text_area" />
-							</li>
-
-						</ul>
-					</div>
-					<div id="videogallery-current-options-5" class="videogallery-current-options <?php if($row->huge_it_sl_effects == 5){ echo ' active'; }  ?>">
-						<ul id="view4">
-							<?php //print_r($row);?>
-							<?php //var_dump($row->display_type);?>
-							  <li>
-								<label for="display_type">Displaying Content</label>
-								<select id="display_type" name="display_type">
-
-									  <option <?php if($row->display_type == 0){ echo 'selected'; } ?>  value="0">Pagination</option>
-										<option <?php if($row->display_type == 1){ echo 'selected'; } ?>   value="1">Load More</option>
-										<option <?php if($row->display_type == 2){ echo 'selected'; } ?>   value="2">Show All</option>
-							
-								</select>
-								</li>
-							<li id="content_per_page">
-								<label for="content_per_page">Videos Per Page</label>
-								<input type="text" name="content_per_page" id="content_per_page" value="<?php echo esc_html(stripslashes($row->content_per_page)); ?>" class="text_area" />
-							</li>
-						</ul>
-					</div>
-					<div id="videogallery-current-options-6" class="videogallery-current-options <?php if($row->huge_it_sl_effects == 6){ echo ' active'; }  ?>">
-						<ul id="view4">
-							<?php //print_r($row);?>
-							<?php //var_dump($row->display_type);?>
-							  <li>
-								<label for="display_type">Displaying Content</label>
-								<select id="display_type" name="display_type">
-									<option <?php if($row->display_type == 0){ echo 'selected'; } ?>  value="0">Pagination</option>
-									<option <?php if($row->display_type == 1){ echo 'selected'; } ?>   value="1">Load More</option>
-									<option <?php if($row->display_type == 2){ echo 'selected'; } ?>   value="2">Show All</option>
-								</select>
-								</li>
-							<li id="content_per_page">
-								<label for="content_per_page">Videos Per Page</label>
-								<input type="text" name="content_per_page" id="content_per_page" value="<?php echo esc_html(stripslashes($row->content_per_page)); ?>" class="text_area" />
-							</li>
-						</ul>
-					</div>
-					<div id="videogallery-current-options-7" class="videogallery-current-options <?php if($row->huge_it_sl_effects == 7){ echo ' active'; }  ?>">
-					<ul id="view7">
-						
-						  <li>
-							<label for="display_type">Displaying Content</label>
-							<select id="display_type" name="display_type">
-
-								  <option <?php if($row->display_type == 0){ echo 'selected'; } ?>  value="0">Pagination</option>
-									<option <?php if($row->display_type == 1){ echo 'selected'; } ?>   value="1">Load More</option>
-									<option <?php if($row->display_type == 2){ echo 'selected'; } ?>   value="2">Show All</option>
-						
-							</select>
-							</li>
-						<li id="content_per_page">
-							<label for="content_per_page">Videos Per Page</label>
-							<input type="text" name="content_per_page" id="content_per_page" value="<?php echo esc_html(stripslashes($row->content_per_page)); ?>" class="text_area" />
-						</li>
-						
-
-					
-					</ul>
-					</div>
-
-
-					</ul>
 						<div id="major-publishing-actions">
 							<div id="publishing-action">
-								<input type="button" onclick="submitbutton('apply')" value="Save Video Gallery" id="save-buttom" class="button button-primary button-large">
+								<input type="button" onclick="submitbutton('apply')" value="Save Video Gallery"
+								       id="save-buttom" class="button button-primary button-large">
 							</div>
 							<div class="clear"></div>
 							<!--<input type="button" onclick="window.location.href='admin.php?page=videogallerys_huge_it_videogallery'" value="Cancel" class="button-secondary action">-->
 						</div>
 					</div>
 					<div id="videogallery-shortcode-box" class="postbox shortcode ms-toggle">
-					<h3 class="hndle"><span>Usage</span></h3>
-					<div class="inside">
-						<ul>
-							<li rel="tab-1" class="selected">
-								<h4>Shortcode</h4>
-								<p>Copy &amp; paste the shortcode directly into any WordPress post or page.</p>
-								<textarea class="full" readonly="readonly">[huge_it_videogallery id="<?php echo $row->id; ?>"]</textarea>
-							</li>
-							<li rel="tab-2">
-								<h4>Template Include</h4>
-								<p>Copy &amp; paste this code into a template file to include the slideshow within your theme.</p>
-								<textarea class="full" readonly="readonly">&lt;?php echo do_shortcode("[huge_it_videogallery id='<?php echo $row->id; ?>']"); ?&gt;</textarea>
-							</li>
-						</ul>
+						<h3 class="hndle"><span>Usage</span></h3>
+						<div class="inside">
+							<ul>
+								<li rel="tab-1" class="selected">
+									<h4>Shortcode</h4>
+									<p>Copy &amp; paste the shortcode directly into any WordPress post or page.</p>
+									<textarea class="full"
+									          readonly="readonly">[huge_it_videogallery id="<?php echo $row->id; ?>
+										"]</textarea>
+								</li>
+								<li rel="tab-2">
+									<h4>Template Include</h4>
+									<p>Copy &amp; paste this code into a template file to include the slideshow within
+										your theme.</p>
+									<textarea class="full" readonly="readonly">&lt;?php echo do_shortcode("[huge_it_videogallery id='<?php echo $row->id; ?>
+										']"); ?&gt;</textarea>
+								</li>
+							</ul>
+						</div>
 					</div>
-				</div>
 				</div>
 			</div>
 		</div>

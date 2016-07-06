@@ -1,3 +1,10 @@
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+?>
 <style>
 .element {
 	position: relative;
@@ -101,7 +108,7 @@
 	padding:6px 12px;
 	background:#2EA2CD;
 	color:#FFFFFF;
-	font-size:14;
+	font-size:14px;
 	text-decoration:none;
 }
 .element div.right-block .button-block a:hover,.pupup-elemen.element div.right-block .button-block a:focus,.element div.right-block .button-block a:active {
