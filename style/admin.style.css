@@ -6,7 +6,6 @@
     height: 20px;
     width: 20px;
     border: 0px;
-    padding-top: 0px;
     cursor: pointer;
     text-decoration: none;
     padding: 0px 20px 0px 0px;
@@ -67,7 +66,6 @@
 	display:block;
 	text-decoration:none;
 	padding:5px 10px 5px 10px;
-	background: #ebebeb;
 	color: #777;
 	background:#fff;
 	outline:none;
@@ -86,7 +84,6 @@
 	margin:2px 0px 0px 0px;
 	background:#f1f1f1;
 	outline:none;
-	width:auto;
 	box-shadow:none;
 	border:0px;
 	width: 90px;
@@ -320,12 +317,10 @@
 
 .editimageicon {
 	border:0px;
-	background:none;
 	color:#2ea2cc;
 	outline:none;
 	display:inline;
 	height: 24px;
-	padding-top: 0px;
 	cursor:pointer;
 	text-decoration:underline;
 	padding:0px 20px 0px 0px;
@@ -335,8 +330,6 @@
 .editimageicon:hover {
 	color:#0074a2;
 }
-
-
 
 /*Current Options*/
 
@@ -495,7 +488,6 @@
 }
 
 #arrows-type li  input {
-	position:relative;
 	vertical-align:middle;
 	width:170px;
 	height:160px;

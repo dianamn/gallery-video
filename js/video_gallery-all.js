@@ -1,14 +1,16 @@
 // SET THIS VARIABLE FOR DELAY, 1000 = 1 SECOND
 var delayLength = 4000;
-	
+
 function doMove(panelWidth, tooFar) {
 	var leftValue = jQuery("#mover").css("left");
-	
+
 	// Fix for IE
-	if (leftValue == "auto") { leftValue = 0; };
-	
+	if (leftValue == "auto") {
+		leftValue = 0;
+	}
+
 	var movement = parseFloat(leftValue, 10) - panelWidth;
-	
+
 	if (movement == tooFar) {
 		jQuery(".slide img").animate({
 			"top": -200
@@ -37,9 +39,9 @@ function doMove(panelWidth, tooFar) {
 	}
 }
 
-jQuery(function(){
-	
-    var $slide1 = jQuery("#slide-1");
+jQuery(function() {
+
+	var $slide1 = jQuery("#slide-1");
 
 	var panelWidth = $slide1.css("width");
 	var panelPaddingLeft = $slide1.css("paddingLeft");
@@ -50,7 +52,7 @@ jQuery(function(){
 	panelPaddingRight = parseFloat(panelPaddingRight, 10);
 
 	panelWidth = panelWidth + panelPaddingLeft + panelPaddingRight;
-	
+
 	var numPanels = jQuery(".slide").length;
 	var tooFar = -(panelWidth * numPanels);
 	var totalMoverwidth = numPanels * panelWidth;
@@ -58,60 +60,59 @@ jQuery(function(){
 
 	jQuery("#slider").append('<a href="#" id="slider-stopper">Stop</a>');
 
-	sliderIntervalID = setInterval(function(){
+	sliderIntervalID = setInterval(function() {
 		doMove(panelWidth, tooFar);
 	}, delayLength);
-	
-	jQuery("#slider-stopper").click(function(){
+
+	jQuery("#slider-stopper").click(function() {
 		if (jQuery(this).text() == "Stop") {
 			clearInterval(sliderIntervalID);
-		 	jQuery(this).text("Start");
+			jQuery(this).text("Start");
 		}
 		else {
-			sliderIntervalID = setInterval(function(){
+			sliderIntervalID = setInterval(function() {
 				doMove(panelWidth, tooFar);
 			}, delayLength);
-		 	jQuery(this).text("Stop");
+			jQuery(this).text("Stop");
 		}
-		 
+
 	});
 
 });
 
-/////
-;(function($){
-  
-    /**
-     * Store scroll position for and set it after reload
-     *
-     * @return {boolean} [loacalStorage is available]
-     */
-    $.fn.scrollPosReaload = function(){
-        if (localStorage) {
-            var posReader = localStorage["posStorage"];
-            if (posReader) {
-                $(window).scrollTop(posReader);
-                localStorage.removeItem("posStorage");
-            }
-            $(this).click(function(e) {
-                localStorage["posStorage"] = $(window).scrollTop();
-            });
+(function($) {
 
-            return true;
-        }
+	/**
+	 * Store scroll position for and set it after reload
+	 *
+	 * @return {boolean} [loacalStorage is available]
+	 */
+	$.fn.scrollPosReaload = function() {
+		if (localStorage) {
+			var posReader = localStorage["posStorage"];
+			if (posReader) {
+				$(window).scrollTop(posReader);
+				localStorage.removeItem("posStorage");
+			}
+			$(this).click(function(e) {
+				localStorage["posStorage"] = $(window).scrollTop();
+			});
 
-        return false;
-    }
-    
-    /* ================================================== */
+			return true;
+		}
 
-    jQuery(document).ready(function($) {
-        // Feel free to set it for any element who trigger the reload
-        $('.paginate5').scrollPosReaload();
-        $('.paginate4').scrollPosReaload();
-        $('.paginate3').scrollPosReaload();
-        $('.paginate2').scrollPosReaload();
-        $('.video_view9_cont_wrapper').scrollPosReaload();
-    });
-  
+		return false;
+	};
+
+	/* ================================================== */
+
+	jQuery(document).ready(function($) {
+		// Feel free to set it for any element who trigger the reload
+		$('.paginate5').scrollPosReaload();
+		$('.paginate4').scrollPosReaload();
+		$('.paginate3').scrollPosReaload();
+		$('.paginate2').scrollPosReaload();
+		$('.video_view9_cont_wrapper').scrollPosReaload();
+	});
+
 }(jQuery));

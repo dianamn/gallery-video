@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 function get_video_gallery_id_from_url($url){
 	if(strpos($url,'youtube') !== false || strpos($url,'youtu') !== false){	
 		if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match)) {
@@ -1110,7 +1115,7 @@ jQuery(document).ready(function(){
 
 /**/
 /***fvpps***/
-#vgalleria #post-body-headings add-videos-slide .wp-buttons-icon {
+#vgalleria #post-body-headings .add-videos-slide .wp-buttons-icon {
 	display: inline-block;
 	width: 4px;
 	vertical-align: text-top;

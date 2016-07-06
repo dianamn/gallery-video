@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 if(function_exists('current_user_can'))
 //if(!current_user_can('manage_options')) {
     
@@ -76,85 +81,85 @@ foreach($catt as $local_cat){
 return $trr_cat;
 
 }
-function editvideogallery($id)
-  {
-	  
-        global $wpdb;
-        if(isset($_POST['huge_it_video_gallery_check'])){
-        $wp_video_nonce = $_POST['huge_it_video_gallery_check'];
-            if(!wp_verify_nonce($wp_video_nonce, 'huge_it_video_gallery')) {
-                wp_die('Security check fail'); 
-            }
-        }
-        else{
-            $wp_video_nonce = $_GET['huge_it_video_nonce'];
-            if(!wp_verify_nonce($wp_video_nonce, 'huge_it_video_gallery_check')) {
-                wp_die('Security check fail'); 
-            }
-        }
-        if(isset($_GET["removeslide"])){
-            if($_GET["removeslide"] != ''){
-	
-	$idfordelete = $_GET["removeslide"];
-	$wpdb->query($wpdb->prepare("DELETE FROM ".$wpdb->prefix."huge_it_videogallery_videos  WHERE id = %d ", $idfordelete));
-	   }
-	   }
-	   $query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries WHERE id= %d",$id);
-	   $row=$wpdb->get_row($query);
-	   if(!isset($row->videogallery_list_effects_s))
-	   return 'id not found';
-       $images=explode(";;;",$row->videogallery_list_effects_s);
-	   $par=explode('	',$row->param);
-	   $count_ord=count($images);
-	   $cat_row=$wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries WHERE id!= %d and sl_width=0", $id));
-       $cat_row=open_cat_in_tree($cat_row);
-	   	  $query=$wpdb->prepare("SELECT name,ordering FROM ".$wpdb->prefix."huge_it_videogallery_galleries WHERE sl_width=%d  ORDER BY `ordering` ",$row->sl_width);
-	   $ord_elem=$wpdb->get_results($query);
-	   
-	    $query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_videos where videogallery_id = %d order by ordering ASC  ",$row->id);
-			   $rowim=$wpdb->get_results($query);
-			   
-			   if(isset($_GET["addslide"])){
-			   if($_GET["addslide"] == 1){
-	
-$table_name = $wpdb->prefix . "huge_it_videogallery_videos";
-    $sql_2 = "
-INSERT INTO 
 
-`" . $table_name . "` ( `name`, `videogallery_id`, `description`, `image_url`, `sl_url`, `ordering`, `published`, `published_in_sl_width`) VALUES
-( '', '".$row->id."', '', '', '', 'par_TV', 2, '1' )";
+function editvideogallery( $id ) {
 
-    $wpdb->query($sql_huge_it_videogallery_videos);
-	
+	global $wpdb;
+	if ( isset( $_POST['huge_it_video_gallery_check'] ) ) {
+		$wp_video_nonce = $_POST['huge_it_video_gallery_check'];
+		if ( ! wp_verify_nonce( $wp_video_nonce, 'huge_it_video_gallery' ) ) {
+			wp_die( 'Security check fail' );
+		}
+	} else {
+		$wp_video_nonce = $_GET['huge_it_video_nonce'];
+		if ( ! wp_verify_nonce( $wp_video_nonce, 'huge_it_video_gallery_check' ) ) {
+			wp_die( 'Security check fail' );
+		}
+	}
+	if ( isset( $_GET["removeslide"] ) ) {
+		if ( $_GET["removeslide"] != '' ) {
 
-      $wpdb->query($sql_2);
-	
-	   }
-	   }
-	   
-	   $query="SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries order by id ASC";
-			   $rowsld=$wpdb->get_results($query);
+			$idfordelete = $_GET["removeslide"];
+			$wpdb->query( $wpdb->prepare( "DELETE FROM " . $wpdb->prefix . "huge_it_videogallery_videos  WHERE id = %d ", $idfordelete ) );
+		}
+	}
+	$query = $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_galleries WHERE id= %d", $id );
+	$row   = $wpdb->get_row( $query );
+	if ( ! isset( $row->videogallery_list_effects_s ) ) {
+		return 'id not found';
+	}
+	$images    = explode( ";;;", $row->videogallery_list_effects_s );
+	$par       = explode( '	', $row->param );
+	$count_ord = count( $images );
+	$cat_row   = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_galleries WHERE id!= %d and sl_width=0", $id ) );
+	$cat_row   = open_cat_in_tree( $cat_row );
+	$query     = $wpdb->prepare( "SELECT name,ordering FROM " . $wpdb->prefix . "huge_it_videogallery_galleries WHERE sl_width=%d  ORDER BY `ordering` ", $row->sl_width );
+	$ord_elem  = $wpdb->get_results( $query );
 
-	
-	 $query="SELECT * FROM ".$wpdb->prefix."posts where post_type = 'post' and post_status = 'publish' order by id ASC";
-			   $rowsposts=$wpdb->get_results($query);
-	 
-	 $rowsposts8 = '';
-	 $postsbycat = '';
-	 if(isset($_POST["iframecatid"])){
-	 	  $query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."term_relationships where term_taxonomy_id = %d order by object_id ASC",$_POST["iframecatid"]);
-		$rowsposts8=$wpdb->get_results($query);
+	$query = $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_videos where videogallery_id = %d order by ordering ASC  ", $row->id );
+	$rowim = $wpdb->get_results( $query );
 
-			   foreach($rowsposts8 as $rowsposts13){
-	 $query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."posts where post_type = 'post' and post_status = 'publish' and ID = %d  order by ID ASC",$rowsposts13->object_id);
-			   $rowsposts1=$wpdb->get_results($query);
-			   $postsbycat = $rowsposts1;
-			   
-	 }
-	 }
+	if ( isset( $_GET["addslide"] ) ) {
+		if ( $_GET["addslide"] == 1 ) {
 
-    Html_editvideogallery($ord_elem, $count_ord, $images, $row, $cat_row, $rowim, $rowsld, $rowsposts, $rowsposts8, $postsbycat);
-  }
+			$table_name = $wpdb->prefix . "huge_it_videogallery_videos";
+			$sql_2      = "
+				INSERT INTO 
+				
+				`" . $table_name . "` ( `name`, `videogallery_id`, `description`, `image_url`, `sl_url`, `ordering`, `published`, `published_in_sl_width`) VALUES
+				( '', '" . $row->id . "', '', '', '', 'par_TV', 2, '1' )";
+
+			$wpdb->query( $sql_huge_it_videogallery_videos );
+
+
+			$wpdb->query( $sql_2 );
+
+		}
+	}
+
+	$query  = "SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_galleries order by id ASC";
+	$rowsld = $wpdb->get_results( $query );
+
+
+	$query     = "SELECT * FROM " . $wpdb->prefix . "posts where post_type = 'post' and post_status = 'publish' order by id ASC";
+	$rowsposts = $wpdb->get_results( $query );
+
+	$rowsposts8 = '';
+	$postsbycat = '';
+	if ( isset( $_POST["iframecatid"] ) ) {
+		$query      = $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "term_relationships where term_taxonomy_id = %d order by object_id ASC", $_POST["iframecatid"] );
+		$rowsposts8 = $wpdb->get_results( $query );
+
+		foreach ( $rowsposts8 as $rowsposts13 ) {
+			$query      = $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "posts where post_type = 'post' and post_status = 'publish' and ID = %d  order by ID ASC", $rowsposts13->object_id );
+			$rowsposts1 = $wpdb->get_results( $query );
+			$postsbycat = $rowsposts1;
+
+		}
+	}
+
+	Html_editvideogallery( $ord_elem, $count_ord, $images, $row, $cat_row, $rowim, $rowsld, $rowsposts, $rowsposts8, $postsbycat );
+}
   
 function add_videogallery()
 {

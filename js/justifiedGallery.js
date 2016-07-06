@@ -1,5 +1,5 @@
 /*!
- * Justified Gallery - v3.2.0
+ * This is a fork of Justified Gallery - v3.2.0
  * http://miromannino.com/projects/justified-gallery/
  * Copyright (c) 2014 Miro Mannino
  * Licensed under the MIT license.
@@ -10,7 +10,6 @@
      if(imagecssAnimation == true)  { var imagecssAnimation2 = false; }
      if(imagecssAnimation == false) { var imagecssAnimation2 = true; }
      
-//alert(imagecssAnimation +' '+imagecssAnimation2);
 	/* Events
 		jg.complete : called when all the gallery has been created
 		jg.resize : called when the gallery has been resized
