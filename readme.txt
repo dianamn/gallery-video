@@ -1,10 +1,10 @@
 === Gallery - Video Gallery ===
 Contributors: Huge-IT
 Donate link: http://huge-it.com/wordpress-video-gallery/
-Tags: video gallery, gallery, video, youtube, vimeo, wp gallery, media gallery, video plugin, vimeo gallery, youtube gallery, embed videos, youtube player, Video Player plugin, videos, wordpress gallery, grid gallery, wordpress youtube, wp gallery plugins, justified gallery, wordpress video, video slider, video slideshow, video player, player, video lightbox, flickr, free gallery, slideshow, Simple gallery, wordpress gallery plugin, thumbnail gallery, slideshow gallery, videos, plugin gallery, photo gallery, responsive gallery, WordPress Video Gallery, youtube video gallery, video gallery plugin, video youtube, add gallery, best gallery, filterable gallery, fullscreen gallery, free photo gallery, gallery decription, widget gallery, website gallery, jquery gallery, wp gallery plugin, best gallery plugin, gallery image, gallery lightbox, Gallery Plugin, gallery shortcode, gallery slider, sortable gallery, thumbnails, content gallery, lightbox gallery,
+Tags: video gallery, gallery, video, youtube, vimeo, youtube gallery, videos, wordpress gallery, wordpress video, WordPress Video Gallery, youtube video gallery, video gallery plugin,
 Requires at least: 3.0.1
 Tested up to: 4.5.3
-Stable tag: 1.7.04
+Stable tag: 1.7.05
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,13 @@ Gallery Video plugin was created and specifically designed to show video links i
 
 == Description ==
 
-### Gallery Video plugin was created and specifically designed to show your videos from Vimeo and Youtube in an unusual splendid way. It provides 7 good-looking views. Each view is made for making the gallery more attractive, so select the one which will match the best for your WordPress website. Plugin allows you to create a video gallery for WordPress. Video Gallery looks very impressive and functional. The process of creating a video gallery only takes a few minutes and created gallery can be displayed on any page or post by means of WordPress shortcode.
+### Gallery Video plugin was created and specifically designed to show your videos from Vimeo and Youtube in an unusual splendid way.
+
+It provides 7 good-looking views. Each view is made for making the gallery more attractive, so select the one which will match the best for your WordPress website.
+
+Plugin allows you to create a video gallery for WordPress. Video Gallery looks very impressive and functional.
+
+The process of creating a video gallery only takes a few minutes and created gallery can be displayed on any page or post by means of WordPress shortcode.
 
 * [Wordpress Video Gallery](http://huge-it.com/wordpress-video-gallery/)
 * [Demo](http://huge-it.com/wordpress-video-gallery-demo-1-content-popup/)
@@ -48,7 +54,7 @@ https://www.youtube.com/watch?v=Re16ci9iGVU
 = Justified gallery View =
 = Blog Style View =
 
-*  **Provides hundreds of Design Options** -  General Options and Lightbox Options of Video Gallery plugin, which is available in the commercial version, allows the users to make customization, change colors, font size, effects and do  many more changes
+*  **Provides hundreds of Design Options** -  General Options and Lightbox Options of Video Gallery plugin, which is available in the commercial version, allows the users to make customization, change colors, font size, effects and do  many more changes.
 
 *  **Youtube Posts** - Add Youtube videos. Create your own amazing gallery with the most popular video site.
 
@@ -58,7 +64,11 @@ https://www.youtube.com/watch?v=Re16ci9iGVU
 
 *  **Show Videos** - Plugin is a powerful, yet easy-to-use plugin to create a video gallery, it gives you full control to automatically embed videos from YouTube or Vimeo.
 
-*  **Huge-IT Video Gallery** -  Working with Video Gallery plugin is pretty much easy. You can create the gallery and fill them with different videos immediately after activating the plugin, plugin will not require you to have any specialized knowledge. For those who has an inquiring mind, they can play with settings and customize every detail for themselves and make their own design.
+*  **Huge-IT Video Gallery** -  Working with Video Gallery plugin is pretty much easy.
+
+You can create the gallery and fill them with different videos immediately after activating the plugin, plugin will not require you to have any specialized knowledge.
+
+For those who has an inquiring mind, they can play with settings and customize every detail for themselves and make their own design.
 
 ### The main features
 
@@ -78,13 +88,31 @@ https://www.youtube.com/watch?v=Re16ci9iGVU
 * **Plugin has Lifelong License**
 * **Sample of video gallery is Included**
 
-*  **Custom Options** - Plugin is easy to install and  you can create unlimited galleries.You can turn to any place your order, posts and pages using a simple shortcode. Video Gallery works with videos hosted on YouTube and Vimeo.
+*  **Custom Options** - Plugin is easy to install and  you can create unlimited galleries.You can turn to any place your order, posts and pages using a simple shortcode.
 
-*  **Video Gallery gives you the choice between 7 incredible views** - There are views which allows to demonstrate gallery videos with its information, title, and special URL which will direct to wherever you want. Provide the whole information about the videos hence from uploader panel or after inserting the video into the panel. Due to the views, the gallery videos can be demonstrated different ways, according to your videos content. Make a choice from one of the nice views and have fun while creating the gallery.
+Video Gallery works with videos hosted on YouTube and Vimeo.
 
-*  **Each view has changeable options in General Options section** - General Options allows the users to change the settings for each view. With general settings users can manage and customize their desired view, make the view more attractive and interesting.
 
-*  **View Counter** - Plugin provides View Counter function, for counting the amount of the video views. Counter will automatically count the views of the gallery videos, which result will be seen on the backend. One more good thing is, that there is an opportunity to export view counter data a pdf file.
+*  **Video Gallery gives you the choice between 7 incredible views** - There are views which allows to demonstrate gallery videos with its information, title, and special URL which will direct to wherever you want.
+
+Provide the whole information about the videos hence from uploader panel or after inserting the video into the panel.
+
+Due to the views, the gallery videos can be demonstrated different ways, according to your videos content.
+
+Make a choice from one of the nice views and have fun while creating the gallery.
+
+
+*  **Each view has changeable options in General Options section** - General Options allows the users to change the settings for each view.
+
+With general settings users can manage and customize their desired view, make the view more attractive and interesting.
+
+
+*  **View Counter** - Plugin provides View Counter function, for counting the amount of the video views.
+
+Counter will automatically count the views of the gallery videos, which result will be seen on the backend.
+
+One more good thing is, that there is an opportunity to export view counter data a pdf file.
+
 
 *  **Modification** - If you have new ideas concerning Video Gallery plugin and we may help you to realize them, do not hesitate to write us.
 
@@ -94,20 +122,60 @@ https://www.youtube.com/watch?v=Re16ci9iGVU
 
 ### 7 Views Options:
 
-*  **Video Gallery / Content Popup** - Content Pop Up view consists of boxes with zoom icon, title and View More button. In the gallery when to click on the videos, they are opened with a popup, where you see title, description, and View More button.There is a zoom icon on the gallery videos. View More button allows you to insert your desired URL, which will take you wherever you need. Click on the gallery videos and see how they smoothly open in popup.
+*  **Video Gallery / Content Popup** - Content Pop Up view consists of boxes with zoom icon, title and View More button.
 
-*  **Content Video Slider** - Content Video Slider view introduce the gallery videos separately. You can see videos one by one, where is inserted the title of the video, description, link button. This view is very nice, due to which you show the gallery videos like a slider.
+In the gallery when to click on the videos, they are opened with a popup, where you see title, description, and View More button.
 
-*  **Lightbox Video Gallery** -  Lightbox view shows only the videos, without any text in a box. Lightbox is like a collection of your favorite videos, where you can add a title.  They open with lightbox, in pro version you have a great opportunity to adjust the style of the lightbox from the Lightbox Options section.
+There is a zoom icon on the gallery videos.
 
-*  **Video Slider** - Video Slider allows you to show your videos in a unique way. If you need to show the gallery videos like a slider, this view will satisfy your demand. Put the title straight on the video, choose the manner of sliding your videos, change styles and enjoy sliding the videos in the gallery. 
+View More button allows you to insert your desired URL, which will take you wherever you need.
 
-*  **Thumbnails** - Bring a new breath to your site, show videos using thumbnails view. Thumbnail view demonstrates the gallery videos like boxes, and when you hover on the image you will see title for them. This is a really nice way of making your website video gallery to look attractive. Pick a background image for the video and open them in Lightbox and enjoy the show.
+Click on the gallery videos and see how they smoothly open in popup.
 
-*  **Justified View** - Justified view allows you to represent your videos within the created gallery next to each other without padding between them. The interesting thing about this gallery type is that it has “order changing” function, which you need to enable from General Options, and your videos will be changed while refreshing the page. By hovering on the items, appears the title with the background. Clicking on the video it opens in a lightbox, giving a beautiful view to them.
+*  **Content Video Slider** - Content Video Slider view introduce the gallery videos separately.
+
+You can see videos one by one, where is inserted the title of the video, description, link button.
+
+This view is very nice, due to which you show the gallery videos like a slider.
+
+*  **Lightbox Video Gallery** -  Lightbox view shows only the videos, without any text in a box.
+
+Lightbox is like a collection of your favorite videos, where you can add a title.
+
+They open with lightbox, in pro version you have a great opportunity to adjust the style of the lightbox from the Lightbox Options section.
+
+*  **Video Slider** - Video Slider allows you to show your videos in a unique way.
+
+If you need to show the gallery videos like a slider, this view will satisfy your demand.
+
+Put the title straight on the video, choose the manner of sliding your videos, change styles and enjoy sliding the videos in the gallery. 
+
+*  **Thumbnails** - Bring a new breath to your site, show videos using thumbnails view.
+
+Thumbnail view demonstrates the gallery videos like boxes, and when you hover on the image you will see title for them.
+
+This is a really nice way of making your website video gallery to look attractive.
+
+Pick a background image for the video and open them in Lightbox and enjoy the show.
+
+*  **Justified View** - Justified view allows you to represent your videos within the created gallery next to each other without padding between them.
+
+The interesting thing about this gallery type is that it has “order changing” function, which you need to enable from General Options, and your videos will be changed while refreshing the page.
+
+By hovering on the items, appears the title with the background.
+
+Clicking on the video it opens in a lightbox, giving a beautiful view to them.
 
 *  **Blog Style View**
-Using with Blog Style view is the simplest and prettiest way of demonstrating your content within gallery. This view is made to display your videos with it’s natural dimensions, with its title and description. The position of title and description can be changed from General Options of the Blog Style view. Description allows to use HTML modified text, so you can beautifully create your projects and place them under each other. The outstanding feature of this view, you can add pagination or load more button at the end of the gallery page, and with this way divide your projects into pages.
+Using with Blog Style view is the simplest and prettiest way of demonstrating your content within gallery.
+
+This view is made to display your videos with it’s natural dimensions, with its title and description.
+
+The position of title and description can be changed from General Options of the Blog Style view.
+
+Description allows to use HTML modified text, so you can beautifully create your projects and place them under each other.
+
+The outstanding feature of this view, you can add pagination or load more button at the end of the gallery page, and with this way divide your projects into pages.
 
 *  **Unlimited Amount**
 
@@ -119,11 +187,17 @@ Plugin is fully responsive for different sizes of screen. So your users will enj
 
 *  **Load More And Pagination**
 
-This feature will allow demonstrating only a part of your created gallery videos, hiding the rest of them under Load More button, or dividing all your gallery projects into several pages with the help of Pagination. You also choose how many projects to display per page.
+This feature will allow demonstrating only a part of your created gallery videos, hiding the rest of them under Load More button, or dividing all your gallery projects into several pages with the help of Pagination.
+
+You also choose how many projects to display per page.
 
 *  **Title And Description**
 
-Important possibility to add title and description to each gallery video. There are views which do not have description place, but video gallery owns views where you are able to write the description for each gallery video. The description can be seen not in all video gallery views, but some of them have a place for it. Video Gallery accomplished with title and description looks rich and perfect.
+Important possibility to add title and description to each gallery video.
+
+There are views which do not have description place, but video gallery owns views where you are able to write the description for each gallery video.
+
+The description can be seen not in all video gallery views, but some of them have a place for it. Video Gallery accomplished with title and description looks rich and perfect.
 
 *  **7 Nicely Designed Views**
 
@@ -137,19 +211,31 @@ Important possibility to add title and description to each gallery video. There 
 * Justified gallery View
 * Blog Style View
 
-*  **Hundreds Of Design Options** - General Options of Pro version, gives you the big choice of different settings, make the video gallery look exactly as you need with plenty of adjustments of colors, size, and effects.Video Gallery is made special for you to demonstrate the videos of your gallery to look pretty nice, informative, user friendly. 
+*  **Hundreds Of Design Options** - General Options of Pro version, gives you the big choice of different settings, make the video gallery look exactly as you need with plenty of adjustments of colors, size, and effects.
 
-*  **Youtube Posts** - Video Gallery can be used with the most popular video site: YouTube, simply copy the link and add it to the gallery will bring the video in it. This way you can transform your gallery into YouTube Gallery
+Video Gallery is made special for you to demonstrate the videos of your gallery to look pretty nice, informative, user friendly. 
 
-*  **Vimeo Posts** - The other source of adding videos: Vimeo. Turn your gallery into Vimeo Gallery using your collection of Vimeo videos. Inserting the links and making customization on it.
+*  **Youtube Posts** - Video Gallery can be used with the most popular video site: YouTube, simply copy the link and add it to the gallery will bring the video in it.
 
-*  **Lightbox Popup With Many Options** - Some of the views use our popular Lightbox tool. Videos are opened using the Lightbox, or sometimes we say Popup. The idea of the Lightbox is to make Video larger, ability to slide through all videos within the gallery. Make some design customization on it, using the variety of Lightbox Options.
+This way you can transform your gallery into YouTube Gallery
+
+*  **Vimeo Posts** - The other source of adding videos: Vimeo. Turn your gallery into Vimeo Gallery using your collection of Vimeo videos.
+
+Inserting the links and making customization on it.
+
+*  **Lightbox Popup With Many Options** - Some of the views use our popular Lightbox tool. Videos are opened using the Lightbox, or sometimes we say Popup.
+
+The idea of the Lightbox is to make Video larger, ability to slide through all videos within the gallery.
+
+Make some design customization on it, using the variety of Lightbox Options.
 
 *  **Plugin allows you to add multiple images** - Create unlimited galleries, add a description for each of them, add a gallery page or share it via shortcode. 
 
 *  **Pro version** - It opens new useful features and new opportunities to demonstrate a perfect video gallery. 
 
-*  **Video Gallery** - You display a large number of galleries on your site, including the slide gallery, supports the display of slides or pages of posts. All components of the slideshow can be easily customized. The plugin supports shortcode which let you insert the gallery into any post very quickly.
+*  **Video Gallery** - You display a large number of galleries on your site, including the slide gallery, supports the display of slides or pages of posts.
+
+All components of the slideshow can be easily customized. The plugin supports shortcode which let you insert the gallery into any post very quickly.
 
 *  **Drag and drop option** -  In plugin you are able to build gallery easily, reorder the videos, decide their sequence in your gallery.
 
@@ -163,39 +249,14 @@ Important possibility to add title and description to each gallery video. There 
 
 *  **High compatibility** - Plugin is compatible with Huge-IT plugins and with most other plugins, we try to avoid conflict with the libraries of other plugin and theme.
 
-*  **Link button** - Plugin allows you to insert link button next to the title. If you need to show more information about the gallery videos in this case you are free to use link button, which you can show or not to show on the videos, do different color and size modification from General Options.
+*  **Link button** - Plugin allows you to insert link button next to the title.
+
+If you need to show more information about the gallery videos in this case you are free to use link button, which you can show or not to show on the videos, do different color and size modification from General Options.
 
 *  **Video Image** - There are views which provide you to change the video image width in your gallery, as well as change the video image border width and color.
 
 *  **Custom Thumbnails** - This amazing feature is available for all the views. Custom Thumbnails feature allows you to change you gallery videos image. 
 
-**[Demo 1 Content Popup](http://huge-it.com/wordpress-video-gallery-demo-1-content-popup/#plugin_demo_wrapper)**
-
-This view has been made for showing your videos in popup with the information, that is given to the videos and the title, In the popup you can also find a Link button which takes to another page. The front image of your video will be settled be in compact box with zoom icon on it. Clicking on them and open the video in popup.
-
-**[Demo 2 Content Video Slider](http://huge-it.com/wordpress-video-gallery-demo-2-content-video-slider/#plugin_demo_wrapper)**
-
-This view will introduce your video with it’s description and title next to it, in a wonderful slider. Choose the way to change the slides,m and enjoy sliding each video with the content.
-
-**[ Demo 3 Lightbox Gallery](http://huge-it.com/wordpress-video-gallery-demo-3-lightbox-video-gallery/#plugin_demo_wrapper)**
-
-This view shows only the videos, without any text in a boxes, which will open in lightbox while clicking on them, it is also possible to adjust the style of the lightbox, in Lightbox Options section.
-
-**[Demo 4 Video Slider](http://huge-it.com/wordpress-video-gallery-demo-4-video-slider/#plugin_demo_wrapper)**
-
-Show your videos in unique way by using Slider view. Here you can put the title and description straight on the video, choose the manner of sliding your videos, change styles and enjoy sliding your videos.
-
-**[Demo 5 Thumbnails](http://huge-it.com/wordpress-video-gallery-demo-5-thumbnails/#plugin_demo_wrapper)**
-
-Breathe new life to your site, show videos using thumbnails view. Pick a background image for the video. Open them in Lightbox and enjoy the show.
-
-**[Demo 6 Custom Thumbnails](http://huge-it.com/wordpress-video-gallery-demo-6-custom-thumbnails/#plugin_demo_wrapper)**
-
-After adding videos use Edit icon on videos to edit video thumbnail on any image you want. This cool feature gives you ability to create nice designed galleries with any view.
-
-**[Demo 7 Blog Style View](http://huge-it.com/wordpress-video-gallery-demo-7-block-style-view/#plugin_demo_wrapper)**
-
-Block Style Gallery views is the simplest and most understanding way of demonstrating your content within gallery. This view is made to simply display your videos with it’s natural dimensions, with title above and description under it.
 
 > #### Demos 
 >
@@ -428,9 +489,18 @@ If you want Video Gallery to work on all your websites, you should do the follow
 
 *  General Options where you have great opportunities to change every detail for your gallery videos?
 
+
+= Does Video Gallery plugin allows to add links for each video? =
+
+*  Yes, Video Gallery has views where you can insert your desired links, as well as select whether open or not in a new tab.
+
+
 If you think, that you found a bug in our [WordPress Video Gallery](http://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com).
     
 == Changelog ==
+
+= 1.7.05 =
+*  Added credits and attribution in the source code refering the original authors.
 
 = 1.7.04 =
 *  Some mirror bug has been fixed.
