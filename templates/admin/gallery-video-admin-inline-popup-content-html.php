@@ -1,12 +1,15 @@
 <div id="huge_it_videogallery" style="display:none;">
 	<h3><?php _e( "Select Huge IT Video Gallery to insert into post" ); ?></h3>
-	<?php if ( count( $shortcodevideogallerys ) ) {
-		echo "<select id='huge_it_videogallery-select'>";
+	<?php
+	$change_view_nonce = wp_create_nonce('gallery_video_shortecode_change_view_nonce');
+	$insert_shortecode_nonce = wp_create_nonce('gallery_video_insert_shortecode');
+	if ( count( $shortcodevideogallerys ) ) {
+		echo "<select id='huge_it_videogallery-select' data-change-view-nonce='".$change_view_nonce."'>";
 		foreach ( $shortcodevideogallerys as $shortcodevideogallery ) {
 			echo "<option value='" . $shortcodevideogallery->id . "'>" . $shortcodevideogallery->name . "</option>";
 		}
 		echo "</select>";
-		echo "<button class='button button-primary' id='hugeitvideogalleryinsert'>Insert Video Gallery</button>";
+		echo "<button class='button button-primary' id='hugeitvideogalleryinsert' data-insert-shortecode-nonce='".$insert_shortecode_nonce."'>Insert Video Gallery</button>";
 	} else {
 		echo "No slideshows found", "huge_it_videogallery";
 	}

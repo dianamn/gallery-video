@@ -64,8 +64,16 @@ function Gallery_Video_Blog_Style_Gallery(id) {
             }
             , "json");
     };
+    _this.resizeEvent = function(){
+        var iframeRatio = param_obj.gallery_video_video_ht_view9_video_width/param_obj.gallery_video_video_ht_view9_video_height;
+        var wrapperWidth = _this.element.find('.video_view9_vid_wrapper').width();
+        var wrapperHeight = wrapperWidth/iframeRatio;
+        _this.element.find('.video_view9_vid_wrapper').css('height',wrapperHeight);
+        _this.element.find(iframe).css({'height':wrapperHeight,'width':wrapperWidth});
+    }
     _this.init = function () {
         _this.addEventListeners();
+        jQuery(window).resize(_this.resizeEvent);
     };
     this.init();
 }

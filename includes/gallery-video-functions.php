@@ -131,7 +131,7 @@ function gallery_video_get_default_general_options() {
 		'gallery_video_light_box_preloading'=>'true',
 		'gallery_video_lightbox_open_position'=>'5',
 		'gallery_video_light_box_style'=>'1',
-		'gallery_video_light_box_size_fix'=>'false',
+		'gallery_video_light_box_size_fix'=>'true',
 		'gallery_video_slider_crop_image'=>'crop',
 		'gallery_video_slider_title_color'=>'000000',
 		'gallery_video_slider_title_font_size'=>'13',

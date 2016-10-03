@@ -215,9 +215,11 @@ function Gallery_Video_Content_Popup(id) {
     };
     _this.closePopup = function () {
         jQuery('#huge-popup-overlay').remove();
-        var videsrc = _this.popupList.find('li.active iframe').attr('src');
+        var videoSrc = _this.popupList.find('li.active iframe').attr('src');
+        videoSrc = videoSrc.split('?');
+        videoSrc = videoSrc[0];
         _this.popupList.find('li.active iframe').attr('src', '');
-        _this.popupList.find('li.active iframe').attr('src', videsrc);
+        _this.popupList.find('li.active iframe').attr('src', videoSrc);
         _this.popupList.find('li').removeClass('active');
         _this.popupList.removeClass('active');
     };

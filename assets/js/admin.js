@@ -33,11 +33,13 @@ jQuery(document).ready(function () {
     });
     jQuery('.iframe-text-area + .set-new-video').on('click', function () {
         var videoUrl = jQuery(this).prev().find('#edit_video_input').val();
+        var insertVideoNonce = jQuery(this).attr('data-insert-new-video-nonce');
         jQuery('.video-text-area').text(videoUrl);
         var data = {
             task: 'set_new_video',
             action: 'admin_gallery_video',
-            video_url: videoUrl
+            video_url: videoUrl,
+            insertVideoNonce: insertVideoNonce
         };
         jQuery.post(ajax_object_admin, data, function (response) {
             response = JSON.parse(response);
@@ -57,11 +59,14 @@ jQuery(document).ready(function () {
         var videoUrl = jQuery(this).attr('data-video-url');
         var galleryVideoId = jQuery(this).attr('data-gallery-video-id');
         var videoUniqueId = jQuery(this).attr('data-video-id');
+        var editVideoNonce = jQuery(this).attr('data-edit-video-nonce');
         jQuery('.video-text-area').text(videoUrl);
         var data = {
             video_url: videoUrl,
             action: 'admin_gallery_video',
-            task: 'send_url_popup'
+            task: 'send_url_popup',
+            editVideoNonce: editVideoNonce,
+            videoUniqueId: videoUniqueId
         };
         jQuery.post(ajax_object_admin, data, function (response) {
             jQuery('#TB_window').css('overflow', 'hidden');

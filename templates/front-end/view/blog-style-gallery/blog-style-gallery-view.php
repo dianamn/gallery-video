@@ -165,15 +165,15 @@
 			$actual_link = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "";
 			$checkREQ    = '';
 			$pattern     = "/\?p=/";
-			$pattern2    = "/&page-img[0-9]+=[0-9]+/";
-			$pattern3    = "/?page-img[0-9]+=[0-9]+/";
+			$pattern2    = "/&page-video[0-9]+=[0-9]+/";
+			$pattern3    = "/?page-video[0-9]+=[0-9]+/";
 			if ( preg_match( $pattern, $actual_link ) ) {
 				if ( preg_match( $pattern2, $actual_link ) ) {
 					$actual_link = preg_replace( $pattern2, '', $actual_link );
 				}
-				$checkREQ = $actual_link . '&page-img' . $gallery_videoID . $pID;
+				$checkREQ = $actual_link . '&page-video' . $gallery_videoID . $pID;
 			} else {
-				$checkREQ = '?page-img' . $gallery_videoID . $pID;
+				$checkREQ = '?page-video' . $gallery_videoID . $pID;
 			}
 			$pervpage = '';
 			if ( $page != 1 ) {

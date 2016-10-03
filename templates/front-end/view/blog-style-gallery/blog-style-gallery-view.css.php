@@ -77,6 +77,8 @@
 .video_view9_vid_wrapper #thevideo{
     position: absolute;
     top: 0;
+    width: 100%;
+    height: 100%;
 }
 .video_view9_vid_wrapper{
     width: <?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_width']; ?>px;
@@ -98,6 +100,7 @@
     opacity: 1;
     cursor: pointer;
     max-width:100%;
+    max-height: 100%;
 }
 .thumb_image{
     position: absolute;

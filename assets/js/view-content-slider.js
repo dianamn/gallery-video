@@ -12,6 +12,7 @@ function Gallery_Video_Content_Slider(id) {
     _this.autoSlide = _this.container.data("autoslide") == "on";
     _this.slideDuration = +_this.container.data("slide-duration");
     _this.slideInterval = +_this.container.data("slide-interval");
+    _this.timeArrowsClick;
     _this.sliderOptons = {
         autoSlide: _this.autoSlide,
         pauseOnHover: _this.pauseHover,
@@ -23,11 +24,14 @@ function Gallery_Video_Content_Slider(id) {
         galleryVideolightboxInit();
     };
     _this.addEventListeners = function () {
-        jQuery('body').on('click', '.ls-nav-left-arrow,.ls-nav-right-arrow', _this.autoslide);
+        if(_this.autoSlide) {
+            jQuery('body').on('click', '.ls-nav-left-arrow,.ls-nav-right-arrow', _this.autoslide);
+        }
     };
     _this.autoslide = function(){
+        clearTimeout(_this.timeArrowsClick);
         var api = jQuery.data( document.querySelector('#' + id + '.main-slider.liquid-slider'), 'liquidSlider');
-        setTimeout(function(){
+        _this.timeArrowsClick = setTimeout(function(){
             api.startAutoSlide();
         },_this.slideInterval);
     };

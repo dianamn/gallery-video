@@ -71,6 +71,7 @@ $protocol    = stripos( $_SERVER['SERVER_PROTOCOL'], 'https' ) === true ? 'https
 									switch ( $rowimages->sl_type ) {
 										case 'video':
 											$gallery_video_nonce_remove_video = wp_create_nonce( 'gallery_video_nonce_remove_video' . $rowimages->id );
+											$gallery_video_nonce_edit_video = wp_create_nonce( 'gallery_video_nonce_edit_video' . $rowimages->id );
 											?>
 											<li <?php if ( $i % 2 == 0 ) {
 												echo "class='has-background'";
@@ -197,6 +198,7 @@ $protocol    = stripos( $_SERVER['SERVER_PROTOCOL'], 'https' ) === true ? 'https
 														   class="button button-primary edit-video thickbox"
 														   data-video-url="<?php echo $rowimages->image_url; ?>"
 														   data-gallery-video-id="<?php echo $row->id; ?>"
+														   data-edit-video-nonce="<?php echo $gallery_video_nonce_edit_video; ?>"
 														   data-video-id="<?php echo $rowimages->id; ?>">Edit Video</a>
 														<?php if ( strpos( $rowimages->image_url, 'youtu' ) !== false ) :?>
 														<div class="video_slider_params" style="display: none;margin-left: 16%;">

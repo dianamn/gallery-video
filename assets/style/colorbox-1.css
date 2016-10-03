@@ -26,7 +26,7 @@
         #vcboxError{padding:50px; border:1px solid #ccc;}
         #vcboxLoadedContent{margin-bottom:28px;}
         #vcboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494;}
-        #vcboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;}
+        #vcboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;line-height: 1;}
         #vcboxLoadingOverlay{background:url(../images/admin_images/loading_background.png) no-repeat center center;}
         #vcboxLoadingGraphic{background:url(../images/admin_images/loading.gif) no-repeat center center;}
 

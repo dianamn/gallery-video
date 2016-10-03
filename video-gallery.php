@@ -98,7 +98,7 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
          * Define Video Gallery Constants.
          */
         private function define_constants() {
-            $this->define( 'GALLERY_VIDEO_PLUGIN_URL', plugin_dir_path(__FILE__));
+            $this->define( 'GALLERY_VIDEO_PLUGIN_URL', plugin_dir_url(__FILE__));
             $this->define( 'GALLERY_VIDEO_PLUGIN_FILE', __FILE__ );
             $this->define( 'GALLERY_VIDEO_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
             $this->define( 'GALLERY_VIDEO_VERSION', $this->version );

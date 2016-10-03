@@ -23,6 +23,7 @@ jQuery(document).ready(function () {
         var sl_pausetime = jQuery('input[name=sl_pausetime]').val();
         var sl_changespeed = jQuery('input[name=sl_changespeed]').val();
         var sl_position = jQuery('select[name=sl_position]').val();
+        var insertShortecodeNonce = jQuery(this).attr('data-insert-shortecode-nonce');
         pause_on_hover = jQuery('input[name=pause_on_hover]').val();
         var data = {
             video_id: id,
@@ -37,7 +38,8 @@ jQuery(document).ready(function () {
             sl_pausetime: sl_pausetime,
             sl_changespeed: sl_changespeed,
             sl_position: sl_position,
-            pause_on_hover: pause_on_hover
+            pause_on_hover: pause_on_hover,
+            insertShortecodeNonce: insertShortecodeNonce
         };
 
         jQuery.post(ajax_object_shortecode, data, function (response) {
@@ -102,11 +104,13 @@ jQuery(document).ready(function () {
     });
     jQuery('#huge_it_sl_effects').change();
     jQuery('#huge_it_videogallery-select').change(function () {
+        var changeShortecodeViewNonce = jQuery(this).attr('data-change-view-nonce');
         gal_sel = jQuery(this).val();
         var data = {
             action: 'admin_gallery_video_shortecode',
             post: 'video_gal_change_options',
-            id: gal_sel
+            id: gal_sel,
+            changeShortecodeViewNonce: changeShortecodeViewNonce
         };
         jQuery.post(ajax_object_shortecode, data, function (response) {
             response = JSON.parse(response);

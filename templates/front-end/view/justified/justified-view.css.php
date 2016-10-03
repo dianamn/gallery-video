@@ -2,6 +2,7 @@
 .justified-gallery {
 	width: 100%;
 	position: relative;
+	overflow: hidden;
 }
 .justified-gallery > a,
 .justified-gallery > div {
