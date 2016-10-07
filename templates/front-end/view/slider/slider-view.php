@@ -577,7 +577,7 @@ var video_is_playing_videogallery_<?php echo $gallery_videoID; ?>=false;
 		}else {
             jQuery("ul.huge_it_slider_videogallery_<?php echo $gallery_videoID; ?> li img").each(function(e,img){
 
-	            var naturalRatio = jQuery(this).prop('naturalWidth') / jQuery(this).prop('naturalHeight');console.log(naturalRatio,defaultRatio, typeof defaultRatio);
+	            var naturalRatio = jQuery(this).prop('naturalWidth') / jQuery(this).prop('naturalHeight');
 	            if (naturalRatio <= defaultRatio) {
 		            jQuery(img).css({
 			            position: "relative",

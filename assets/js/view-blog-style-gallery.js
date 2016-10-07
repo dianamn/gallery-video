@@ -35,7 +35,7 @@ function Gallery_Video_Blog_Style_Gallery(id) {
         var src = jQuery(this).parent().next().find('iframe').attr('src');
         src += '?autoplay=1';
         jQuery(this).parent().next().find('iframe').attr('src',src);
-        jQuery(this).parent().next().find('iframe').css('opacity','1');console.log(4);
+        jQuery(this).parent().next().find('iframe').css('opacity','1');
         jQuery(this).parent().find('*').css('display','none');
     };
     _this.getResult = function (pagenum, perpage, galleryVideoId, blogLoadNonce) {
@@ -53,7 +53,7 @@ function Gallery_Video_Blog_Style_Gallery(id) {
                 if (response.success) {
                     var $objnewitems = jQuery(response.success);
                     _this.container.append($objnewitems);
-                    setTimeout(function () {console.log(_this.element);
+                    setTimeout(function () {
                         _this.resizeEvent();
                     }, 100);
                     _this.loadMoreBtn.show();
