@@ -12,6 +12,12 @@
 			$video_name  = str_replace( '__5_5_5__', '%', $row->name );
 			$video_desc  = str_replace( '__5_5_5__', '%', $row->description );
 			$video_thumb = $row->thumb_url;
+			if ( $video_thumb != '' ){
+				$iframe_thumbclass = 'iframe-thumb';
+			}
+			else {
+				$iframe_thumbclass = '';
+			}
 
 			if ( $gallery_video_get_option['gallery_video_video_view9_image_position'] == 1 ) :
 				?>
@@ -29,7 +35,7 @@
 							<?php
 							$videourl = gallery_video_get_video_id_from_url( $row->image_url );
 							if ( $videourl[1] == 'youtube' ) { ?>
-								<iframe class="video_view9_img"
+								<iframe class="video_view9_img <?php echo $iframe_thumbclass; ?>"
 								        width="<?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_width']; ?>"
 								        height="<?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_height']; ?>"
 								        src="//www.youtube.com/embed/<?php echo $videourl[0]; ?>" style="border: 0;"
@@ -37,7 +43,7 @@
 								<?php
 							} else {
 								?>
-								<iframe class="video_view9_img"
+								<iframe class="video_view9_img <?php echo $iframe_thumbclass; ?>"
 								        width="<?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_width']; ?>"
 								        height="<?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_height']; ?>"
 								        src="//player.vimeo.com/video/<?php echo $videourl[0]; ?>" style="border: 0;"
@@ -70,7 +76,7 @@
 							<?php
 							$videourl = gallery_video_get_video_id_from_url( $row->image_url );
 							if ( $videourl[1] == 'youtube' ) { ?>
-								<iframe class="video_view9_img"
+								<iframe class="video_view9_img <?php echo $iframe_thumbclass; ?>"
 								        width="<?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_width']; ?>"
 								        height="<?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_height']; ?>"
 								        src="//www.youtube.com/embed/<?php echo $videourl[0]; ?>" style="border: 0;"
@@ -78,7 +84,7 @@
 								<?php
 							} else {
 								?>
-								<iframe class="video_view9_img"
+								<iframe class="video_view9_img <?php echo $iframe_thumbclass; ?>"
 								        width="<?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_width']; ?>"
 								        height="<?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_height']; ?>"
 								        src="//player.vimeo.com/video/<?php echo $videourl[0]; ?>" style="border: 0;"
@@ -86,7 +92,6 @@
 								<?php
 							}
 							?>
-							</iframe>
 						</div>
 					</div>
 					<div class="video_new_view_desc"><?php echo $video_desc; ?></div>
@@ -111,7 +116,7 @@
 							<?php
 							$videourl = gallery_video_get_video_id_from_url( $row->image_url );
 							if ( $videourl[1] == 'youtube' ) { ?>
-								<iframe class="video_view9_img"
+								<iframe class="video_view9_img <?php echo $iframe_thumbclass; ?>"
 								        width="<?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_width']; ?>"
 								        height="<?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_height']; ?>"
 								        src="//www.youtube.com/embed/<?php echo $videourl[0]; ?>" style="border: 0;"
@@ -119,7 +124,7 @@
 								<?php
 							} else {
 								?>
-								<iframe class="video_view9_img"
+								<iframe class="video_view9_img <?php echo $iframe_thumbclass; ?>"
 								        width="<?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_width']; ?>"
 								        height="<?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_height']; ?>"
 								        src="//player.vimeo.com/video/<?php echo $videourl[0]; ?>" style="border: 0;"
@@ -127,7 +132,6 @@
 								<?php
 							}
 							?>
-							</iframe>
 						</div>
 					</div>
 				</div>

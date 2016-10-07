@@ -931,7 +931,7 @@ else{
 
 		if(jQuery(window).width() <= settings.w+50){
 			settings.w = jQuery(window).width() - 50;
-			settings.h = settings.w*3/4;
+			settings.h = settings.w*9/16;
 		}
 		// Sets the minimum dimensions for use in image scaling
 		settings.mw = settings.w;

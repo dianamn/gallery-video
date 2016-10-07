@@ -152,16 +152,15 @@ function Gallery_Video_Content_Popup(id) {
         }
         if (num >= 1) {
             var strid = jQuery(this).closest(".pupup-element").prev(".pupup-element").find('a').data('popupid').replace('#', '');
-            _this.popupList.find('#huge_it_videogallery_pupup_element' + strid).css({height: height * 0.7});
+            _this.popupList.find('#huge_it_videogallery_pupup_element_' + strid).css({height: height * 0.7});
             jQuery(this).closest(".pupup-element").removeClass("active");
             jQuery(this).closest(".pupup-element").prev(".pupup-element").addClass("active");
         } else {
             var strid = _this.popupList.find(".pupup-element").last().find('a').data('popupid').replace('#', '');
-            _this.popupList.find('#huge_it_videogallery_pupup_element' + strid).css({height: height * 0.7});
+            _this.popupList.find('#huge_it_videogallery_pupup_element_' + strid).css({height: height * 0.7});
             jQuery(this).closest(".pupup-element").removeClass("active");
             _this.popupList.find(".pupup-element").last().addClass("active");
         }
-
 
         if (jQuery('.pupup-element.active .description').height() + jQuery('.right-block h3').height() + 200 > jQuery('.pupup-element.active .right-block').height()) {
             if (jQuery('.pupup-element.active img').height() > jQuery('.pupup-element.active .image-block').height()) {
@@ -190,12 +189,12 @@ function Gallery_Video_Content_Popup(id) {
         });
         if (num <= cnt) {
             var strid = jQuery(this).closest(".pupup-element").next(".pupup-element").find('a').data('popupid').replace('#', '');
-            _this.popupList.find('#huge_it_videogallery_pupup_element' + strid).css({height: height * 0.7});
+            _this.popupList.find('#huge_it_videogallery_pupup_element_' + strid).css({height: height * 0.7});
             jQuery(this).closest(".pupup-element").removeClass("active");
             jQuery(this).closest(".pupup-element").next(".pupup-element").addClass("active");
         } else {
             var strid = _this.popupList.find(".pupup-element:first-child a").data('popupid').replace('#', '');
-            _this.popupList.find('#huge_it_videogallery_pupup_element' + strid).css({height: height * 0.7});
+            _this.popupList.find('#huge_it_videogallery_pupup_element_' + strid).css({height: height * 0.7});
             jQuery(this).closest(".pupup-element").removeClass("active");
             _this.popupList.find(".pupup-element:first-child").addClass("active");
         }

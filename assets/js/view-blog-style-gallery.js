@@ -14,6 +14,7 @@ function Gallery_Video_Blog_Style_Gallery(id) {
     _this.galleryVideoId = _this.content.attr('data-gallery-video-id');
     _this.contentPerPage = _this.content.attr('data-gallery-video-perpage');
     _this.element = _this.container.find('.video_view9_container');
+    _this.wrapperWidth = _this.element.find('.video_view9_vid_wrapper').width();
     _this.addEventListeners = function () {
         _this.loadMoreBtn.on('click', _this.loadMoreBtnClick);
         _this.container.on('click','.thumb_image,.playbutton', _this.thumbWrapperClick);
@@ -34,6 +35,7 @@ function Gallery_Video_Blog_Style_Gallery(id) {
         var src = jQuery(this).parent().next().find('iframe').attr('src');
         src += '?autoplay=1';
         jQuery(this).parent().next().find('iframe').attr('src',src);
+        jQuery(this).parent().next().find('iframe').css('opacity','1');console.log(4);
         jQuery(this).parent().find('*').css('display','none');
     };
     _this.getResult = function (pagenum, perpage, galleryVideoId, blogLoadNonce) {
@@ -51,7 +53,8 @@ function Gallery_Video_Blog_Style_Gallery(id) {
                 if (response.success) {
                     var $objnewitems = jQuery(response.success);
                     _this.container.append($objnewitems);
-                    setTimeout(function () {
+                    setTimeout(function () {console.log(_this.element);
+                        _this.resizeEvent();
                     }, 100);
                     _this.loadMoreBtn.show();
                     _this.loadingIcon.hide();
@@ -65,15 +68,17 @@ function Gallery_Video_Blog_Style_Gallery(id) {
             , "json");
     };
     _this.resizeEvent = function(){
-        var iframeRatio = param_obj.gallery_video_video_ht_view9_video_width/param_obj.gallery_video_video_ht_view9_video_height;
-        var wrapperWidth = _this.element.find('.video_view9_vid_wrapper').width();
-        var wrapperHeight = wrapperWidth/iframeRatio;
-        _this.element.find('.video_view9_vid_wrapper').css('height',wrapperHeight);
-        _this.element.find(iframe).css({'height':wrapperHeight,'width':wrapperWidth});
+        var iframeRatio = 56.25;
+        var wrapperHeight = _this.wrapperWidth*iframeRatio/100;
+        _this.container.find('.video_view9_container').find('.video_view9_vid_wrapper').css('height',wrapperHeight);
     }
     _this.init = function () {
         _this.addEventListeners();
-        jQuery(window).resize(_this.resizeEvent);
+        _this.resizeEvent();
+        jQuery(window).resize(function(){
+            _this.wrapperWidth = _this.element.find('.video_view9_vid_wrapper').width();
+        _this.resizeEvent();
+        });
     };
     this.init();
 }

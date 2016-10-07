@@ -81,8 +81,9 @@
     height: 100%;
 }
 .video_view9_vid_wrapper{
-    width: <?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_width']; ?>px;
-    height: <?php echo $gallery_video_get_option['gallery_video_video_ht_view9_video_height']; ?>px;
+    /*width: <?php /*echo $gallery_video_get_option['gallery_video_video_ht_view9_video_width']; */?>px;
+    height: <?php /*echo $gallery_video_get_option['gallery_video_video_ht_view9_video_height']; */?>px;*/
+    width: 100%;
     position: relative;
     margin-bottom: 15px;
     display: inline-block;
@@ -101,6 +102,9 @@
     cursor: pointer;
     max-width:100%;
     max-height: 100%;
+}
+.video_view9_vid_wrapper iframe.iframe-thumb{
+    opacity: 0;
 }
 .thumb_image{
     position: absolute;
