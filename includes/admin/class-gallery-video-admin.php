@@ -49,6 +49,7 @@ class Gallery_Video_Admin {
 		add_action( 'wp_loaded', array( $this, 'wp_loaded' ) );
 		add_action( 'wp_loaded', array( $this, 'wp_loaded_add_video' ) );
 		add_action( 'wp_loaded', array( $this, 'wp_loaded_edit_video' ) );
+		add_action( 'wp_loaded', array( $this, 'wp_loaded_duplicate_video' ) );
 	}
 
 	/**
@@ -75,7 +76,7 @@ class Gallery_Video_Admin {
 			'load_video_gallery_page'
 		) );
 
-		$this->pages[] = add_submenu_page( 'video_galleries_huge_it_video_gallery', __( 'General Options', 'gallery-video' ), __( 'General Options', 'gallery-video' ), 'delete_pages', 'Options_video_gallery_styles', array(
+		$this->pages[] = add_submenu_page( 'video_galleries_huge_it_video_gallery', __( 'Advanced Features PRO', 'gallery-video' ), __( 'Advanced Features PRO', 'gallery-video' ), 'delete_pages', 'Options_video_gallery_styles', array(
 			Gallery_Video()->admin->general_options,
 			'load_page'
 		) );
@@ -220,6 +221,73 @@ class Gallery_Video_Admin {
 					array( 'id' => $video_unique_id )
 				);
 				wp_redirect( 'admin.php?page=video_galleries_huge_it_video_gallery&id=' . $gallery_video_id . '&task=apply' );
+			}
+		}
+	}
+
+	/**
+	 * Duplicate Video
+	 */
+	function wp_loaded_duplicate_video() {
+		if (isset($_GET['page']) && $_GET['page'] == 'video_galleries_huge_it_video_gallery') {
+			if (isset($_GET["id"])) {
+				$id = absint( $_GET["id"] );
+			}
+		}
+		if ( isset( $_REQUEST['gallery_video_duplicate_nonce'] ) ) {
+			$video_duplicate_nonce = $_REQUEST['gallery_video_duplicate_nonce'];
+			if ( ! wp_verify_nonce( $video_duplicate_nonce, 'huge_it_gallery_video_nonce_duplicate_gallery' . $id) ) {
+				wp_die( 'Security check fail' );
+			}
+		}
+		if ( isset( $_GET['page'] ) && $_GET['page'] == 'video_galleries_huge_it_video_gallery' ) {
+			if ( gallery_video_get_video_gallery_task() ) {
+				if ( gallery_video_get_video_gallery_task() == 'duplicate_gallery_video' ) {
+					global $wpdb;
+					$table_name    = $wpdb->prefix . "huge_it_videogallery_galleries";
+					$query         = $wpdb->prepare( "SELECT * FROM " . $table_name . " WHERE id=%d", $id );
+					$gallery_video = $wpdb->get_results( $query );
+					$wpdb->insert(
+						$table_name,
+						array(
+							'name'                        => $gallery_video[0]->name . ' Copy',
+							'sl_height'                   => $gallery_video[0]->sl_height,
+							'sl_width'                    => $gallery_video[0]->sl_width,
+							'pause_on_hover'              => $gallery_video[0]->pause_on_hover,
+							'videogallery_list_effects_s' => $gallery_video[0]->videogallery_list_effects_s,
+							'description'                 => $gallery_video[0]->description,
+							'param'                       => $gallery_video[0]->param,
+							'sl_position'                 => $gallery_video[0]->sl_position,
+							'ordering'                    => $gallery_video[0]->ordering,
+							'published'                   => $gallery_video[0]->published,
+							'huge_it_sl_effects'          => $gallery_video[0]->huge_it_sl_effects,
+							'display_type'                => $gallery_video[0]->display_type,
+							'content_per_page'            => $gallery_video[0]->content_per_page,
+							'autoslide'                   => $gallery_video[0]->autoslide
+						)
+					);
+
+					$query    = "SELECT id FROM " . $wpdb->prefix . "huge_it_videogallery_galleries order by id ASC";
+					$row_ids = $wpdb->get_col( $query );
+					$last_key = max($row_ids);
+					$table_name  = $wpdb->prefix . "huge_it_videogallery_videos";
+					$query       = $wpdb->prepare( "SELECT * FROM " . $table_name . " WHERE videogallery_id=%d", $id );
+					$videos      = $wpdb->get_results( $query );
+					$videos_list = "";
+					foreach ( $videos as $key => $video ) {
+						$new_video = "('";
+						$new_video .= $video->name . "','" . $last_key . "','" . $video->description . "','" . $video->image_url . "','" .
+						              $video->sl_url . "','" . $video->sl_type . "','" . $video->link_target . "','" . $video->ordering . "','" .
+						              $video->published . "','" . $video->published_in_sl_width . "','" . $video->thumb_url . "','" .
+						              $video->show_controls . "','" . $video->show_info . "')";
+						$videos_list .= $new_video ."," ;
+					}
+					$videos_list      = substr($videos_list,0,strlen($videos_list)-1);
+					$query = "INSERT into " . $table_name . " (name,videogallery_id,description,image_url,sl_url,sl_type,link_target,ordering,published,published_in_sl_width,thumb_url,show_controls,show_info)
+					VALUES " . $videos_list ;
+					$wpdb->query( $query);
+					wp_redirect( 'admin.php?page=video_galleries_huge_it_video_gallery' );
+				}
 			}
 		}
 	}

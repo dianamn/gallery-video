@@ -5,6 +5,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <div class="wrap">
 	<?php require(GALLERY_VIDEO_TEMPLATES_PATH.DIRECTORY_SEPARATOR.'admin'.DIRECTORY_SEPARATOR.'gallery-video-admin-free-banner.php');?>
+	<p class="pro_info">
+		<?php echo __('These features are available in the Professional version of the plugin only.', 'gallery-video'); ?>
+		<a href="http://huge-it.com/wordpress-video-gallery/" target="_blank" class="button button-primary"><?php echo __('Enable','gallery-images'); ?></a>
+	</p>
 	<div style="clear: both;"></div>
 	<div id="poststuff">
 		<?php $path_site = GALLERY_VIDEO_IMAGES_URL.'/admin_images'; ?>
@@ -25,6 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<li><a href="#videogallery-view-options-6">Blog Style Gallery</a></li>
 					</ul>
 					<ul class="options-block" id="videogallery-view-tabs-contents">
+						<div class="gallery_options_grey_overlay"></div>
 						<li id="videogallery-view-options-0" class="active">
 							<img style="width: 100%;" src='<?php echo $path_site; ?>/Content popup tab1.png' >
 						</li>
