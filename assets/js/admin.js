@@ -9,7 +9,7 @@ var name_changeTop = function (e) {
 jQuery(document).ready(function () {
     jQuery(".close_free_banner").on("click",function(){
         jQuery(".free_version_banner").css("display","none");
-        hgSliderSetCookie( 'hgSliderFreeBannerShow', 'no', {expires:3600} );
+        hgSliderSetCookie( 'galleryVideoFreeBannerShow', 'no', {expires:86400} );
     });
     jQuery('.save-videogallery-options').click(function(e){
         e.preventDefault();

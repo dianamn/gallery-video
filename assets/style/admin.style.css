@@ -1,3 +1,66 @@
+.gallery_options_grey_overlay {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .2);
+	position: absolute;
+	z-index: 10;
+}
+#post-body-content{
+	display: inline-block;
+	position: relative;
+}
+#videogallery-view-tabs-contents {
+	position: relative;
+	display: inline-block;
+}
+.pro_info {
+	width: 100%;
+	position: relative;
+	text-align: center;
+}
+
+.pro_info a {
+	background-color: #BF1E2E !important;
+	box-shadow: #BF1E2E 0 1px 0 0 !important;
+	text-shadow: #BF1E2E 0 -1px 1px !important;
+	border-color: #BF1E2E !important;
+}
+
+.pro_info a:active {
+	vertical-align: baseline !important;
+}
+.wp-list-table td {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+a span.duplicate-icon {
+	background: url(../images/admin_images/fields.opt.png) 0 -43px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 22px;
+	height: 23px;
+	opacity: 0.5;
+}
+
+a span.delete-icon {
+	background: url(../images/admin_images/fields.opt.png) 0 0;
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 22px;
+	height: 23px;
+	opacity: 0.5;
+}
+
+a.duplicate-link {
+	margin-left: 18px;
+	box-shadow: none;
+}
+
+a.delete-link {
+	margin-left: 13px;
+	box-shadow: none;
+}
 .get_full_version_pdf {
 	display: block;
 	border: 1px solid #bf1e2e;
@@ -416,6 +479,7 @@
 	border-bottom:1px solid #ddd;
 	height:40px;
 	padding-top:10px;
+	display: inline-block;
 }
 
 #videogallery-view-tabs  li  {
@@ -1149,11 +1213,11 @@ div.def_thumb.hg_set_def_button {
 }
 
 .free_version_banner .hg_social_link_buttons a.gplus {
-	background-position: -120px 0;
+	background-position: -121px 0;
 }
 
 .free_version_banner .hg_social_link_buttons a.yt {
-	background-position: -40px 0;
+	background-position: -41px 0;
 }
 
 @media screen and (max-width:1400px){

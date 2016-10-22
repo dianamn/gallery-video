@@ -46,9 +46,12 @@ $huge_it_gallery_video_nonce_remove_gallery_video = wp_create_nonce( 'huge_it_ga
 								class="sorting-indicator"></span></th>
 						<th scope="col" id="name" style="width:85px"><span>Name</span><span
 								class="sorting-indicator"></span></th>
-						<th scope="col" id="prod_count" style="width:75px;"><span>Images</span><span
+						<th scope="col" id="prod_count" style="width:40px;"><span>Videos</span><span
 								class="sorting-indicator"></span></th>
-						<th style="width:40px">Delete</th>
+						<th style="width:40px"><span>Duplicate</span><span
+								class="sorting-indicator"></span></th>
+						<th style="width:40px"><span>Delete</span><span
+								class="sorting-indicator"></span></th>
 					</tr>
 					</thead>
 					<tbody>
@@ -114,6 +117,7 @@ $huge_it_gallery_video_nonce_remove_gallery_video = wp_create_nonce( 'huge_it_ga
 						} else {
 							$pr_count = 0;
 						}
+						$huge_it_video_nonce_duplicate_gallery = wp_create_nonce('huge_it_gallery_video_nonce_duplicate_gallery'.$rows[$i]->id);
 						?>
 						<tr <?php if ( $trcount % 2 == 0 ) {
 							echo 'class="has-background"';
@@ -128,8 +132,11 @@ $huge_it_gallery_video_nonce_remove_gallery_video = wp_create_nonce( 'huge_it_ga
 									echo $rows[ $i ]->prod_count;
 								} ?>)
 							</td>
+							<td>
+								<a href="admin.php?page=video_galleries_huge_it_video_gallery&task=duplicate_gallery_video&id=<?php echo $rows[ $i ]->id; ?>&gallery_video_duplicate_nonce=<?php echo $huge_it_video_nonce_duplicate_gallery; ?>" class="duplicate-link"><span class="duplicate-icon"></span></a>
+							</td>
 							<td><a class="delete-gallery-video"
-							       href="admin.php?page=video_galleries_huge_it_video_gallery&task=remove_cat&id=<?php echo $rows[ $i ]->id; ?>&huge_it_gallery_video_nonce_remove_video_gallery=<?php echo $huge_it_gallery_video_nonce_remove_video_gallery; ?>">Delete</a>
+							       href="admin.php?page=video_galleries_huge_it_video_gallery&task=remove_cat&id=<?php echo $rows[ $i ]->id; ?>&huge_it_gallery_video_nonce_remove_video_gallery=<?php echo $huge_it_gallery_video_nonce_remove_video_gallery; ?>" class="delete-link"><span class="delete-icon"></span></a>
 							</td>
 						</tr>
 					<?php } ?>

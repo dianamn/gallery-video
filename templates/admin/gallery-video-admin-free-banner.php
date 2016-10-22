@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 ?>
-<div class="free_version_banner" <?php if( isset($_COOKIE['hgSliderFreeBannerShow']) && isset($_COOKIE['hgSliderFreeBannerShow']) == "no" ){ echo 'style="display:none"'; } ?> >
+<div class="free_version_banner" <?php if( isset($_COOKIE['galleryVideoFreeBannerShow']) && $_COOKIE['galleryVideoFreeBannerShow'] == "no" ){ echo 'style="display:none"'; } ?> >
     <a class="close_free_banner">+</a>
     <img class="manual_icon" src="<?php echo GALLERY_VIDEO_IMAGES_URL.'/admin_images/icon-user-manual.png';?>" alt="user manual" />
     <p class="usermanual_text">If you have any difficulties in using the options, Follow the link to <a href="http://huge-it.com/wordpress-video-gallery-user-manual/" target="_blank">User Manual</a></p>
