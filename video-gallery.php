@@ -4,7 +4,7 @@
 Plugin Name: Gallery - Video Gallery
 Plugin URI: http://huge-it.com/wordpress-video-gallery/
 Description: Video Gallery plugin was created and specifically designed to show your video files in unusual splendid ways.
-Version: 2.0.0
+Version: 2.0.1
 Author: http://huge-it.com/
 License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 */

@@ -4,7 +4,7 @@ Donate link: http://huge-it.com/wordpress-video-gallery/
 Tags: video gallery, gallery, video, youtube, vimeo, youtube gallery, videos, wordpress gallery, wordpress video, WordPress Video Gallery, youtube video gallery, video gallery plugin,
 Requires at least: 3.0.1
 Tested up to: 4.6.1
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,6 @@ Gallery Video plugin was created and specifically designed to show video links i
 * [User Manual Video Gallery](http://huge-it.com/wordpress-video-gallery-user-manual/)
 * [Video Gallery Support](http://huge-it.com/contact-us/)
 * [Video Gallery Github Project](https://github.com/Huge-IT/gallery-video)
-
 
 https://www.youtube.com/watch?v=Re16ci9iGVU
 
@@ -503,6 +502,11 @@ If you want Video Gallery to work on all your websites, you should do the follow
 If you think, that you found a bug in our [WordPress Video Gallery](http://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com).
     
 == Changelog ==
+
+= 2.0.1 =
+* 1) We have limited the back-end banner to pop every hour and now it will be closed with the colse button permanently
+* 2) Now users can duplicate their galleries in back end and delete multiple video galleries too
+* 3) We have also made some UI/UX customization's in order to have back-end of the Video Gallery more user friendly. Differed the lite and Pro options more clearly.
 
 = 2.0.0 =
 **In the series of updates we will go through our plugins one by one and fix all technical issues with our code in order to meet the WordPress Coding Standards. These are the major updates that had been implemented to Video Gallery in this new version of the plugin.**
