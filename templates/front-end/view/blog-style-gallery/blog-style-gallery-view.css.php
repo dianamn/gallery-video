@@ -58,6 +58,7 @@
 }
 .paginate a{
     border-bottom: none !important;
+    box-shadow: none !important;
 }
 .icon-style{
     font-size: <?php echo $gallery_video_get_option['gallery_video_video_ht_view9_paginator_icon_size']; ?>px !important;

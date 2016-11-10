@@ -2,6 +2,7 @@
 * {outline:none;}
 #main-slider_<?php echo $gallery_videoID; ?> a{
 	border:none;
+	box-shadow: none !important;
 }
 #main-slider_<?php echo $gallery_videoID; ?> {background:#<?php echo $gallery_video_get_option["gallery_video_ht_view5_slider_background_color"];?>;}
 

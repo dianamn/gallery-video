@@ -4,7 +4,7 @@ Donate link: http://huge-it.com/wordpress-video-gallery/
 Tags: video gallery, gallery, video, youtube, vimeo, youtube gallery, videos, wordpress gallery, wordpress video, WordPress Video Gallery, youtube video gallery, video gallery plugin,
 Requires at least: 3.0.1
 Tested up to: 4.6.1
-Stable tag: 2.0.1
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -502,6 +502,14 @@ If you want Video Gallery to work on all your websites, you should do the follow
 If you think, that you found a bug in our [WordPress Video Gallery](http://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com).
     
 == Changelog ==
+
+= 2.0.3 =
+**Fixed the front end issue which was bringing  borders on video thumbs over multiple views on hover.**
+
+= 2.0.2 =
+* 1) We have fixed reported bug with Twenty Fifteen theme, where images on text layer moved photos on hover.
+* 2) We have fixed a conflict with Twenty Fifteen in Content video slider view where an additional line poped on next/prev. button.
+* 3) Added author's link of the plugin for the plugin list.
 
 = 2.0.1 =
 * 1) We have limited the back-end banner to pop every hour and now it will be closed with the colse button permanently

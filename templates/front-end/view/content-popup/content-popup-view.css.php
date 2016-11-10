@@ -67,6 +67,7 @@
 	display:block;
 	width:100%;
 	height:100%;
+	box-shadow: none !important;
 	background:url('<?php echo GALLERY_VIDEO_IMAGES_URL.'/admin_images/zoom.'.$gallery_video_get_option["gallery_video_ht_view2_zoombutton_style"].'.png'; ?>') center center no-repeat;
 }
 
@@ -146,6 +147,7 @@
 }
 .paginate5 a{
 	border-bottom: none !important;
+	box-shadow: none !important;
 }
 .icon-style5{
 	font-size: <?php echo $gallery_video_get_option['gallery_video_video_ht_view1_paginator_icon_size']; ?>px !important;

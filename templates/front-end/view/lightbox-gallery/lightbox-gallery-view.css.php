@@ -17,7 +17,7 @@
     max-width:<?php echo $gallery_video_get_option['gallery_video_ht_view6_width']; ?>px;
 }
 
-.video-element_<?php echo $gallery_videoID; ?> .image-block_<?php echo $gallery_videoID; ?> a {display:block;}
+.video-element_<?php echo $gallery_videoID; ?> .image-block_<?php echo $gallery_videoID; ?> a {display:block;box-shadow: none !important;}
 
 .video-element_<?php echo $gallery_videoID; ?> .image-block_<?php echo $gallery_videoID; ?> img {
     width:<?php echo $gallery_video_get_option['gallery_video_ht_view6_width']; ?>px !important;
@@ -83,6 +83,7 @@
     font-size: <?php echo $gallery_video_get_option["gallery_video_ht_view6_title_font_size"];?>px;
     color:#<?php echo $gallery_video_get_option["gallery_video_ht_view6_title_font_color"];?>;
     font-weight:normal;
+    box-shadow: none !important;
 }
 
 .video-element_<?php echo $gallery_videoID; ?> .title-block_<?php echo $gallery_videoID; ?> a:hover, .video-element_<?php echo $gallery_videoID; ?> .title-block_<?php echo $gallery_videoID; ?> a:focus, .video-element_<?php echo $gallery_videoID; ?> .title-block_<?php echo $gallery_videoID; ?> a:active {
@@ -125,6 +126,7 @@
 }
 .paginate4 a{
     border-bottom: none !important;
+    box-shadow: none !important;
 }
 .icon-style4{
     font-size: <?php echo $gallery_video_get_option['gallery_video_video_ht_view4_paginator_icon_size']; ?>px !important;
