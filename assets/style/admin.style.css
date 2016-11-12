@@ -34,6 +34,11 @@
 	padding-bottom: 5px;
 }
 
+a.duplicate-link:focus,a.delete-link:focus{
+	border: none;
+	box-shadow: none;
+}
+
 a span.duplicate-icon {
 	background: url(../images/admin_images/fields.opt.png) 0 -43px;
 	background-repeat: no-repeat;

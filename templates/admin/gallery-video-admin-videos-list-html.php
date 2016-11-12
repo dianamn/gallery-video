@@ -4,14 +4,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 global $wpdb;
 $huge_it_gallery_video_nonce_add_gallery_video = wp_create_nonce( 'huge_it_gallery_video_nonce_add_gallery_video' );
-$protocol    = stripos( $_SERVER['SERVER_PROTOCOL'], 'https' ) === true ? 'https://' : 'http://';
+$protocol                                      = stripos( $_SERVER['SERVER_PROTOCOL'], 'https' ) === true ? 'https://' : 'http://';
+$add_video_nonce                               = wp_create_nonce( 'huge_it_gallery_nonce_add_video' );
 ?>
 
 	<div class="wrap">
-		<?php require(GALLERY_VIDEO_TEMPLATES_PATH.DIRECTORY_SEPARATOR.'admin'.DIRECTORY_SEPARATOR.'gallery-video-admin-free-banner.php');?>
-		<?php $path_site2 = plugins_url( "../images", __FILE__ ); ?>
+		<?php require( GALLERY_VIDEO_TEMPLATES_PATH . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'gallery-video-admin-free-banner.php' ); ?>
+		<?php
+		$path_site2                    = plugins_url( "../images", __FILE__ );
+		$gallery_video_save_data_nonce = wp_create_nonce( 'gallery_video_save_data_nonce' . $row->id );
+		?>
 		<div style="clear: both;"></div>
-		<form action="admin.php?page=video_galleries_huge_it_video_gallery&id=<?php echo $row->id; ?>" method="post"
+		<form action="admin.php?page=video_galleries_huge_it_video_gallery&id=<?php echo $row->id; ?>&save_data_nonce=<?php echo $gallery_video_save_data_nonce;?>" method="post"
 		      name="adminForm" id="adminForm">
 
 			<div id="poststuff">
@@ -21,10 +25,11 @@ $protocol    = stripos( $_SERVER['SERVER_PROTOCOL'], 'https' ) === true ? 'https
 						<?php
 						foreach ( $rowsld as $rowsldires ) {
 							if ( $rowsldires->id != $row->id ) {
+								$gallery_video_save_data_nonce = wp_create_nonce( 'huge_it_gallery_video_nonce' . $rowsldires->id );
 								?>
 								<li>
 									<a href="#"
-									   onclick="window.location.href='admin.php?page=video_galleries_huge_it_video_gallery&task=edit_cat&id=<?php echo $rowsldires->id; ?>'"><?php echo $rowsldires->name; ?></a>
+									   onclick="window.location.href='admin.php?page=video_galleries_huge_it_video_gallery&task=edit_cat&id=<?php echo $rowsldires->id; ?>&huge_it_gallery_video_nonce=<?php echo $gallery_video_save_data_nonce;?>'"><?php echo $rowsldires->name; ?></a>
 								</li>
 								<?php
 							} else { ?>
@@ -53,8 +58,10 @@ $protocol    = stripos( $_SERVER['SERVER_PROTOCOL'], 'https' ) === true ? 'https
 							<div id="post-body-heading">
 								<h3>Videos</h3>
 								<a href="#TB_inline?width=700&height=500&inlineId=huge_it_gallery_video_add_videos"
-								   class="button button-primary add-video-slide thickbox">
-									<span class="wp-media-buttons-icon"></span>Add Video
+								    class="button button-primary add-video-slide thickbox"
+									data-add-video-nonce="<?php echo $add_video_nonce; ?>"
+								   data-videogallery-id="<?php echo $row->id; ?>">
+									<span class="wp-media-buttons-icon"></span><?php _e('Add Video','gallery-video'); ?>
 								</a>
 							</div>
 							<ul id="images-list">
@@ -65,7 +72,7 @@ $protocol    = stripos( $_SERVER['SERVER_PROTOCOL'], 'https' ) === true ? 'https
 									}
 								}
 
-								$i = 2;
+								$i  = 2;
 								foreach ( $rowim as $key => $rowimages ) { ?>
 									<?php
 									switch ( $rowimages->sl_type ) {
@@ -91,7 +98,7 @@ $protocol    = stripos( $_SERVER['SERVER_PROTOCOL'], 'https' ) === true ? 'https
 														$vimeo    = $rowimages->image_url;
 														$imgid    = explode( "/", $vimeo );
 														$imgid    = end( $imgid );
-														$hash     = unserialize( wp_remote_fopen( $protocol."vimeo.com/api/v2/video/" . $imgid . ".php" ) );
+														$hash     = unserialize( wp_remote_fopen( $protocol . "vimeo.com/api/v2/video/" . $imgid . ".php" ) );
 														$imgsrc   = $hash[0]['thumbnail_large'];
 														$thumburl = '<img src="' . esc_url( $imgsrc ) . '" alt="" />';
 													}
@@ -138,15 +145,25 @@ $protocol    = stripos( $_SERVER['SERVER_PROTOCOL'], 'https' ) === true ? 'https
 														<div class="hg_report">
 															<div class="hg_info_div">
 																<div class="cb"></div>
-																<div class="hg_view_count"><span>Video Views Count (pro)</span>
-																	<a href="#TB_inline?width=600&height=550&inlineId=html_videogallery_video_test" class="thickbox hg_open_pop_up"><div class="hg-arrow-right"></div>View Detailed Report</a>
+																<div class="hg_view_count">
+																	<span>Video Views Count (pro)</span>
+																	<a href="#TB_inline?width=600&height=550&inlineId=html_videogallery_video_test"
+																	   class="thickbox hg_open_pop_up">
+																		<div class="hg-arrow-right"></div>
+																		View Detailed Report</a>
 																</div>
 																<div class="cb"></div>
-																<div id="html_videogallery_video_test" style="display: none;">
+																<div id="html_videogallery_video_test"
+																     style="display: none;">
 																	<div class="hg_pop_up_div">
-																		<img src="<?php echo GALLERY_VIDEO_IMAGES_URL.'/admin_images/pop_pdf.png'; ?>" alt="Download Full Version" />
-																		<h3>Sorry, this option is available in the full version.</h3>
-																		<a class="get_full_version_pdf" href="http://huge-it.com/wordpress-video-gallery/" target="_blank">
+																		<img
+																			src="<?php echo GALLERY_VIDEO_IMAGES_URL . '/admin_images/pop_pdf.png'; ?>"
+																			alt="Download Full Version"/>
+																		<h3>Sorry, this option is available in the full
+																			version.</h3>
+																		<a class="get_full_version_pdf"
+																		   href="http://huge-it.com/wordpress-video-gallery/"
+																		   target="_blank">
 																			GET THE FULL VERSION
 																		</a>
 																	</div>
@@ -192,7 +209,7 @@ $protocol    = stripos( $_SERVER['SERVER_PROTOCOL'], 'https' ) === true ? 'https
 													</div>
 													<div class="remove-image-container">
 														<a class="button remove-image"
-														   href="admin.php?page=video_galleries_huge_it_video_gallery&task=edit_cat&id=<?php echo $row->id; ?>&remove_video=<?php echo $rowimages->id; ?>&gallery_video_nonce_remove_video=<?php echo $gallery_video_nonce_remove_video; ?>">Remove
+														   href="admin.php?page=video_galleries_huge_it_video_gallery&task=apply&id=<?php echo $row->id; ?>&remove_video=<?php echo $rowimages->id; ?>&save_data_nonce=<?php echo $gallery_video_nonce_remove_video; ?>">Remove
 															Video</a>
 														<a href="#TB_inline?width=700&height=500&inlineId=huge_it_gallery_video_edit_videos"
 														   class="button button-primary edit-video thickbox"
@@ -200,17 +217,30 @@ $protocol    = stripos( $_SERVER['SERVER_PROTOCOL'], 'https' ) === true ? 'https
 														   data-gallery-video-id="<?php echo $row->id; ?>"
 														   data-edit-video-nonce="<?php echo $gallery_video_nonce_edit_video; ?>"
 														   data-video-id="<?php echo $rowimages->id; ?>">Edit Video</a>
-														<?php if ( strpos( $rowimages->image_url, 'youtu' ) !== false ) :?>
-														<div class="video_slider_params" style="display: none;margin-left: 16%;">
-															<label for="show_controls"><?php _e('Show Controls'); ?></label>
-															<input type="hidden"  value="off" name="show_controls<?php echo $rowimages->id; ?>">
-															<input type="checkbox" id="show_controls" name="show_controls<?php echo $rowimages->id; ?>" value="on" <?php if($rowimages->show_controls == 'on') echo 'checked'; ?>>
-														</div>
-														<div class="video_slider_params" style="display: none;">
-															<label for="show_info"><?php _e('Show Info'); ?></label>
-															<input type="hidden"  value="off" name="show_info<?php echo $rowimages->id; ?>">
-															<input type="checkbox" id="show_info" name="show_info<?php echo $rowimages->id; ?>" value="on" <?php if($rowimages->show_info == 'on') echo 'checked'; ?>>
-														</div>
+														<?php if ( strpos( $rowimages->image_url, 'youtu' ) !== false ) : ?>
+															<div class="video_slider_params"
+															     style="display: none;margin-left: 16%;">
+																<label
+																	for="show_controls"><?php _e( 'Show Controls' ); ?></label>
+																<input type="hidden" value="off"
+																       name="show_controls<?php echo $rowimages->id; ?>">
+																<input type="checkbox" id="show_controls"
+																       name="show_controls<?php echo $rowimages->id; ?>"
+																       value="on" <?php if ( $rowimages->show_controls == 'on' ) {
+																	echo 'checked';
+																} ?>>
+															</div>
+															<div class="video_slider_params" style="display: none;">
+																<label
+																	for="show_info"><?php _e( 'Show Info' ); ?></label>
+																<input type="hidden" value="off"
+																       name="show_info<?php echo $rowimages->id; ?>">
+																<input type="checkbox" id="show_info"
+																       name="show_info<?php echo $rowimages->id; ?>"
+																       value="on" <?php if ( $rowimages->show_info == 'on' ) {
+																	echo 'checked';
+																} ?>>
+															</div>
 														<?php endif; ?>
 													</div>
 												</div>
@@ -574,7 +604,6 @@ $protocol    = stripos( $_SERVER['SERVER_PROTOCOL'], 'https' ) === true ? 'https
 				</div>
 			</div>
 			<input type="hidden" name="task" value=""/>
-			<?php wp_nonce_field( 'gallery_video_save_data_nonce', 'gallery_video_save_data_nonce' ); ?>
 		</form>
 	</div>
 <?php

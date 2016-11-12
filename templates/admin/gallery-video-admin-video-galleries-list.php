@@ -3,7 +3,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 global $wpdb;
-$gallery_video_wp_nonce                           = wp_create_nonce( 'huge_it_gallery_video_nonce' );
 $huge_it_gallery_video_nonce_add_gallery_video    = wp_create_nonce( 'huge_it_gallery_video_nonce_add_gallery_video' );
 $huge_it_gallery_video_nonce_remove_gallery_video = wp_create_nonce( 'huge_it_gallery_video_nonce_remove_gallery_video' );
 ?>
@@ -118,13 +117,14 @@ $huge_it_gallery_video_nonce_remove_gallery_video = wp_create_nonce( 'huge_it_ga
 							$pr_count = 0;
 						}
 						$huge_it_video_nonce_duplicate_gallery = wp_create_nonce('huge_it_gallery_video_nonce_duplicate_gallery'.$rows[$i]->id);
+						$gallery_video_wp_nonce                = wp_create_nonce( 'huge_it_gallery_video_nonce' . $rows[ $i ]->id);
 						?>
 						<tr <?php if ( $trcount % 2 == 0 ) {
 							echo 'class="has-background"';
 						} ?>>
 							<td><?php echo $rows[ $i ]->id; ?></td>
 							<td>
-								<a href="admin.php?page=video_galleries_huge_it_video_gallery&task=edit_cat&id=<?php echo $rows[ $i ]->id; ?>"><?php echo esc_html( stripslashes( $rows[ $i ]->name ) ); ?></a>
+								<a href="admin.php?page=video_galleries_huge_it_video_gallery&task=edit_cat&id=<?php echo $rows[ $i ]->id; ?>&huge_it_gallery_video_nonce=<?php echo $gallery_video_wp_nonce; ?>"><?php echo esc_html( stripslashes( $rows[ $i ]->name ) ); ?></a>
 							</td>
 							<td>(<?php if ( ! ( $pr_count ) ) {
 									echo '0';
@@ -135,8 +135,8 @@ $huge_it_gallery_video_nonce_remove_gallery_video = wp_create_nonce( 'huge_it_ga
 							<td>
 								<a href="admin.php?page=video_galleries_huge_it_video_gallery&task=duplicate_gallery_video&id=<?php echo $rows[ $i ]->id; ?>&gallery_video_duplicate_nonce=<?php echo $huge_it_video_nonce_duplicate_gallery; ?>" class="duplicate-link"><span class="duplicate-icon"></span></a>
 							</td>
-							<td><a class="delete-gallery-video"
-							       href="admin.php?page=video_galleries_huge_it_video_gallery&task=remove_cat&id=<?php echo $rows[ $i ]->id; ?>&huge_it_gallery_video_nonce_remove_video_gallery=<?php echo $huge_it_gallery_video_nonce_remove_video_gallery; ?>" class="delete-link"><span class="delete-icon"></span></a>
+							<td><a class="delete-gallery-video delete-link"
+							       href="admin.php?page=video_galleries_huge_it_video_gallery&task=remove_gallery_video&id=<?php echo $rows[ $i ]->id; ?>&huge_it_gallery_video_nonce_remove_video_gallery=<?php echo $huge_it_gallery_video_nonce_remove_video_gallery; ?>" ><span class="delete-icon"></span></a>
 							</td>
 						</tr>
 					<?php } ?>

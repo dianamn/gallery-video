@@ -18,6 +18,6 @@ $insert_new_video_nonce = wp_create_nonce('insert_new_video_nonce');
         </div>
         <a class='button-primary set-new-video' data-insert-new-video-nonce="<?php echo $insert_new_video_nonce; ?>"><?php echo __('See New Video', 'gallery-video'); ?></a>
         <a class='button-primary edit-video-button'
-           id='huge-it-insert-video-button'><?php echo __('Insert Video', 'gallery-video'); ?></a>
+           id='huge-it-edit-video-button'><?php echo __('Insert Video', 'gallery-video'); ?></a>
     </form>
 </div>

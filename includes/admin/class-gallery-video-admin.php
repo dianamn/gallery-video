@@ -100,16 +100,12 @@ class Gallery_Video_Admin {
 	 * Inserts New Video Gallery
 	 */
 	public function wp_loaded() {
-
-		if ( isset( $_REQUEST['huge_it_gallery_video_nonce_add_gallery_video'] ) ) {
-			$huge_it_gallery_video_nonce_add_gallery_video = $_REQUEST['huge_it_gallery_video_nonce_add_gallery_video'];
-			if ( ! wp_verify_nonce( $huge_it_gallery_video_nonce_add_gallery_video, 'huge_it_gallery_video_nonce_add_gallery_video' ) ) {
-				wp_die( 'Security check fail' );
-			}
-		}
 		if ( isset( $_GET['page'] ) && $_GET['page'] == 'video_galleries_huge_it_video_gallery' ) {
 			if ( gallery_video_get_video_gallery_task() ) {
 				if ( gallery_video_get_video_gallery_task() == 'add_cat' ) {
+					if ( ! isset( $_REQUEST['huge_it_gallery_video_nonce_add_gallery_video'] ) || ! wp_verify_nonce( $_REQUEST['huge_it_gallery_video_nonce_add_gallery_video'], 'huge_it_gallery_video_nonce_add_gallery_video' ) ) {
+						wp_die( 'Security check fail' );
+					}
 					global $wpdb;
 					$table_name = $wpdb->prefix . "huge_it_videogallery_galleries";
 					$wpdb->insert(
@@ -127,14 +123,13 @@ class Gallery_Video_Admin {
 							'huge_it_sl_effects'          => 4
 						)
 					);
-					$query    = "SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_galleries order by id ASC";
-					$rowsldcc = $wpdb->get_results( $query );
-					$last_key = key( array_slice( $rowsldcc, - 1, 1, true ) );
-					foreach ( $rowsldcc as $key => $rowsldccs ) {
-						if ( $last_key == $key ) {
-							wp_redirect( 'admin.php?page=video_galleries_huge_it_video_gallery&id=' . $rowsldccs->id . '&task=apply' );
-						}
-					}
+					$apply_video_gallery_safe_link = wp_nonce_url(
+						'admin.php?page=video_galleries_huge_it_video_gallery&id=' . $wpdb->insert_id . '&task=apply',
+						'gallery_video_save_data_nonce' . $wpdb->insert_id,
+						'save_data_nonce'
+					);
+					$apply_video_gallery_safe_link = htmlspecialchars_decode( $apply_video_gallery_safe_link );
+					wp_redirect( $apply_video_gallery_safe_link );
 				}
 			}
 		}
@@ -144,15 +139,13 @@ class Gallery_Video_Admin {
 	 * Inserts New Video into Video Gallery
 	 */
 	public function wp_loaded_add_video() {
-		if ( isset( $_REQUEST['huge_it_gallery_nonce_add_video'] ) ) {
-			$huge_it_gallery_nonce_add_video = $_REQUEST['huge_it_gallery_nonce_add_video'];
-			if ( ! wp_verify_nonce( $huge_it_gallery_nonce_add_video, 'huge_it_gallery_nonce_add_video' ) ) {
-				wp_die( 'Security check fail' );
-			}
-		}
+
 		if ( isset( $_GET['page'] ) && $_GET['page'] == 'video_galleries_huge_it_video_gallery' ) {
 			if ( gallery_video_get_video_gallery_task() && gallery_video_get_video_gallery_id() ) {
 				if ( gallery_video_get_video_gallery_task() == 'videogallery_video' && $_GET['closepop'] == 1 ) {
+					if ( ! isset( $_REQUEST['video_add_nonce'] ) || ! wp_verify_nonce( $_REQUEST['video_add_nonce'], 'huge_it_gallery_nonce_add_video' ) ) {
+						wp_die( 'Security check fail' );
+					}
 					$id = gallery_video_get_video_gallery_id();
 					global $wpdb;
 					$title       = wp_kses( wp_unslash( $_POST["show_title"] ), 'default' );
@@ -192,7 +185,13 @@ class Gallery_Video_Admin {
 							);
 						}
 					}
-					wp_redirect( 'admin.php?page=video_galleries_huge_it_video_gallery&id=' . $id . '&task=apply' );
+					$apply_video_gallery_safe_link = wp_nonce_url(
+						'admin.php?page=video_galleries_huge_it_video_gallery&id=' . $id . '&task=apply',
+						'gallery_video_save_data_nonce' . $id,
+						'save_data_nonce'
+					);
+					$apply_video_gallery_safe_link = htmlspecialchars_decode( $apply_video_gallery_safe_link );
+					wp_redirect( $apply_video_gallery_safe_link );
 				}
 			}
 		}
@@ -202,16 +201,19 @@ class Gallery_Video_Admin {
 	 * Edit Video
 	 */
 	public function wp_loaded_edit_video() {
-		if ( isset( $_REQUEST['video_edit_nonce'] ) ) {
-			$video_edit_nonce = $_REQUEST['video_edit_nonce'];
-			if ( ! wp_verify_nonce( $video_edit_nonce, 'gallery_video_edit_video_nonce' ) ) {
-				wp_die( 'Security check fail' );
-			}
-		}
 		if ( isset( $_GET['page'] ) && $_GET['page'] == 'video_galleries_huge_it_video_gallery' ) {
 			if ( gallery_video_get_video_gallery_task() && gallery_video_get_video_gallery_task() == 'gallery_video_edit_video' && $_GET['closepop'] == 1 ) {
+				if ( ! isset( $_REQUEST['video_edit_nonce'] ) || ! wp_verify_nonce( $_REQUEST['video_edit_nonce'], 'gallery_video_edit_video_nonce' ) ) {
+					wp_die( 'Security check fail' );
+				}
 				global $wpdb;
+                if ( !isset( $_GET["video_id"] ) || absint( $_GET['video_id'] ) != $_GET['video_id'] ) {
+                    wp_die('"video_id" parameter is required to be not negative integer');
+                }
 				$video_unique_id  = absint( $_GET['video_id'] );
+                if ( !isset( $_GET["gallery_video_id"] ) || absint( $_GET['gallery_video_id'] ) != $_GET['gallery_video_id'] ) {
+                    wp_die('"gallery_video_id" parameter is required to be not negative integer');
+                }
 				$gallery_video_id = absint( $_GET['gallery_video_id'] );
 				$video_url        = sanitize_text_field( $_GET['video_url'] );
 				$table_name       = $wpdb->prefix . 'huge_it_videogallery_videos';
@@ -220,7 +222,13 @@ class Gallery_Video_Admin {
 					array( 'image_url' => $video_url ),
 					array( 'id' => $video_unique_id )
 				);
-				wp_redirect( 'admin.php?page=video_galleries_huge_it_video_gallery&id=' . $gallery_video_id . '&task=apply' );
+				$apply_video_gallery_safe_link = wp_nonce_url(
+					'admin.php?page=video_galleries_huge_it_video_gallery&id=' . $gallery_video_id . '&task=apply',
+					'gallery_video_save_data_nonce' . $gallery_video_id,
+					'save_data_nonce'
+				);
+				$apply_video_gallery_safe_link = htmlspecialchars_decode( $apply_video_gallery_safe_link );
+				wp_redirect( $apply_video_gallery_safe_link );
 			}
 		}
 	}
@@ -229,20 +237,16 @@ class Gallery_Video_Admin {
 	 * Duplicate Video
 	 */
 	function wp_loaded_duplicate_video() {
-		if (isset($_GET['page']) && $_GET['page'] == 'video_galleries_huge_it_video_gallery') {
-			if (isset($_GET["id"])) {
-				$id = absint( $_GET["id"] );
-			}
-		}
-		if ( isset( $_REQUEST['gallery_video_duplicate_nonce'] ) ) {
-			$video_duplicate_nonce = $_REQUEST['gallery_video_duplicate_nonce'];
-			if ( ! wp_verify_nonce( $video_duplicate_nonce, 'huge_it_gallery_video_nonce_duplicate_gallery' . $id) ) {
-				wp_die( 'Security check fail' );
-			}
-		}
 		if ( isset( $_GET['page'] ) && $_GET['page'] == 'video_galleries_huge_it_video_gallery' ) {
 			if ( gallery_video_get_video_gallery_task() ) {
 				if ( gallery_video_get_video_gallery_task() == 'duplicate_gallery_video' ) {
+                    if ( !isset( $_GET["id"] ) || absint( $_GET['id'] ) != $_GET['id'] ) {
+                        wp_die('"id" parameter is required to be not negative integer');
+                    }
+                    $id = absint( $_GET["id"] );
+					if ( ! isset( $_REQUEST['gallery_video_duplicate_nonce'] ) || ! wp_verify_nonce( $_REQUEST['gallery_video_duplicate_nonce'], 'huge_it_gallery_video_nonce_duplicate_gallery' . $id) ) {
+						wp_die( 'Security check fail' );
+					}
 					global $wpdb;
 					$table_name    = $wpdb->prefix . "huge_it_videogallery_galleries";
 					$query         = $wpdb->prepare( "SELECT * FROM " . $table_name . " WHERE id=%d", $id );

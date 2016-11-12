@@ -43,83 +43,79 @@ class Gallery_Video_Ajax
     {
         global $wpdb;
         if ($_POST['post'] == 'video_gal_change_options') {
-            if (isset($_REQUEST['changeShortecodeViewNonce'])) {
-                $gallery_video_content_nonce = $_REQUEST['changeShortecodeViewNonce'];
-                if (!wp_verify_nonce($gallery_video_content_nonce, 'gallery_video_shortecode_change_view_nonce')) {
-                    wp_die('Security check fail');
-                }
+            if (!isset($_REQUEST['changeShortecodeViewNonce']) || !wp_verify_nonce($_REQUEST['changeShortecodeViewNonce'], 'gallery_video_shortecode_change_view_nonce')) {
+                wp_die('Security check fail');
             }
-            if (isset($_POST['id'])) {
-                $id = absint($_POST['id']);
-                $query = $wpdb->prepare("SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_galleries WHERE id = %d", $id);
-                $row = $wpdb->get_row($query);
-                $response = array(
-                    'huge_it_sl_effects' => $row->huge_it_sl_effects,
-                    'sl_height' => $row->sl_height,
-                    'sl_width' => $row->sl_width,
-                    'pause_on_hover' => $row->pause_on_hover,
-                    'videogallery_list_effects_s' => $row->videogallery_list_effects_s,
-                    'sl_pausetime' => $row->description,
-                    'sl_changespeed' => $row->param,
-                    'sl_position' => $row->sl_position,
-                    'display_type' => $row->display_type,
-                    'content_per_page' => $row->content_per_page
-                );
-                echo json_encode($response);
+            if ( !isset( $_POST["id"] ) || absint( $_POST['id'] ) != $_POST['id'] ) {
+                echo json_encode(array('success'=>'0','message'=>'"id" parameter is required to be not negative integer'));
             }
+            $id = absint($_POST['id']);
+            $query = $wpdb->prepare("SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_galleries WHERE id = %d", $id);
+            $row = $wpdb->get_row($query);
+            $response = array(
+                'huge_it_sl_effects' => $row->huge_it_sl_effects,
+                'sl_height' => $row->sl_height,
+                'sl_width' => $row->sl_width,
+                'pause_on_hover' => $row->pause_on_hover,
+                'videogallery_list_effects_s' => $row->videogallery_list_effects_s,
+                'sl_pausetime' => $row->description,
+                'sl_changespeed' => $row->param,
+                'sl_position' => $row->sl_position,
+                'display_type' => $row->display_type,
+                'content_per_page' => $row->content_per_page
+            );
+            echo json_encode($response);
         }
         if ($_POST['post'] == 'videoGalSaveOptions') {
-            if (isset($_REQUEST['insertShortecodeNonce'])) {
-                $gallery_video_content_nonce = $_REQUEST['insertShortecodeNonce'];
-                if (!wp_verify_nonce($gallery_video_content_nonce, 'gallery_video_insert_shortecode')) {
-                    wp_die('Security check fail');
-                }
+            if (!isset($_REQUEST['insertShortecodeNonce'])  || !wp_verify_nonce($_REQUEST['insertShortecodeNonce'], 'gallery_video_insert_shortecode')) {
+                wp_die('Security check fail');
             }
-            if (isset($_POST["video_id"])) {
-                $id = absint($_POST["video_id"]);
-                $table_name = $wpdb->prefix . "huge_it_videogallery_galleries";
-                if (isset($_POST["display_type"]) || isset($_POST["content_per_page"])) {
-                    $display_type = sanitize_text_field($_POST["display_type"]);
-                    $content_per_page = sanitize_text_field($_POST["content_per_page"]);
-                    $wpdb->update(
-                        $table_name,
-                        array(
-                            'display_type' => $display_type,
-                            'content_per_page' => $content_per_page
-                        ),
-                        array('id' => $id)
-                    );
-                }
-                $view = absint($_POST["huge_it_sl_effects"]);
-                $sl_width = absint($_POST["sl_width"]);
-                $sl_height = absint($_POST["sl_height"]);
-                $videogallery_list_effects_s = sanitize_text_field($_POST["videogallery_list_effects_s"]);
-                $sl_pausetime = absint($_POST["sl_pausetime"]);
-                $sl_changespeed = absint($_POST["sl_changespeed"]);
-                $sl_position = in_array(sanitize_text_field($_POST["sl_position"]), array(
-                    'right',
-                    'left',
-                    'center'
-                )) ? sanitize_text_field($_POST["sl_position"]) : 'center';
-                $pause_on_hover = in_array(sanitize_text_field($_POST["pause_on_hover"]), array(
-                    'on',
-                    'off',
-                )) ? sanitize_text_field($_POST["pause_on_hover"]) : 'on';
+            if ( !isset( $_POST["video_id"] ) || absint( $_POST['video_id'] ) != $_POST['video_id'] ) {
+                echo json_encode(array('success'=>'0','message'=>'"video_id" parameter is required to be not negative integer'));
+            }
+            $id = absint($_POST["video_id"]);
+            $table_name = $wpdb->prefix . "huge_it_videogallery_galleries";
+            if (isset($_POST["display_type"]) || isset($_POST["content_per_page"])) {
+                $display_type = sanitize_text_field($_POST["display_type"]);
+                $content_per_page = sanitize_text_field($_POST["content_per_page"]);
                 $wpdb->update(
                     $table_name,
                     array(
-                        'huge_it_sl_effects' => $view,
-                        'sl_width' => $sl_width,
-                        'sl_height' => $sl_height,
-                        'videogallery_list_effects_s' => $videogallery_list_effects_s,
-                        'description' => $sl_pausetime,
-                        'param' => $sl_changespeed,
-                        'sl_position' => $sl_position,
-                        'pause_on_hover' => $pause_on_hover
+                        'display_type' => $display_type,
+                        'content_per_page' => $content_per_page
                     ),
                     array('id' => $id)
                 );
             }
+            $view = absint($_POST["huge_it_sl_effects"]);
+            $sl_width = absint($_POST["sl_width"]);
+            $sl_height = absint($_POST["sl_height"]);
+            $videogallery_list_effects_s = sanitize_text_field($_POST["videogallery_list_effects_s"]);
+            $sl_pausetime = absint($_POST["sl_pausetime"]);
+            $sl_changespeed = absint($_POST["sl_changespeed"]);
+            $sl_position = in_array(sanitize_text_field($_POST["sl_position"]), array(
+                'right',
+                'left',
+                'center'
+            )) ? sanitize_text_field($_POST["sl_position"]) : 'center';
+            $pause_on_hover = in_array(sanitize_text_field($_POST["pause_on_hover"]), array(
+                'on',
+                'off',
+            )) ? sanitize_text_field($_POST["pause_on_hover"]) : 'on';
+            $wpdb->update(
+                $table_name,
+                array(
+                    'huge_it_sl_effects' => $view,
+                    'sl_width' => $sl_width,
+                    'sl_height' => $sl_height,
+                    'videogallery_list_effects_s' => $videogallery_list_effects_s,
+                    'description' => $sl_pausetime,
+                    'param' => $sl_changespeed,
+                    'sl_position' => $sl_position,
+                    'pause_on_hover' => $pause_on_hover
+                ),
+                array('id' => $id)
+            );
         }
         wp_die();
     }
@@ -127,12 +123,12 @@ class Gallery_Video_Ajax
     function gallery_video_admin_ajax_callback()
     {
         if (isset($_POST['task']) && $_POST['task'] == 'send_url_popup') {
+            if ( !isset( $_POST["videoUniqueId"] ) || absint( $_POST['videoUniqueId'] ) != $_POST['videoUniqueId'] ) {
+                echo json_encode(array('success'=>'0','message'=>'"videoUniqueId" parameter is required to be not negative integer'));
+            }
             $video_unique_id = absint($_POST['videoUniqueId']);
-            if (isset($_REQUEST['editVideoNonce'])) {
-                $gallery_video_content_nonce = $_REQUEST['editVideoNonce'];
-                if (!wp_verify_nonce($gallery_video_content_nonce, 'gallery_video_nonce_edit_video' . $video_unique_id)) {
-                    wp_die('Security check fail');
-                }
+            if (!isset($_REQUEST['editVideoNonce']) || !wp_verify_nonce($_REQUEST['editVideoNonce'], 'gallery_video_nonce_edit_video' . $video_unique_id)) {
+                wp_die('Security check fail');
             }
             $video = gallery_video_get_video_id_from_url(esc_url($_POST['video_url']));
             $video_id = $video[0];
@@ -144,11 +140,8 @@ class Gallery_Video_Ajax
             wp_die(json_encode($response));
         }
         if (isset($_POST['task']) && $_POST['task'] == 'set_new_video') {
-            if (isset($_REQUEST['insertVideoNonce'])) {
-                $gallery_video_content_nonce = $_REQUEST['insertVideoNonce'];
-                if (!wp_verify_nonce($gallery_video_content_nonce, 'insert_new_video_nonce')) {
-                    wp_die('Security check fail');
-                }
+            if (!isset($_REQUEST['insertVideoNonce']) || !wp_verify_nonce($_REQUEST['insertVideoNonce'], 'insert_new_video_nonce')) {
+                wp_die('Security check fail');
             }
             $video = gallery_video_get_video_id_from_url(esc_url($_POST['video_url']));
             $video_id = $video[0];
@@ -163,19 +156,19 @@ class Gallery_Video_Ajax
         $gallery_video_get_option = gallery_video_get_default_general_options();
         $protocol = stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https://' : 'http://';
         if (isset($_POST['task']) && $_POST['task'] == "load_videos_content") {
-            if (isset($_REQUEST['galleryVideoContentLoadNonce'])) {
-                $gallery_video_content_nonce = $_REQUEST['galleryVideoContentLoadNonce'];
-                if (!wp_verify_nonce($gallery_video_content_nonce, 'gallery_video_content_popup_nonce')) {
-                    wp_die('Security check fail');
-                }
+            if (!isset($_REQUEST['galleryVideoContentLoadNonce']) || !wp_verify_nonce($_REQUEST['galleryVideoContentLoadNonce'], 'gallery_video_content_popup_nonce')) {
+                wp_die('Security check fail');
             }
             global $wpdb;
             $page = 1;
             if (!empty($_POST["page"]) && is_numeric($_POST['page']) && $_POST['page'] > 0) {
+                if ( !isset( $_POST["galleryVideoId"] ) || absint( $_POST['galleryVideoId'] ) != $_POST['galleryVideoId'] ) {
+                    echo json_encode(array('success'=>'0','message'=>'"galleryVideoId" parameter is required to be not negative integer'));
+                }
+                $gallery_video_id = absint($_POST['galleryVideoId']);
                 $page = absint($_POST["page"]);
                 $num = absint($_POST['perpage']);
                 $start = $page * $num - $num;
-                $gallery_video_id = absint($_POST['galleryVideoId']);
                 $query = $wpdb->prepare("SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_videos where videogallery_id = '%d' order by ordering ASC LIMIT %d,%d", $gallery_video_id, $start, $num);
                 $page_videos = $wpdb->get_results($query);
                 $output = '';
@@ -216,7 +209,7 @@ class Gallery_Video_Ajax
                         } else {
                             $target = '';
                         }
-                        $button = '<div class="button-block"><a href="' . str_replace('__5_5_5__', '%', $row->sl_url) . '" ' . $target . ' >' . $_POST['linkbutton'] . '</a></div>';
+                        $button = '<div class="button-block"><a href="' . str_replace('__5_5_5__', '%', $row->sl_url) . '" ' . $target . ' >' . sanitize_text_field($_POST['linkbutton']) . '</a></div>';
                     }
                     $no_video_title = '';
                     if (empty($row->name) && (empty($link) || $gallery_video_get_option['gallery_video_ht_view2_element_show_linkbutton'] == 'off')) {
@@ -296,19 +289,19 @@ class Gallery_Video_Ajax
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////
         if (isset($_POST['task']) && $_POST['task'] == "load_videos_lightbox") {
-            if (isset($_REQUEST['galleryVideoLightboxLoadNonce'])) {
-                $gallery_video_lightbox_nonce = $_REQUEST['galleryVideoLightboxLoadNonce'];
-                if (!wp_verify_nonce($gallery_video_lightbox_nonce, 'gallery_video_lightbox_nonce')) {
-                    wp_die('Security check fail');
-                }
+            if (!isset($_REQUEST['galleryVideoLightboxLoadNonce']) || !wp_verify_nonce($_REQUEST['galleryVideoLightboxLoadNonce'], 'gallery_video_lightbox_nonce')) {
+                wp_die('Security check fail');
             }
             global $wpdb;
             $page = 1;
             if (!empty($_POST["page"]) && is_numeric($_POST['page']) && $_POST['page'] > 0) {
+                if ( !isset( $_POST["galleryVideoId"] ) || absint( $_POST['galleryVideoId'] ) != $_POST['galleryVideoId'] ) {
+                    echo json_encode(array('success'=>'0','message'=>'"galleryVideoId" parameter is required to be not negative integer'));
+                }
+                $gallery_video_id = absint($_POST['galleryVideoId']);
                 $page = absint($_POST["page"]);
                 $num = absint($_POST['perpage']);
                 $start = $page * $num - $num;
-                $gallery_video_id = absint($_POST['galleryVideoId']);
                 $query = $wpdb->prepare("SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_videos where videogallery_id = '%d' order by ordering ASC LIMIT %d,%d", $gallery_video_id, $start, $num);
                 $page_videos = $wpdb->get_results($query);
                 $output = '';
@@ -371,11 +364,8 @@ class Gallery_Video_Ajax
 
 ////////////////////////////////////////////////////////////////////////////////////////////
         if (isset($_POST['task']) && $_POST['task'] == "load_videos_justified") {
-            if (isset($_REQUEST['galleryVideoJustifiedLoadNonce'])) {
-                $gallery_video_justified_nonce = $_REQUEST['galleryVideoJustifiedLoadNonce'];
-                if (!wp_verify_nonce($gallery_video_justified_nonce, 'gallery_video_justified_nonce')) {
-                    wp_die('Security check fail');
-                }
+            if (!isset($_REQUEST['galleryVideoJustifiedLoadNonce']) || !wp_verify_nonce($_REQUEST['galleryVideoJustifiedLoadNonce'], 'gallery_video_justified_nonce')) {
+                wp_die('Security check fail');
             }
             global $wpdb;
             $page = 1;
@@ -423,19 +413,19 @@ class Gallery_Video_Ajax
         }
 ////////////////////////////////////////////////////////////////////////////////////////////
         if (isset($_POST['task']) && $_POST['task'] == "load_videos_thumbnail") {
-            if (isset($_REQUEST['galleryVideoThumbnailLoadNonce'])) {
-                $gallery_video_lightbox_nonce = $_REQUEST['galleryVideoThumbnailLoadNonce'];
-                if (!wp_verify_nonce($gallery_video_lightbox_nonce, 'gallery_video_thumbnail_nonce')) {
-                    wp_die('Security check fail');
-                }
+            if (!isset($_REQUEST['galleryVideoThumbnailLoadNonce']) || !wp_verify_nonce($_REQUEST['galleryVideoThumbnailLoadNonce'], 'gallery_video_thumbnail_nonce')) {
+                wp_die('Security check fail');
             }
             global $wpdb;
             $page = 1;
             if (!empty($_POST["page"]) && is_numeric($_POST['page']) && $_POST['page'] > 0) {
+                if ( !isset( $_POST["galleryVideoId"] ) || absint( $_POST['galleryVideoId'] ) != $_POST['galleryVideoId'] ) {
+                    echo json_encode(array('success'=>'0','message'=>'"galleryVideoId" parameter is required to be not negative integer'));
+                }
+                $gallery_video_id = absint($_POST['galleryVideoId']);
                 $page = absint($_POST["page"]);
                 $num = absint($_POST['perpage']);
                 $start = $page * $num - $num;
-                $gallery_video_id = absint($_POST['galleryVideoId']);
                 $query = $wpdb->prepare("SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_videos where videogallery_id = '%d' order by ordering ASC LIMIT %d,%d", $gallery_video_id, $start, $num);
                 $output = '';
                 $page_videos = $wpdb->get_results($query);
@@ -506,10 +496,13 @@ class Gallery_Video_Ajax
             global $wpdb;
             $page = 1;
             if (!empty($_POST["page"]) && is_numeric($_POST['page']) && $_POST['page'] > 0) {
+                if ( !isset( $_POST["galleryVideoId"] ) || absint( $_POST['galleryVideoId'] ) != $_POST['galleryVideoId'] ) {
+                    echo json_encode(array('success'=>'0','message'=>'"galleryVideoId" parameter is required to be not negative integer'));
+                }
+                $gallery_video_id = absint($_POST['galleryVideoId']);
                 $page = absint($_POST["page"]);
                 $num = absint($_POST['perpage']);
                 $start = $page * $num - $num;
-                $gallery_video_id = absint($_POST['galleryVideoId']);
                 $query = $wpdb->prepare("SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_videos where videogallery_id = '%d' order by ordering ASC LIMIT %d,%d", $gallery_video_id, $start, $num);
                 $output = '';
                 $page_videos = $wpdb->get_results($query);
@@ -615,6 +608,9 @@ class Gallery_Video_Ajax
             if ($_POST['task'] == "data-id") {
                 if (gallery_video_get_ip() != 'UNKNOWN') {
                     $ip = gallery_video_get_ip();
+                    if ( !isset( $_POST["id"] ) || absint( $_POST['id'] ) != $_POST['id'] ) {
+                        echo json_encode(array('success'=>'0','message'=>'"id" parameter is required to be not negative integer'));
+                    }
                     $vid_id = absint($_POST['id']);
                     $sql_huge_result = $wpdb->prepare("SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_params_ip WHERE ip=%s and video_id=%d", $ip, $vid_id);
                     $ipcount = $wpdb->get_results($sql_huge_result);
@@ -625,7 +621,7 @@ class Gallery_Video_Ajax
                         $current_date = date("Y-m-d H:i:s");
                         $sql_huge_it_insert = "INSERT INTO " . $wpdb->prefix . "huge_it_videogallery_params_ip (video_id, ip, date) VALUES ('" . $vid_id . "','" . gallery_video_get_ip() . "','" . $current_date . "')";
                         $wpdb->query($sql_huge_it_insert);
-                        echo json_encode(array('response' => 'succesRecord'));
+                        echo json_encode(array('response' => 'successRecord'));
                         wp_die();
                     }
                 }

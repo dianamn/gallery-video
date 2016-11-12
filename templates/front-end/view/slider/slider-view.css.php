@@ -34,6 +34,7 @@
 	z-index: 13;
 	bottom:25px;
 	top:50%;
+	box-shadow: none;
 }
 
 
