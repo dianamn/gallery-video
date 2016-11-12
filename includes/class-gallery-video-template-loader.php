@@ -26,7 +26,7 @@ class Gallery_Video_Template_Loader {
 		$pID         = $post->ID;
 		$path_site   = GALLERY_VIDEO_IMAGES_URL;
 		if ( isset( $_GET[ 'page-video' . $gallery_videoID . $pID ] ) ) {
-			$page = $_GET[ 'page-video' . $gallery_videoID . $pID ];
+			$page = absint( $_GET[ 'page-video' . $gallery_videoID . $pID ] );
 		} else {
 			$page = '';
 		}

@@ -5,10 +5,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <div id="huge_it_gallery_video_add_videos" style="display: none;">
     <div id="huge_it_gallery_video_add_videos">
-        <div id="huge_it_gallery_video_add_videos_wrap">
+        <div id="huge_it_gallery_video_add_videos_wrap" data-add-video-nonce="" data-videgallery-id="">
             <h2><?php _e('Add Video URL From Youtube or Vimeo'); ?></h2>
             <div class="control-panel">
-                <form method="post" action="admin.php?page=video_galleries_huge_it_video_gallery&task=videogallery_video&id=<?php echo absint($_GET['id']); ?>&closepop=1" >
+                <!--<form method="post" action="admin.php?page=video_galleries_huge_it_video_gallery&task=videogallery_video&id=<?php /*echo absint($_GET['id']); */?>&closepop=1" >-->
+                <form method="post" action="" >
                     <input type="text" id="huge_it_add_video_input" name="huge_it_add_video_input" />
                     <button class='save-slider-options button-primary huge-it-insert-video-button' id='huge-it-insert-video-button'><?php _e('Insert Video'); ?></button>
                     <div id="add-video-popup-options">

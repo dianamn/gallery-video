@@ -7,6 +7,18 @@ var name_changeTop = function (e) {
 };
 
 jQuery(document).ready(function () {
+    jQuery('#huge-it-insert-video-button').on('click',function () {
+        var add_nonce = jQuery(this).parents('#huge_it_gallery_video_add_videos_wrap').attr('data-add-video-nonce');
+        var videoGalleryId = jQuery(this).parents('#huge_it_gallery_video_add_videos_wrap').attr('data-videogallery-id');
+        var action = 'admin.php?page=video_galleries_huge_it_video_gallery&task=videogallery_video&id='+videoGalleryId+'&closepop=1&video_add_nonce='+add_nonce;
+        jQuery(this).parents('form').attr('action',action);
+    });
+    jQuery('a.add-video-slide').on('click',function(){
+        var addVideoNonce  = jQuery(this).attr('data-add-video-nonce');
+        var videoGalleryId  = jQuery(this).attr('data-videogallery-id');
+        jQuery('#huge_it_gallery_video_add_videos_wrap').attr('data-add-video-nonce',addVideoNonce);
+        jQuery('#huge_it_gallery_video_add_videos_wrap').attr('data-videogallery-id',videoGalleryId);
+    });
     jQuery(".close_free_banner").on("click",function(){
         jQuery(".free_version_banner").css("display","none");
         hgSliderSetCookie( 'galleryVideoFreeBannerShow', 'no', {expires:86400} );
@@ -147,6 +159,8 @@ jQuery(document).ready(function () {
                 jQuery(this).find('ul li input[name="content_per_page"]').attr('name', '');
                 jQuery(this).find('ul li select[name="display_type"]').attr('name', '');
             } else {
+                jQuery(this).find('ul li input#content_per_page').attr('name', 'content_per_page');
+                jQuery(this).find('ul li select#display_type').attr('name', 'display_type');
             }
         })
     });

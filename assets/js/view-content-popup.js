@@ -234,7 +234,7 @@ function Gallery_Video_Content_Popup(id) {
         }
     };
     _this.resizeEvent = function () {
-        var iframeHeight = _this.popupList.find('.popup-wrapper .image-block').width() * 0.5;
+        var iframeHeight = jQuery('body').width() * 0.23;
         _this.popupList.find('.popup-wrapper .image-block iframe').height(iframeHeight);
         galleryVideoIsotope(_this.container.children(), 'reLayout');
         _this.showCenter();

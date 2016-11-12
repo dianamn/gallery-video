@@ -170,13 +170,13 @@ function gallery_video_print_html_nav($count_items, $page_number, $serch_fields 
         </div>
     </div>
     <input type="hidden" id="page_number" name="page_number" value="<?php if (isset($_POST['page_number'])) {
-        echo $_POST['page_number'];
+        echo esc_attr(absint($_POST['page_number']));
     } else {
         echo '1';
     } ?>"/>
 
     <input type="hidden" id="serch_or_not" name="serch_or_not" value="<?php if (isset($_POST["serch_or_not"])) {
-        echo $_POST["serch_or_not"];
+        echo esc_attr($_POST["serch_or_not"]);
     } ?>"/>
     <?php
 }

@@ -14,17 +14,12 @@ class Gallery_Video_Galleries {
 	 */
 	public function load_video_gallery_page() {
 		global $wpdb;
-		if ( isset( $_GET['page'] ) && $_GET['page'] == 'video_galleries_huge_it_video_gallery' ) {
-			$task = gallery_video_get_video_gallery_task();
-			$id   = gallery_video_get_video_gallery_id();
-		}
+		$task = gallery_video_get_video_gallery_task();
+		$id   = gallery_video_get_video_gallery_id();
 		switch ( $task ) {
 			case 'edit_cat':
-				if ( isset( $_REQUEST['huge_it_gallery_video_nonce'] ) ) {
-					$wp_nonce = $_REQUEST['huge_it_gallery_video_nonce'];
-					if ( ! wp_verify_nonce( $wp_nonce, 'huge_it_gallery_video_nonce' ) ) {
-						wp_die( 'Security check fail' );
-					}
+				if ( ! isset( $_REQUEST['huge_it_gallery_video_nonce'] ) || ! wp_verify_nonce( $_REQUEST['huge_it_gallery_video_nonce'], 'huge_it_gallery_video_nonce' . $id  ) ) {
+					wp_die( 'Security check fail' );
 				}
 				if ( $id ) {
 					$this->edit_video_gallery( $id );
@@ -34,29 +29,20 @@ class Gallery_Video_Galleries {
 				}
 				break;
 			case 'apply':
-				if ( isset( $_REQUEST['gallery_video_save_data_nonce'] ) ) {
-					$wp_nonce2 = $_REQUEST['gallery_video_save_data_nonce'];
-					if ( ! wp_verify_nonce( $wp_nonce2, 'gallery_video_save_data_nonce' ) ) {
-						wp_die( 'Security check fail' );
-					}
+				$a = isset( $_REQUEST['save_data_nonce'] );
+				$b = wp_verify_nonce( $_REQUEST['save_data_nonce'], 'gallery_video_save_data_nonce' . $id );
+				$c = wp_verify_nonce( $_REQUEST['save_data_nonce'], 'gallery_video_nonce_remove_video' . ( isset( $_GET['remove_video'] ) ? absint( $_GET['remove_video'] ) : '' ) );
+				if ( ! ( ( $b || $c ) && $a ) ) {
+					wp_die( 'Security check fail' );
 				}
 				if ( $id ) {
 					$this->save_video_gallery_data( $id );
 					$this->edit_video_gallery( $id );
 				}
 				break;
-			case 'remove_cat':
-				if ( isset( $_REQUEST['huge_it_gallery_video_nonce_remove_video_gallery'] ) ) {
-					$huge_it_gallery_video_nonce_remove_video_gallery = $_REQUEST['huge_it_gallery_video_nonce_remove_video_gallery'];
-					if ( ! wp_verify_nonce( $huge_it_gallery_video_nonce_remove_video_gallery, 'huge_it_gallery_video_nonce_remove_video_gallery' . $id ) ) {
-						wp_die( 'Security check fail' );
-					}
-				}
-				if ( isset( $_REQUEST['huge_it_gallery_video_nonce_remove_galery'] ) ) {
-					$huge_it_gallery_video_nonce_remove_galery = $_REQUEST['huge_it_gallery_video_nonce_remove_galery'];
-					if ( ! wp_verify_nonce( $huge_it_gallery_video_nonce_remove_galery, 'huge_it_gallery_video_nonce_remove_galery' ) ) {
-						wp_die( 'Security check fail' );
-					}
+			case 'remove_gallery_video':
+				if ( ! isset( $_REQUEST['huge_it_gallery_video_nonce_remove_video_gallery'] ) | ! wp_verify_nonce( $_REQUEST['huge_it_gallery_video_nonce_remove_video_gallery'], 'huge_it_gallery_video_nonce_remove_video_gallery' . $id ) ) {
+					wp_die( 'Security check fail' );
 				}
 				$this->remove_video_gallery( $id );
 				$this->show_video_galleries_page();
@@ -197,22 +183,7 @@ GROUP BY " . $wpdb->prefix . "huge_it_videogallery_videos.videogallery_id ";
 	 * @return string
 	 */
 	public function edit_video_gallery( $id ) {
-		if ( isset( $_REQUEST['gallery_video_nonce_remove_video'] ) ) {
-			$gallery_video_nonce_remove_video = $_REQUEST['gallery_video_nonce_remove_video'];
-			if ( ! wp_verify_nonce( $gallery_video_nonce_remove_video, 'gallery_video_nonce_remove_video' . absint( $_GET["remove_video"] ) ) ) {
-				wp_die( 'Security check fail' );
-			}
-		}
 		global $wpdb;
-		if ( isset( $_GET["remove_video"] ) ) {
-			if ( $_GET["remove_video"] != '' ) {
-				$table_name = $wpdb->prefix . "huge_it_videogallery_videos";
-				$wpdb->delete(
-					$table_name,
-					array( 'id' => absint( $_GET["remove_video"] ) )
-				);
-			}
-		}
 		$query = $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_galleries WHERE id= %d", $id );
 		$row   = $wpdb->get_row( $query );
 		if ( ! isset( $row->videogallery_list_effects_s ) ) {
@@ -235,19 +206,19 @@ GROUP BY " . $wpdb->prefix . "huge_it_videogallery_videos.videogallery_id ";
 	 */
 	function save_video_gallery_data( $id ) {
 		global $wpdb;
-		if ( ! is_numeric( $id ) ) {
-			echo 'insert numerc id';
-
-			return '';
-		}
-		if ( ! ( isset( $_POST['sl_width'] ) && isset( $_POST["name"] ) ) ) {
-			echo '';
-		}
 		$cat_row    = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_galleries WHERE id!= %d ", $id ) );
 		$query      = $wpdb->prepare( "SELECT sl_width FROM " . $wpdb->prefix . "huge_it_videogallery_galleries WHERE id = %d", $id );
 		$table_name = $wpdb->prefix . "huge_it_videogallery_galleries";
 		$id         = absint( $id );
-
+        if ( isset( $_GET["remove_video"] ) ) {
+            if ( $_GET["remove_video"] != '' ) {
+                $table_name = $wpdb->prefix . "huge_it_videogallery_videos";
+                $wpdb->delete(
+                    $table_name,
+                    array( 'id' => absint( $_GET["remove_video"] ) )
+                );
+            }
+        }
 		if ( isset( $_POST["name"] ) ) {
 			$name                        = sanitize_text_field( wp_unslash( $_POST["name"] ) );
 			$sl_width                    = absint( $_POST["sl_width"] );
