@@ -46,7 +46,7 @@ class Gallery_Video_Ajax
             if (!isset($_REQUEST['changeShortecodeViewNonce']) || !wp_verify_nonce($_REQUEST['changeShortecodeViewNonce'], 'gallery_video_shortecode_change_view_nonce')) {
                 wp_die('Security check fail');
             }
-            if ( !isset( $_POST["id"] ) || absint( $_GET['id'] ) != $_GET['id'] ) {
+            if ( !isset( $_POST["id"] ) || absint( $_POST['id'] ) != $_POST['id'] ) {
                 echo json_encode(array('success'=>'0','message'=>'"id" parameter is required to be not negative integer'));
             }
             $id = absint($_POST['id']);
@@ -70,7 +70,7 @@ class Gallery_Video_Ajax
             if (!isset($_REQUEST['insertShortecodeNonce'])  || !wp_verify_nonce($_REQUEST['insertShortecodeNonce'], 'gallery_video_insert_shortecode')) {
                 wp_die('Security check fail');
             }
-            if ( !isset( $_POST["video_id"] ) || absint( $_GET['video_id'] ) != $_GET['video_id'] ) {
+            if ( !isset( $_POST["video_id"] ) || absint( $_POST['video_id'] ) != $_POST['video_id'] ) {
                 echo json_encode(array('success'=>'0','message'=>'"video_id" parameter is required to be not negative integer'));
             }
             $id = absint($_POST["video_id"]);
@@ -123,7 +123,7 @@ class Gallery_Video_Ajax
     function gallery_video_admin_ajax_callback()
     {
         if (isset($_POST['task']) && $_POST['task'] == 'send_url_popup') {
-            if ( !isset( $_POST["videoUniqueId"] ) || absint( $_GET['videoUniqueId'] ) != $_GET['videoUniqueId'] ) {
+            if ( !isset( $_POST["videoUniqueId"] ) || absint( $_POST['videoUniqueId'] ) != $_POST['videoUniqueId'] ) {
                 echo json_encode(array('success'=>'0','message'=>'"videoUniqueId" parameter is required to be not negative integer'));
             }
             $video_unique_id = absint($_POST['videoUniqueId']);
@@ -162,7 +162,7 @@ class Gallery_Video_Ajax
             global $wpdb;
             $page = 1;
             if (!empty($_POST["page"]) && is_numeric($_POST['page']) && $_POST['page'] > 0) {
-                if ( !isset( $_POST["galleryVideoId"] ) || absint( $_GET['galleryVideoId'] ) != $_GET['galleryVideoId'] ) {
+                if ( !isset( $_POST["galleryVideoId"] ) || absint( $_POST['galleryVideoId'] ) != $_POST['galleryVideoId'] ) {
                     echo json_encode(array('success'=>'0','message'=>'"galleryVideoId" parameter is required to be not negative integer'));
                 }
                 $gallery_video_id = absint($_POST['galleryVideoId']);
@@ -295,7 +295,7 @@ class Gallery_Video_Ajax
             global $wpdb;
             $page = 1;
             if (!empty($_POST["page"]) && is_numeric($_POST['page']) && $_POST['page'] > 0) {
-                if ( !isset( $_POST["galleryVideoId"] ) || absint( $_GET['galleryVideoId'] ) != $_GET['galleryVideoId'] ) {
+                if ( !isset( $_POST["galleryVideoId"] ) || absint( $_POST['galleryVideoId'] ) != $_POST['galleryVideoId'] ) {
                     echo json_encode(array('success'=>'0','message'=>'"galleryVideoId" parameter is required to be not negative integer'));
                 }
                 $gallery_video_id = absint($_POST['galleryVideoId']);
@@ -419,7 +419,7 @@ class Gallery_Video_Ajax
             global $wpdb;
             $page = 1;
             if (!empty($_POST["page"]) && is_numeric($_POST['page']) && $_POST['page'] > 0) {
-                if ( !isset( $_POST["galleryVideoId"] ) || absint( $_GET['galleryVideoId'] ) != $_GET['galleryVideoId'] ) {
+                if ( !isset( $_POST["galleryVideoId"] ) || absint( $_POST['galleryVideoId'] ) != $_POST['galleryVideoId'] ) {
                     echo json_encode(array('success'=>'0','message'=>'"galleryVideoId" parameter is required to be not negative integer'));
                 }
                 $gallery_video_id = absint($_POST['galleryVideoId']);
@@ -496,7 +496,7 @@ class Gallery_Video_Ajax
             global $wpdb;
             $page = 1;
             if (!empty($_POST["page"]) && is_numeric($_POST['page']) && $_POST['page'] > 0) {
-                if ( !isset( $_POST["galleryVideoId"] ) || absint( $_GET['galleryVideoId'] ) != $_GET['galleryVideoId'] ) {
+                if ( !isset( $_POST["galleryVideoId"] ) || absint( $_POST['galleryVideoId'] ) != $_POST['galleryVideoId'] ) {
                     echo json_encode(array('success'=>'0','message'=>'"galleryVideoId" parameter is required to be not negative integer'));
                 }
                 $gallery_video_id = absint($_POST['galleryVideoId']);
@@ -608,7 +608,7 @@ class Gallery_Video_Ajax
             if ($_POST['task'] == "data-id") {
                 if (gallery_video_get_ip() != 'UNKNOWN') {
                     $ip = gallery_video_get_ip();
-                    if ( !isset( $_POST["id"] ) || absint( $_GET['id'] ) != $_GET['id'] ) {
+                    if ( !isset( $_POST["id"] ) || absint( $_POST['id'] ) != $_POST['id'] ) {
                         echo json_encode(array('success'=>'0','message'=>'"id" parameter is required to be not negative integer'));
                     }
                     $vid_id = absint($_POST['id']);
