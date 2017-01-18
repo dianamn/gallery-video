@@ -1,3 +1,21 @@
+a.video-pro-link {
+	display: inline-block;
+	position: relative;
+	top: 50%;
+	transform: translatey(23%);
+	width: 30px;
+	height: 15px;
+	outline: none;
+	box-shadow: none;
+}
+
+span.video-pro-icon {
+	width: 30px;
+	height: 15px;
+	background: url(../images/admin_images/Video-gallery.png) no-repeat;
+	display: inline-block;
+}
+
 .gallery_options_grey_overlay {
 	width: 100%;
 	height: 100%;
