@@ -4,7 +4,7 @@
 Plugin Name: Huge IT Video Gallery
 Plugin URI: http://huge-it.com/video-allery/
 Description: Video Gallery plugin was created and specifically designed to show your video files in unusual splendid ways.
-Version: 10.0
+Version: 2.0.5
 Author: http://huge-it.com/
 License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -22,7 +22,7 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
          * Version of plugin
          * @var float
          */
-        public $version = 10.0;
+        public $version = '2.0.5';
 
         /**
          * Instance of Gallery_Video_Admin class to manage admin
@@ -90,8 +90,6 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
             register_activation_hook( __FILE__, array( 'Gallery_Video_Install', 'install' ) );
             add_action( 'init', array( $this, 'init' ), 0 );
             add_action( 'plugins_loaded', array($this,'load_plugin_textdomain') );
-	        add_action( 'init', array( 'Gallery_Video_Install', 'db_update' ), 0 );
-
         }
 
         /**
