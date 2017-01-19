@@ -91,8 +91,6 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
             register_activation_hook( __FILE__, array( 'Gallery_Video_Install', 'install' ) );
             add_action( 'init', array( $this, 'init' ), 0 );
             add_action( 'plugins_loaded', array($this,'load_plugin_textdomain') );
-	        add_action( 'init', array( 'Gallery_Video_Install', 'db_update' ), 0 );
-
         }
 
         /**

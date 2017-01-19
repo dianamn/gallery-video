@@ -25,11 +25,10 @@ $add_video_nonce                               = wp_create_nonce( 'huge_it_galle
 						<?php
 						foreach ( $rowsld as $rowsldires ) {
 							if ( $rowsldires->id != $row->id ) {
-								$gallery_video_save_data_nonce = wp_create_nonce( 'huge_it_gallery_video_nonce' . $rowsldires->id );
 								?>
 								<li>
 									<a href="#"
-									   onclick="window.location.href='admin.php?page=video_galleries_huge_it_video_gallery&task=edit_cat&id=<?php echo $rowsldires->id; ?>&huge_it_gallery_video_nonce=<?php echo $gallery_video_save_data_nonce;?>'"><?php echo $rowsldires->name; ?></a>
+									   onclick="window.location.href='admin.php?page=video_galleries_huge_it_video_gallery&task=edit_cat&id=<?php echo $rowsldires->id; ?>'"><?php echo $rowsldires->name; ?></a>
 								</li>
 								<?php
 							} else { ?>
@@ -92,7 +91,7 @@ $add_video_nonce                               = wp_create_nonce( 'huge_it_galle
 													if ( strpos( $rowimages->image_url, 'youtube' ) !== false || strpos( $rowimages->image_url, 'youtu' ) !== false ) {
 														$liclass         = "youtube";
 														$video_thumb_url = get_youtube_id_from_url( $rowimages->image_url );
-														$thumburl        = '<img src="http://img.youtube.com/vi/' . $video_thumb_url . '/mqdefault.jpg" alt="" />';
+														$thumburl        = '<img src="//img.youtube.com/vi/' . $video_thumb_url . '/mqdefault.jpg" alt="" />';
 													} else if ( strpos( $rowimages->image_url, 'vimeo' ) !== false ) {
 														$liclass  = "vimeo";
 														$vimeo    = $rowimages->image_url;
@@ -299,7 +298,7 @@ $add_video_nonce                               = wp_create_nonce( 'huge_it_galle
 											</option>
 										</select>
 									</li>
-									<div id="videogallery-current-options-0"
+									<li id="videogallery-current-options-0"
 									     class="videogallery-current-options <?php if ( $row->huge_it_sl_effects == 0 ) {
 										     echo ' active';
 									     } ?>">
@@ -329,8 +328,8 @@ $add_video_nonce                               = wp_create_nonce( 'huge_it_galle
 												       class="text_area"/>
 											</li>
 										</ul>
-									</div>
-									<div id="videogallery-current-options-1"
+									</li>
+									<li id="videogallery-current-options-1"
 									     class="videogallery-current-options <?php if ( $row->huge_it_sl_effects == 1 ) {
 										     echo ' active';
 									     } ?>">
@@ -365,8 +364,8 @@ $add_video_nonce                               = wp_create_nonce( 'huge_it_galle
 												} ?> />
 											</li>
 										</ul>
-									</div>
-									<div id="videogallery-current-options-3"
+									</li>
+									<li id="videogallery-current-options-3"
 									     class="videogallery-current-options <?php if ( $row->huge_it_sl_effects == 3 ) {
 										     echo ' active';
 									     } ?>">
@@ -444,9 +443,8 @@ $add_video_nonce                               = wp_create_nonce( 'huge_it_galle
 												</select>
 											</li>
 										</ul>
-									</div>
-									<!-- ///////////////////////////////////////////////////////// -->
-									<div id="videogallery-current-options-4"
+									</li>
+									<li id="videogallery-current-options-4"
 									     class="videogallery-current-options <?php if ( $row->huge_it_sl_effects == 4 ) {
 										     echo ' active';
 									     } ?>">
@@ -476,8 +474,8 @@ $add_video_nonce                               = wp_create_nonce( 'huge_it_galle
 												       class="text_area"/>
 											</li>
 										</ul>
-									</div>
-									<div id="videogallery-current-options-5"
+									</li>
+									<li id="videogallery-current-options-5"
 									     class="videogallery-current-options <?php if ( $row->huge_it_sl_effects == 5 ) {
 										     echo ' active';
 									     } ?>">
@@ -506,8 +504,8 @@ $add_video_nonce                               = wp_create_nonce( 'huge_it_galle
 												       class="text_area"/>
 											</li>
 										</ul>
-									</div>
-									<div id="videogallery-current-options-6"
+									</li>
+									<li id="videogallery-current-options-6"
 									     class="videogallery-current-options <?php if ( $row->huge_it_sl_effects == 6 ) {
 										     echo ' active';
 									     } ?>">
@@ -537,8 +535,8 @@ $add_video_nonce                               = wp_create_nonce( 'huge_it_galle
 												       class="text_area"/>
 											</li>
 										</ul>
-									</div>
-									<div id="videogallery-current-options-7"
+									</li>
+									<li id="videogallery-current-options-7"
 									     class="videogallery-current-options <?php if ( $row->huge_it_sl_effects == 7 ) {
 										     echo ' active';
 									     } ?>">
@@ -568,7 +566,12 @@ $add_video_nonce                               = wp_create_nonce( 'huge_it_galle
 												       class="text_area"/>
 											</li>
 										</ul>
-									</div>
+									</li>
+									<li>
+										<label for="disable_related"><?php _e('Disable Related Videos', 'gallery-video' ); ?></label>
+										<input type="checkbox" id="disable_related" name="disable_related" value="on" disabled>
+										<a class="video-pro-link probuttonlink" href="http://huge-it.com/video-gallery/" target="_blank"><span class="video-pro-icon"></span></a>
+									</li>
 
 								</ul>
 								<div id="major-publishing-actions">

@@ -18,9 +18,6 @@ class Gallery_Video_Galleries {
 		$id   = gallery_video_get_video_gallery_id();
 		switch ( $task ) {
 			case 'edit_cat':
-				if ( ! isset( $_REQUEST['huge_it_gallery_video_nonce'] ) || ! wp_verify_nonce( $_REQUEST['huge_it_gallery_video_nonce'], 'huge_it_gallery_video_nonce' . $id  ) ) {
-					wp_die( 'Security check fail' );
-				}
 				if ( $id ) {
 					$this->edit_video_gallery( $id );
 				} else {

@@ -19,7 +19,7 @@
 					$videourl = gallery_video_get_video_id_from_url( $row->image_url );
 					if ( $videourl[1] == 'youtube' ) {
 						if ( empty( $row->thumb_url ) ) {
-							$thumb_pic = 'http://img.youtube.com/vi/' . $videourl[0] . '/mqdefault.jpg';
+							$thumb_pic = '//img.youtube.com/vi/' . $videourl[0] . '/mqdefault.jpg';
 						} else {
 							$thumb_pic = $row->thumb_url;
 						}

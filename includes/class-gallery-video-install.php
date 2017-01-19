@@ -6,6 +6,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Gallery_Video_Install {
 
 	/**
+	 * Check Gallery Video version and run the updater is required.
+	 *
+	 * This check is done on all requests and runs if the versions do not match.
+	 */
+	public static function check_version() {
+		if(get_option( 'gallery_video_version' ) !== Gallery_Video()->version ){
+			self::install();
+			update_option( 'gallery_video_version',Gallery_Video()->version );
+		}
+	}
+
+	/**
 	 * Install  Gallery Image.
 	 */
 	public static function install() {
@@ -13,6 +25,7 @@ class Gallery_Video_Install {
 			define( 'GALLERY_VIDEO_INSTALLING', true );
 		}
 		self::create_tables();
+		self::db_update();
 		// Flush rules after install
 		flush_rewrite_rules();
 		// Trigger action
@@ -90,6 +103,14 @@ INSERT INTO `$table_name` (`id`, `name`, `sl_height`, `sl_width`, `pause_on_hove
 		if ( ! $wpdb->get_var( "select count(*) from " . $wpdb->prefix . "huge_it_videogallery_galleries" ) ) {
 			$wpdb->query( $sql_3 );
 		}
+		
+	}
+
+	/**
+	 * Update DataBase
+	 */
+	public static function db_update() {
+		global $wpdb;
 		$imagesAllFieldsInArray = $wpdb->get_results( "DESCRIBE " . $wpdb->prefix . "huge_it_videogallery_videos", ARRAY_A );
 		$forUpdate              = 0;
 		foreach ( $imagesAllFieldsInArray as $portfoliosField ) {
@@ -116,13 +137,6 @@ INSERT INTO `$table_name` (`id`, `name`, `sl_height`, `sl_width`, `pause_on_hove
 			$query                      = "SELECT name,value FROM " . $table_name;
 			$video_gallery_table_params = $wpdb->get_results( $query );
 		}
-	}
-
-	/**
-	 * Update DataBase
-	 */
-	public static function db_update() {
-		global $wpdb;
 		$table_name_galleries = $wpdb->prefix . "huge_it_videogallery_galleries";
 		$table_name_videos = $wpdb->prefix . "huge_it_videogallery_videos";
         if(function_exists('issetTableColumn')) {

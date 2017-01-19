@@ -11,7 +11,7 @@
 				$thumb_pic = "//img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg";
 				if ( $videourl[1] == 'youtube' ) {
 					if ( empty( $row->thumb_url ) ) {
-						$thumb_pic = 'http://img.youtube.com/vi/' . $videourl[0] . '/mqdefault.jpg';
+						$thumb_pic = '//img.youtube.com/vi/' . $videourl[0] . '/mqdefault.jpg';
 					} else {
 						$thumb_pic = $row->thumb_url;
 					}

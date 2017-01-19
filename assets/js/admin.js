@@ -154,7 +154,7 @@ jQuery(document).ready(function () {
         }
     })
     jQuery('#videogallery-unique-options').on('change', function () {
-        jQuery('div[id^="videogallery-current-options"]').each(function () {
+        jQuery('li[id^="videogallery-current-options"]').each(function () {
             if (!jQuery(this).hasClass("active")) {
                 jQuery(this).find('ul li input[name="content_per_page"]').attr('name', '');
                 jQuery(this).find('ul li select[name="display_type"]').attr('name', '');
