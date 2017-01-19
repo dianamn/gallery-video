@@ -3,8 +3,8 @@ Contributors: Huge-IT
 Donate link: http://huge-it.com/wordpress-video-gallery/
 Tags: video gallery, gallery, video, youtube, vimeo, youtube gallery, videos, wordpress gallery, wordpress video, WordPress Video Gallery, youtube video gallery, video gallery plugin,
 Requires at least: 3.0.1
-Tested up to: 4.6.1
-Stable tag: 2.0.4
+Tested up to: 4.7.1
+Stable tag: 2.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -502,6 +502,11 @@ If you want Video Gallery to work on all your websites, you should do the follow
 If you think, that you found a bug in our [WordPress Video Gallery](http://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com).
     
 == Changelog ==
+
+= 2.0.5 =
+* Added featured plugins list 
+* Fix issue with WP themes that included isotope js and brought conflict Fixed the conflict with one column in some themes due to isotope js
+* Added an option to disable relates YouTube videos (Pro)
 
 = 2.0.4 =
 * Fixed issues with nonce tokens in the plugin for all _POST, _GET requests
