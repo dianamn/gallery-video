@@ -176,6 +176,7 @@
 }
 .ls-nav-left-arrow a, .ls-nav-right-arrow a {
   display: block;
+  border: none !important;
 }
 [class$="-arrow"] {
   width: 25px;

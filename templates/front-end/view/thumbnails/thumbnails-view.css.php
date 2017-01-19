@@ -112,6 +112,7 @@ section #huge_it_videogallery li a {
 }
 .paginate3 a{
 	border-bottom: none !important;
+	box-shadow: none !important;
 }
 .icon-style3{
 	font-size: <?php echo $gallery_video_get_option['gallery_video_video_ht_view7_paginator_icon_size']; ?>px !important;

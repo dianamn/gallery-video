@@ -3,8 +3,8 @@ Contributors: Huge-IT
 Donate link: http://huge-it.com/wordpress-video-gallery/
 Tags: video gallery, gallery, video, youtube, vimeo, youtube gallery, videos, wordpress gallery, wordpress video, WordPress Video Gallery, youtube video gallery, video gallery plugin,
 Requires at least: 3.0.1
-Tested up to: 4.5.3
-Stable tag: 1.7.05
+Tested up to: 4.6.1
+Stable tag: 2.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,20 +12,24 @@ Gallery Video plugin was created and specifically designed to show video links i
 
 == Description ==
 
+**Gallery - Video Gallery**
+
 ### Gallery Video plugin was created and specifically designed to show your videos from Vimeo and Youtube in an unusual splendid way.
+
+* [Wordpress Video Gallery](http://huge-it.com/wordpress-video-gallery/)
+* [Demo Video Gallery](http://huge-it.com/wordpress-video-gallery-demo-1-content-popup/)
+* [FAQ Video Gallery](http://huge-it.com/wordpress-video-gallery-faq/)
+* [User Manual Video Gallery](http://huge-it.com/wordpress-video-gallery-user-manual/)
+* [Video Gallery Support](http://huge-it.com/contact-us/)
+* [Video Gallery Github Project](https://github.com/Huge-IT/gallery-video)
+
+https://www.youtube.com/watch?v=Re16ci9iGVU
 
 It provides 7 good-looking views. Each view is made for making the gallery more attractive, so select the one which will match the best for your WordPress website.
 
 Plugin allows you to create a video gallery for WordPress. Video Gallery looks very impressive and functional.
 
 The process of creating a video gallery only takes a few minutes and created gallery can be displayed on any page or post by means of WordPress shortcode.
-
-* [Wordpress Video Gallery](http://huge-it.com/wordpress-video-gallery/)
-* [Demo](http://huge-it.com/wordpress-video-gallery-demo-1-content-popup/)
-* [FAQ](http://huge-it.com/wordpress-video-gallery-faq/)
-* [User Manual](http://huge-it.com/wordpress-video-gallery-user-manual/)
-
-https://www.youtube.com/watch?v=Re16ci9iGVU
 
 * Upload a video
 * Write a title
@@ -498,6 +502,43 @@ If you want Video Gallery to work on all your websites, you should do the follow
 If you think, that you found a bug in our [WordPress Video Gallery](http://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com).
     
 == Changelog ==
+
+= 2.0.4 =
+* Fixed issues with nonce tokens in the plugin for all _POST, _GET requests
+* Fixed issue with cross site scripting (XSS)
+
+= 2.0.3 =
+**Fixed the front end issue which was bringing  borders on video thumbs over multiple views on hover.**
+
+= 2.0.2 =
+* 1) We have fixed reported bug with Twenty Fifteen theme, where images on text layer moved photos on hover.
+* 2) We have fixed a conflict with Twenty Fifteen in Content video slider view where an additional line poped on next/prev. button.
+* 3) Added author's link of the plugin for the plugin list.
+
+= 2.0.1 =
+* 1) We have limited the back-end banner to pop every hour and now it will be closed with the colse button permanently
+* 2) Now users can duplicate their galleries in back end and delete multiple video galleries too
+* 3) We have also made some UI/UX customization's in order to have back-end of the Video Gallery more user friendly. Differed the lite and Pro options more clearly.
+
+= 2.0.0 =
+**In the series of updates we will go through our plugins one by one and fix all technical issues with our code in order to meet the WordPress Coding Standards. These are the major updates that had been implemented to Video Gallery in this new version of the plugin.**
+
+* 1) Changed function names, defines and classnames to have unique prefixes.
+* 2) Refined folder and image names.
+* 3) Fixed the issue with direct file access to plugin files.
+* 4) Changed the code structure to be more Object Oriented, now all major functionality of plugin is stored in a single instance which is accessible via Video_Gallery() function, this allows other plugins/extensions to use the functionality of this plugin.
+* 5) Removed Lazy codes both, from back and front end.
+* 6) Removed unreadable codes, and replaced with documented codes.
+* 7) Added additional credits where necessary.
+* 8) Made further code optimization in order to meet required WordPress coding standards.
+* 9)  Fixed the issue of CSS bugs on front end , where videos were being cut. Now the plugin is fully responsive.
+* 10) Code optimization loads the admin panel more quickly now as well.
+* 11) Added nonces for all _POST, _GET requests.
+* 12) Rate Us URL leading to the review page of WordPress has been changed to lead to the new/correct one after WP.org update of links.
+* 13) Finalise addition of nonces for edit/create/delete requests.
+* 14) Edited collation to meet WordPRess standards fully.
+* 15)Sanitize the user data and validated post/get calls of the plugin.
+* 16) Took off additional/extra indexes from tables.
 
 = 1.7.05 =
 *  Added credits and attribution in the source code refering the original authors.
