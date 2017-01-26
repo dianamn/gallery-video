@@ -8,18 +8,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Gallery_Video_Widgets{
 
 	/**
-	 * Gallery_Video_Widgets constructor.
-	 */
-	public function __construct() {
-		add_action( 'widgets_init', array($this,'register_widget'));
-	}
-
-	/**
 	 * Register Huge-IT  Gallery Video Widget
 	 */
-	public function register_widget(){
-		register_widget( 'Huge_it_video_gallery_Widget' );
+	public static function init(){
+		register_widget( 'Gallery_Video_Widget' );
 	}
 }
-
-new Gallery_Video_Widgets();

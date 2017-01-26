@@ -3,9 +3,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 /**
- * Class Huge_it_video_gallery_Widget
+ * Class Gallery_Video_Widget
  */
-class Huge_it_video_gallery_Widget extends WP_Widget {
+class Gallery_Video_Widget extends WP_Widget {
 
 	/**
 	 * Huge_it_gallery_Widget constructor.

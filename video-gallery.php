@@ -15,6 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
+include_once( 'config.php' );
+
 if ( ! class_exists( 'Gallery_Video' ) ) :
 
     final class Gallery_Video {
@@ -91,6 +93,7 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
             register_activation_hook( __FILE__, array( 'Gallery_Video_Install', 'install' ) );
             add_action( 'init', array( $this, 'init' ), 0 );
             add_action( 'plugins_loaded', array($this,'load_plugin_textdomain') );
+            add_action( 'widgets_init', array( 'Gallery_Video_Widgets', 'init' ) );
         }
 
         /**
@@ -144,23 +147,8 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
         public function includes() {
             include_once( 'includes/gallery-video-functions.php' );
             include_once( 'includes/gallery-video-video-functions.php' );
-            include_once( 'includes/class-gallery-video-install.php' );
-            include_once( 'includes/class-gallery-video-template-loader.php' );
-            include_once( 'includes/class-gallery-video-ajax.php' );
-            include_once( 'includes/class-gallery-video-widgets.php' );
-            include_once( 'includes/class-gallery-video-huge-it-gallery-widget.php' );
-            include_once( 'includes/class-gallery-video-shortcode.php' );
-            include_once( 'includes/class-gallery-video-frontend-scripts.php' );
             if ( $this->is_request( 'admin' ) ) {
                 include_once( 'includes/admin/gallery-video-admin-functions.php' );
-                include_once( 'includes/admin/class-gallery-video-admin.php' );
-                include_once( 'includes/admin/class-gallery-video-admin-assets.php' );
-                include_once( 'includes/admin/class-gallery-video-general-options.php' );
-                include_once( 'includes/admin/class-gallery-video-galleries.php' );
-                include_once( 'includes/admin/class-gallery-video-lightbox-options.php' );
-                include_once( 'includes/admin/class-gallery-video-featured-plugins.php' );
-                include_once( 'includes/admin/class-gallery-video-licensing.php' );
-
             }
         }
 
@@ -179,9 +167,20 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
             do_action( 'before_Gallery_Video_init' );
 
             $this->template_loader = new Gallery_Video_Template_Loader();
+
             if ( $this->is_request( 'admin' ) ) {
+
                 $this->admin = new Gallery_Video_Admin();
+
+                new Gallery_Video_Admin_Assets();
+
             }
+
+            new Gallery_Video_Frontend_Scripts();
+
+            new Gallery_Video_Ajax();
+
+            new Gallery_Video_Shortcode();
 
             // Init action.
             do_action( 'Gallery_Video_init' );
