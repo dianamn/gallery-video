@@ -25,7 +25,7 @@
 						}
 						?>
 						<a data-id="<?php echo $row->id; ?>" class="vyoutube huge_it_videogallery_item group1"
-						   href="https://www.youtube.com/embed/<?php echo $videourl[0]; ?>"
+						   href="//www.youtube.com/embed/<?php echo $videourl[0]; ?>"
 						   title="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>">
 							<img src="<?php echo esc_attr( $thumb_pic ); ?>" alt=""/>
 							<div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
