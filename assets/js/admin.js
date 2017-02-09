@@ -250,6 +250,13 @@ jQuery(document).ready(function () {
             jQuery('.video_slider_params').css('display','');
         else
             jQuery('.video_slider_params').css('display','none');
+
+
+        if(jQuery(this).val() == 3 || jQuery(this).val() == 7)
+            jQuery('.autoplay').css('display','none');
+        else
+            jQuery('.autoplay').css('display','');
+
     });
     jQuery('#huge_it_sl_effects').change();
 });
