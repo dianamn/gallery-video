@@ -573,7 +573,16 @@ $add_video_nonce                               = wp_create_nonce( 'huge_it_galle
 										<a class="video-pro-link probuttonlink" href="http://huge-it.com/video-gallery/" target="_blank"><span class="video-pro-icon"></span></a>
 									</li>
 
-								</ul>
+                                    <li class="autoplay">
+
+                                        <label for="autoplay"><?php _e('Pop-Up Autoplay', 'autoplay' ); ?></label>
+                                        <input type="checkbox" id="autoplay" name="autoplay" value="on" disabled>
+                                        <a class="video-pro-link probuttonlink" href="http://huge-it.com/video-gallery/" target="_blank"><span class="video-pro-icon"></span></a>
+
+                                    </li>
+
+
+                                </ul>
 								<div id="major-publishing-actions">
 									<div id="publishing-action">
 										<input type="button" onclick="submitbutton('apply')" value="Save Video Gallery"
