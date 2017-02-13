@@ -2,11 +2,11 @@
 
 /*
 Plugin Name: Gallery - Video Gallery
-Plugin URI: http://huge-it.com/wordpress-video-gallery/
+Plugin URI: https://huge-it.com/wordpress-video-gallery/
 Description: Video Gallery plugin was created and specifically designed to show your video files in unusual splendid ways.
-Version: 2.0.6
+Version: 2.0.7
 Author: Huge-IT
-Author URI: http://huge-it.com/
+Author URI: https://huge-it.com/
 License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 */
 
@@ -25,7 +25,7 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
          * Version of plugin
          * @var float
          */
-        public $version = '2.0.6';
+        public $version = '2.0.7';
 
         /**
          * Instance of Gallery_Video_Admin class to manage admin
