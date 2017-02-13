@@ -109,5 +109,3 @@ class Gallery_Video_Shortcode {
 
 
 }
-
-new Gallery_Video_Shortcode();
