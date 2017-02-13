@@ -45,6 +45,8 @@ $huge_it_gallery_video_nonce_remove_gallery_video = wp_create_nonce( 'huge_it_ga
 								class="sorting-indicator"></span></th>
 						<th scope="col" id="name" style="width:85px"><span>Name</span><span
 								class="sorting-indicator"></span></th>
+                        <th scope="col" id="shortcode" style="width:85px"><span>Shortcode</span><span
+                                    class="sorting-indicator"></span></th>
 						<th scope="col" id="prod_count" style="width:40px;"><span>Videos</span><span
 								class="sorting-indicator"></span></th>
 						<th style="width:40px"><span>Duplicate</span><span
@@ -125,12 +127,16 @@ $huge_it_gallery_video_nonce_remove_gallery_video = wp_create_nonce( 'huge_it_ga
 							<td>
 								<a href="admin.php?page=video_galleries_huge_it_video_gallery&task=edit_cat&id=<?php echo $rows[ $i ]->id; ?>"><?php echo esc_html( stripslashes( $rows[ $i ]->name ) ); ?></a>
 							</td>
+                            <td>
+                                [huge_it_videogallery id="<?php echo $rows[ $i ]->id; ?>"]
+                            </td>
 							<td>(<?php if ( ! ( $pr_count ) ) {
 									echo '0';
 								} else {
 									echo $rows[ $i ]->prod_count;
 								} ?>)
 							</td>
+
 							<td>
 								<a href="admin.php?page=video_galleries_huge_it_video_gallery&task=duplicate_gallery_video&id=<?php echo $rows[ $i ]->id; ?>&gallery_video_duplicate_nonce=<?php echo $huge_it_video_nonce_duplicate_gallery; ?>" class="duplicate-link"><span class="duplicate-icon"></span></a>
 							</td>
