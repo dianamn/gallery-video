@@ -629,5 +629,3 @@ class Gallery_Video_Ajax
         }
     }
 }
-
-new Gallery_Video_Ajax();

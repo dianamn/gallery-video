@@ -258,5 +258,3 @@ class Gallery_Video_Frontend_Scripts {
 		wp_localize_script( 'video-jusiifed-js', 'justified_obj', $justified );
 	}
 }
-
-new Gallery_Video_Frontend_Scripts();
