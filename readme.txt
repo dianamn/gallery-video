@@ -1,4 +1,4 @@
-=== Gallery - Video Gallery ===
+﻿=== Gallery - Video Gallery ===
 Contributors: Huge-IT
 Donate link: https://huge-it.com/wordpress-video-gallery/
 Tags: video gallery, gallery, video, youtube, vimeo, youtube gallery, videos, wordpress gallery, wordpress video, WordPress Video Gallery, youtube video gallery, video gallery plugin,
