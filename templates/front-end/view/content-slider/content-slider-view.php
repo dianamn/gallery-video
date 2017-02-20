@@ -24,7 +24,7 @@
 							$thumb_pic = $row->thumb_url;
 						}
 						?>
-						<a data-id="<?php echo $row->id; ?>" class="vyoutube huge_it_videogallery_item group1"
+						<a data-id="<?php echo $row->id; ?>" class="vyoutube huge_it_videogallery_item group<?php echo $gallery_videoID; ?>"
 						   href="//www.youtube.com/embed/<?php echo $videourl[0]; ?>"
 						   title="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>">
 							<img src="<?php echo esc_attr( $thumb_pic ); ?>" alt=""/>
@@ -32,14 +32,14 @@
 						</a>
 						<?php
 					} else {
-						$hash = unserialize( wp_remote_fopen( $protocol . "vimeo.com/api/v2/video/" . $videourl[0] . ".php" ) );
+						$hash = @unserialize( wp_remote_fopen( $protocol . "vimeo.com/api/v2/video/" . $videourl[0] . ".php" ) );
 						if ( empty( $row->thumb_url ) ) {
 							$imgsrc = $hash[0]['thumbnail_large'];
 						} else {
 							$imgsrc = $row->thumb_url;
 						}
 						?>
-						<a class="vvimeo huge_it_videogallery_item group1" data-id="<?php echo $row->id; ?>"
+						<a class="vvimeo huge_it_videogallery_item group<?php echo $gallery_videoID; ?>" data-id="<?php echo $row->id; ?>"
 						   href="//player.vimeo.com/video/<?php echo $videourl[0]; ?>"
 						   title="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>">
 							<img src="<?php echo esc_attr( $imgsrc ); ?>" alt=""/>

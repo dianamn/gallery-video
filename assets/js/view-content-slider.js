@@ -24,16 +24,16 @@ function Gallery_Video_Content_Slider(id) {
         galleryVideolightboxInit();
     };
     _this.addEventListeners = function () {
-        if(_this.autoSlide) {
+        if (_this.autoSlide) {
             jQuery('body').on('click', '.ls-nav-left-arrow,.ls-nav-right-arrow', _this.autoslide);
         }
     };
-    _this.autoslide = function(){
+    _this.autoslide = function () {
         clearTimeout(_this.timeArrowsClick);
-        var api = jQuery.data( document.querySelector('#' + id + '.main-slider.liquid-slider'), 'liquidSlider');
-        _this.timeArrowsClick = setTimeout(function(){
+        var api = jQuery.data(document.querySelector('#' + id + '.main-slider.liquid-slider'), 'liquidSlider');
+        _this.timeArrowsClick = setTimeout(function () {
             api.startAutoSlide();
-        },_this.slideInterval);
+        }, _this.slideInterval);
     };
     _this.init = function () {
         _this.documentReady();

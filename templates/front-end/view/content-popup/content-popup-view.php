@@ -34,7 +34,7 @@
                             <img src="<?php echo esc_attr($thumb_pic); ?>" alt=""/>
                             <?php
                         } else {
-                            $hash = unserialize(wp_remote_fopen($protocol."vimeo.com/api/v2/video/" . $videourl[0] . ".php"));
+                            $hash = @unserialize(wp_remote_fopen($protocol."vimeo.com/api/v2/video/" . $videourl[0] . ".php"));
                             if (empty($row->thumb_url)) {
                                 $imgsrc = $hash[0]['thumbnail_large'];
                             } else {
@@ -77,7 +77,7 @@
     </div>
     <?php
     $a = $disp_type;
-    if ($a == 1) {
+    if ($a == 1 && $num < $total_videos) {
 	    $content_popup_nonce = wp_create_nonce('gallery_video_content_popup_nonce');
         ?>
         <div class="load_more5">

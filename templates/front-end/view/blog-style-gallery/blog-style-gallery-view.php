@@ -143,7 +143,7 @@
 	</div>
 	<?php
 	$a = $disp_type;
-	if ( $a == 1 ) {
+	if ( $a == 1 && $num < $total_videos ) {
 		$gallery_video_blog_nonce = wp_create_nonce( 'gallery_video_blog_load_nonce' );
 		?>
 		<div class="load_more">

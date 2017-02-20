@@ -13,7 +13,7 @@
 					$thumb_pic = $row->thumb_url;
 				}
 				?>
-				<a class="vyoutube huge_it_videogallery_item group1"
+				<a class="vyoutube huge_it_videogallery_item group<?php echo $gallery_videoID; ?>"
 				   href="//www.youtube.com/embed/<?php echo $videourl[0]; ?>"
 				   title="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>" data-id="<?php echo $row->id; ?>">
 					<img src="<?php echo esc_attr( $thumb_pic ); ?>"
@@ -22,14 +22,14 @@
 				</a>
 				<input type="hidden" class="pagenum" value="1"/>
 			<?php } else {
-				$hash = unserialize( wp_remote_fopen( $protocol . "vimeo.com/api/v2/video/" . $videourl[0] . ".php" ) );
+				$hash = @unserialize( wp_remote_fopen( $protocol . "vimeo.com/api/v2/video/" . $videourl[0] . ".php" ) );
 				if ( empty( $row->thumb_url ) ) {
 					$imgsrc = $hash[0]['thumbnail_large'];
 				} else {
 					$imgsrc = $row->thumb_url;
 				}
 				?>
-				<a class="vvimeo huge_it_videogallery_item group1"
+				<a class="vvimeo huge_it_videogallery_item group<?php echo $gallery_videoID; ?>"
 				   href="//player.vimeo.com/video/<?php echo $videourl[0]; ?>"
 				   title="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>" data-id="<?php echo $row->id; ?>">
 					<img alt="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>"
@@ -44,7 +44,7 @@
 	</div>
 	<?php
 	$a = $disp_type;
-	if ( $a == 1 ){
+	if ( $a == 1 && $num < $total_videos){
 		$gallery_video_justified_nonce = wp_create_nonce( 'gallery_video_justified_nonce' );
 		?>
 		<div class="load_more2">

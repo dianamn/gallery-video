@@ -97,7 +97,7 @@ $add_video_nonce                               = wp_create_nonce( 'huge_it_galle
 														$vimeo    = $rowimages->image_url;
 														$imgid    = explode( "/", $vimeo );
 														$imgid    = end( $imgid );
-														$hash     = unserialize( wp_remote_fopen( $protocol . "vimeo.com/api/v2/video/" . $imgid . ".php" ) );
+														$hash     = @unserialize( wp_remote_fopen( $protocol . "vimeo.com/api/v2/video/" . $imgid . ".php" ) );
 														$imgsrc   = $hash[0]['thumbnail_large'];
 														$thumburl = '<img src="' . esc_url( $imgsrc ) . '" alt="" />';
 													}
