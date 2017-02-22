@@ -1,10 +1,10 @@
-﻿=== Gallery - Video Gallery ===
+=== Gallery - Video Gallery ===
 Contributors: Huge-IT
 Donate link: https://huge-it.com/wordpress-video-gallery/
 Tags: video gallery, gallery, video, youtube, vimeo, youtube gallery, videos, wordpress gallery, wordpress video, WordPress Video Gallery, youtube video gallery, video gallery plugin,
 Requires at least: 3.0.1
 Tested up to: 4.7.2
-Stable tag: 2.0.7
+Stable tag: 2.0.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -503,6 +503,13 @@ If you want Video Gallery to work on all your websites, you should do the follow
 If you think, that you found a bug in our [WordPress Video Gallery](https://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com).
     
 == Changelog ==
+
+= 2.0.8 =
+* 1) fixed the issue of auto-play in Content-Popup view.
+* 2) Fixed the bug when the counting of images were wrong in 2 views on one page.
+* 3) Fixed the bug with load more button that didn't work correct with multiple videos on one page.
+* 4) Fixed the bug with private videos.
+* 5) Fixed the bug where 2 shortcodes of Content Video Slider had different styles when on one page.
 
 = 2.0.7 =
 * 1) We have fixed YouTube title autofill bug 
