@@ -1,12 +1,12 @@
-<section id="huge_it_videogallery_content_<?php echo $gallery_videoID; ?>" class="gallery-video-content"
-         data-gallery-video-id="<?php echo $gallery_videoID; ?>" data-gallery-video-perpage="<?php echo $num; ?>">
-    <div id="huge_it_videogallery_container_<?php echo $gallery_videoID; ?>"
-         class="huge_it_videogallery_container super-list variable-sizes clearfix view-<?php echo $view_slug; ?>"
+<section id="huge_it_videogallery_content_<?php echo esc_attr($gallery_videoID); ?>" class="gallery-video-content"
+         data-gallery-video-id="<?php echo esc_attr($gallery_videoID); ?>" data-gallery-video-perpage="<?php echo esc_attr($num); ?>">
+    <div id="huge_it_videogallery_container_<?php echo esc_attr($gallery_videoID); ?>"
+         class="huge_it_videogallery_container super-list variable-sizes clearfix view-<?php echo esc_attr($view_slug); ?>"
          data-show-center="<?php echo $gallery_video_get_option['gallery_video_ht_view2_content_in_center_popup']; ?>"
          data-image-behaviour="<?php echo $gallery_video_get_option['gallery_video_video_natural_size_contentpopup']; ?>">
-        <div id="huge_it_videogallery_container_moving_<?php echo $gallery_videoID; ?>">
+        <div id="huge_it_videogallery_container_moving_<?php echo esc_attr($gallery_videoID); ?>">
             <input type="hidden" class="pagenum" value="1"/>
-            <input type="hidden" id="total" value="<?php echo $total; ?>"/>
+            <input type="hidden" id="total" value="<?php echo esc_attr($total); ?>"/>
             <?php
             foreach ($page_videos as $key => $row) {
                 $link = str_replace('__5_5_5__', '%', $row->sl_url);
@@ -59,10 +59,10 @@
 
 
                         ?>
-                        <div class="videogallery-image-overlay"><a href="#<?php echo $row->id; ?>"></a></div>
+                        <div class="videogallery-image-overlay"><a href="#<?php echo esc_attr($row->id); ?>"></a></div>
                     </div>
                     <?php if ($row->name != '' || $link != ''): ?>
-                        <div class="title-block_<?php echo $gallery_videoID; ?>">
+                        <div class="title-block_<?php echo esc_attr($gallery_videoID); ?>">
                             <h3><?php echo str_replace('__5_5_5__', '%', $row->name); ?></h3>
                             <?php if ($gallery_video_get_option["gallery_video_ht_view2_element_show_linkbutton"] == 'on') { ?>
                                 <?php echo $viwMoreButton ?>
@@ -83,7 +83,7 @@
         <div class="load_more5">
             <div
                 class="load_more_button5"
-                data-content-nonce-value="<?php echo $content_popup_nonce; ?>"><?php echo $gallery_video_get_option['gallery_video_video_ht_view1_loadmore_text']; ?></div>
+                data-content-nonce-value="<?php echo esc_attr($content_popup_nonce); ?>"><?php echo esc_attr($gallery_video_get_option['gallery_video_video_ht_view1_loadmore_text']); ?></div>
             <div class="loading5"><img
                     src="<?php if ($gallery_video_get_option['gallery_video_video_ht_view1_loading_type'] == '1') {
                         echo $path_site . '/arrows/loading1.gif';
@@ -130,7 +130,7 @@
     }
     ?>
 </section>
-<ul id="huge_it_videogallery_popup_list_<?php echo $gallery_videoID; ?>" class="hg_video_popup">
+<ul id="huge_it_videogallery_popup_list_<?php echo esc_attr($gallery_videoID); ?>" class="hg_video_popup">
     <?php
     $changePopup = 1;
     foreach ($page_videos as $key => $row) {
@@ -139,7 +139,7 @@
         $descnohtml = strip_tags(str_replace('__5_5_5__', '%', $row->description));
         $result = substr($descnohtml, 0, 50);
         ?>
-        <li class="pupup-element" id="huge_it_videogallery_pupup_element_<?php echo $row->id; ?>">
+        <li class="pupup-element" id="huge_it_videogallery_pupup_element_<?php echo esc_attr($row->id); ?>">
             <div class="heading-navigation">
                 <div style="display: inline-block; float: left;">
                     <div class="left-change"><a href="#<?php echo $changePopup - 1; ?>"

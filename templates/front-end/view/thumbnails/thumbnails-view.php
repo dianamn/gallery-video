@@ -1,12 +1,12 @@
-<section id="thumbwrapper<?php echo $gallery_videoID; ?>" class="gallery-video-content"
-         data-gallery-video-perpage="<?php echo $num; ?>" data-gallery-video-id="<?php echo $gallery_videoID; ?>">
+<section id="thumbwrapper<?php echo esc_attr($gallery_videoID); ?>" class="gallery-video-content"
+         data-gallery-video-perpage="<?php echo esc_attr($num); ?>" data-gallery-video-id="<?php echo esc_attr($gallery_videoID); ?>">
 
     <input type="hidden" class="pagenum" value="1"/>
-    <ul id="huge_it_videogallery" class="huge_it_videogallery view-<?php echo $view_slug; ?>">
+    <ul id="huge_it_videogallery" class="huge_it_videogallery view-<?php echo esc_attr($view_slug); ?>">
         <li id="fullPreview"></li>
         <input type="hidden" id="total" value="<?php echo $total; ?>"/>
         <?php foreach ($page_videos as $key => $row) { ?>
-            <li class="huge_it_big_li" data-id="<?php echo $row->id; ?>">
+            <li class="huge_it_big_li" data-id="<?php echo esc_attr($row->id); ?>">
                 <?php
                 $videourl = gallery_video_get_video_id_from_url($row->image_url);
                 $thumb_pic = "//img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg";
@@ -20,7 +20,7 @@
                     <a class="vyoutube huge_it_videogallery_item group<?php echo $gallery_videoID; ?>"
                        href="//www.youtube.com/embed/<?php echo $videourl[0]; ?>"
                        title="<?php echo str_replace('__5_5_5__', '%', $row->name); ?>"
-                       data-id="<?php echo $row->id; ?>"></a>
+                       data-id="<?php echo esc_attr($row->id); ?>"></a>
                     <img src="<?php echo esc_attr($thumb_pic); ?>"
                          alt="<?php echo str_replace('__5_5_5__', '%', $row->name); ?>"/>
                     <?php
@@ -35,7 +35,7 @@
                     <a class="vvimeo huge_it_videogallery_item group<?php echo $gallery_videoID; ?>"
                        href="//player.vimeo.com/video/<?php echo $videourl[0]; ?>"
                        title="<?php echo str_replace('__5_5_5__', '%', $row->name); ?>"
-                       data-id="<?php echo $row->id; ?>"></a>
+                       data-id="<?php echo esc_attr($row->id); ?>"></a>
                     <img src="<?php echo esc_attr($imgsrc); ?>"
                          alt="<?php echo str_replace('__5_5_5__', '%', $row->name); ?>"/>
                     <?php
@@ -69,7 +69,7 @@
         ?>
         <div class="load_more3">
             <div class="load_more_button3"
-                 data-thumbnail-load-nonce="<?php echo $thubnail_nonce; ?>"><?php echo $gallery_video_get_option['gallery_video_video_ht_view7_loadmore_text']; ?></div>
+                 data-thumbnail-load-nonce="<?php echo esc_attr($thubnail_nonce); ?>"><?php echo esc_attr($gallery_video_get_option['gallery_video_video_ht_view7_loadmore_text']); ?></div>
             <div class="loading3"><img
                         src="<?php if ($gallery_video_get_option['gallery_video_video_ht_view7_loading_type'] == '1') {
                             echo $path_site . '/arrows/loading1.gif';
@@ -82,7 +82,7 @@
                         } ?>"></div>
         </div>
         <?php
-    } elseif ($a == 0) {
+    } elseif ($a == 0 ) {
         ?>
         <div class="paginate3">
             <?php

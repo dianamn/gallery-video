@@ -1,8 +1,8 @@
-<div id="my_video_gallery_wrapper_<?php echo $gallery_videoID; ?>" class="clearfix gallery-video-content"
-     data-gallery-video-id="<?php echo $gallery_videoID; ?>" data-gallery-video-perpage="<?php echo $num; ?>">
-	<div id="my_video_gallery_<?php echo $gallery_videoID; ?>"
-	     class="clearfix my_video_gallery view-<?php echo $view_slug; ?>">
-		<input type="hidden" id="total" value="<?php echo $total; ?>"/>
+<div id="my_video_gallery_wrapper_<?php echo esc_attr($gallery_videoID); ?>" class="clearfix gallery-video-content"
+     data-gallery-video-id="<?php echo esc_attr($gallery_videoID); ?>" data-gallery-video-perpage="<?php echo esc_attr($num); ?>">
+	<div id="my_video_gallery_<?php echo esc_attr($gallery_videoID); ?>"
+	     class="clearfix my_video_gallery view-<?php echo esc_attr($view_slug); ?>">
+		<input type="hidden" id="total" value="<?php echo esc_attr($total); ?>"/>
 		<?php
 		foreach ( $page_videos as $key => $row ) {
 			$videourl = gallery_video_get_video_id_from_url( $row->image_url );
@@ -13,9 +13,9 @@
 					$thumb_pic = $row->thumb_url;
 				}
 				?>
-				<a class="vyoutube huge_it_videogallery_item group<?php echo $gallery_videoID; ?>"
+				<a class="vyoutube huge_it_videogallery_item group<?php echo esc_attr($gallery_videoID); ?>"
 				   href="//www.youtube.com/embed/<?php echo $videourl[0]; ?>"
-				   title="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>" data-id="<?php echo $row->id; ?>">
+				   title="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>" data-id="<?php echo esc_attr($row->id); ?>">
 					<img src="<?php echo esc_attr( $thumb_pic ); ?>"
 					     alt="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>"/>
 					<div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
@@ -29,9 +29,9 @@
 					$imgsrc = $row->thumb_url;
 				}
 				?>
-				<a class="vvimeo huge_it_videogallery_item group<?php echo $gallery_videoID; ?>"
+				<a class="vvimeo huge_it_videogallery_item group<?php echo esc_attr($gallery_videoID); ?>"
 				   href="//player.vimeo.com/video/<?php echo $videourl[0]; ?>"
-				   title="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>" data-id="<?php echo $row->id; ?>">
+				   title="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>" data-id="<?php echo esc_attr($row->id); ?>">
 					<img alt="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>"
 					     src="<?php echo esc_attr( $imgsrc ); ?>"/>
 					<div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
@@ -48,7 +48,7 @@
 		$gallery_video_justified_nonce = wp_create_nonce( 'gallery_video_justified_nonce' );
 		?>
 		<div class="load_more2">
-			<div class="load_more_button2 load_more_button_<?php echo $gallery_videoID; ?>"
+			<div class="load_more_button2 load_more_button_<?php echo esc_attr($gallery_videoID); ?>"
 			     data-justified-load-nonce="<?php echo $gallery_video_justified_nonce; ?>"><?php echo $gallery_video_get_option['gallery_video_video_ht_view8_loadmore_text']; ?></div>
 			<div class="loading2 loading_<?php echo $gallery_videoID; ?>"><img
 					src="<?php if ( $gallery_video_get_option['gallery_video_video_ht_view8_loading_type'] == '1' ) {

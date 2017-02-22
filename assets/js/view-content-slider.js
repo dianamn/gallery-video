@@ -12,12 +12,21 @@ function Gallery_Video_Content_Slider(id) {
     _this.autoSlide = _this.container.data("autoslide") == "on";
     _this.slideDuration = +_this.container.data("slide-duration");
     _this.slideInterval = +_this.container.data("slide-interval");
+    _this.hideArrowsThreshold;
     _this.timeArrowsClick;
+    if(jQuery(window).width() <=480 ){
+        _this.hideArrowsThreshold = 0;
+    }
+    else{
+        _this.hideArrowsThreshold = 1;
+    }
     _this.sliderOptons = {
         autoSlide: _this.autoSlide,
         pauseOnHover: _this.pauseHover,
         slideEaseDuration: _this.slideDuration,
         autoSlideInterval: _this.slideInterval,
+        hideArrowsThreshold: _this.hideArrowsThreshold,
+        responsive: true
     };
     _this.documentReady = function () {
         _this.container.liquidSlider(_this.sliderOptons);
