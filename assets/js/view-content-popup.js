@@ -296,8 +296,9 @@ function Gallery_Video_Content_Popup(id) {
                     var $objnewitems = jQuery(response.output);
                     var popupNewItems = response.output_popup;
                     _this.container.children().first().append($objnewitems);
+                  galleryVideoIsotope(_this.container.children().first());
                     setTimeout(function () {
-                        galleryVideoIsotope(_this.container.children().first());
+
                         galleryVideoIsotope(_this.container.children().first(), 'reloadItems');
                         galleryVideoIsotope(_this.container.children().first(), {sortBy: 'original-order'});
                         galleryVideoIsotope(_this.container.children().first(), 'layout');
