@@ -27,7 +27,7 @@
 						<a data-id="<?php echo $row->id; ?>" class="vyoutube huge_it_videogallery_item group<?php echo $gallery_videoID; ?>"
 						   href="//www.youtube.com/embed/<?php echo $videourl[0]; ?>"
 						   title="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>">
-							<img src="<?php echo esc_attr( $thumb_pic ); ?>" alt=""/>
+							<img src="<?php echo esc_attr( $thumb_pic ); ?>" alt="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>"/>
 							<div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
 						</a>
 						<?php
@@ -42,7 +42,7 @@
 						<a class="vvimeo huge_it_videogallery_item group<?php echo $gallery_videoID; ?>" data-id="<?php echo $row->id; ?>"
 						   href="//player.vimeo.com/video/<?php echo $videourl[0]; ?>"
 						   title="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>">
-							<img src="<?php echo esc_attr( $imgsrc ); ?>" alt=""/>
+							<img src="<?php echo esc_attr( $imgsrc ); ?>" alt="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>" />
 							<div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
 						</a>
 						<?php

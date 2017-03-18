@@ -16,21 +16,106 @@ class Gallery_Video_Install {
 			update_option( 'gallery_video_version',Gallery_Video()->version );
 		}
 	}
+    /**
+     * Install  Gallery Image.
+     */
+    public static function install() {
+        if ( ! defined( 'GALLERY_VIDEO_INSTALLING' ) ) {
+            define( 'GALLERY_VIDEO_INSTALLING', true );
+        }
+        self::create_tables();
 
-	/**
-	 * Install  Gallery Image.
-	 */
-	public static function install() {
-		if ( ! defined( 'GALLERY_VIDEO_INSTALLING' ) ) {
-			define( 'GALLERY_VIDEO_INSTALLING', true );
-		}
-		self::create_tables();
-		self::db_update();
-		// Flush rules after install
-		flush_rewrite_rules();
-		// Trigger action
-		do_action( 'gallery_video_installed' );
-	}
+        self::install_options();
+
+        do_action( 'gallery_video_installed' );
+    }
+
+
+
+
+
+    public static function install_options() {
+
+        if( !get_option( 'gallery_video_lightbox_type' ) ) {
+            if (!get_option( 'gallery_video_version' )) {
+                update_option( 'gallery_video_lightbox_type', 'new_type' );
+            }
+            else {
+                update_option( 'gallery_video_lightbox_type', 'old_type' );
+            }
+        }
+
+        $lightbox_new_options = array(
+            'gallery_video_lightbox_lightboxView'                               => 'view1',
+            'gallery_video_lightbox_speed_new'                                  => '600',
+            'gallery_video_lightbox_overlayClose_new'                           => 'true',
+            'gallery_video_lightbox_loop_new'                                   => 'true',
+        );
+
+        if(!get_option( 'gallery_video_lightbox_lightboxView' )) {
+            foreach ($lightbox_new_options as $name => $value) {
+                add_option( $name, $value);
+            }
+        }
+
+
+
+        global $wpdb;
+        $updated_options = array('light_box_size_fix','light_box_width','light_box_height','light_box_maxwidth','light_box_initialwidth','light_box_initialheight');
+        foreach ( $updated_options as $updated_option ) {
+            $query = $wpdb->prepare("SELECT option_name FROM ".$wpdb->prefix."options WHERE option_name = %s",$updated_option);
+            $option_name = $wpdb->get_var($query);
+            $wpdb->update(
+                $wpdb->prefix."options",
+                array( 'option_name' => 'gallery_video_'.$option_name),
+                array( 'option_name' => $option_name )
+            );
+        }
+        if ( ! get_option( 'gallery_video_disable_right_click' ) ) {
+            update_option( 'gallery_video_disable_right_click', 'off' );
+        }
+        
+        
+        $imagesAllFieldsInArray = $wpdb->get_results( "DESCRIBE " . $wpdb->prefix . "huge_it_videogallery_videos", ARRAY_A );
+        $forUpdate              = 0;
+        foreach ( $imagesAllFieldsInArray as $portfoliosField ) {
+            if ( $portfoliosField['Field'] == 'thumb_url' ) {
+                $forUpdate = 1;
+            }
+        }
+        if ( $forUpdate != 1 ) {
+            $wpdb->query( "ALTER TABLE " . $wpdb->prefix . "huge_it_videogallery_videos ADD thumb_url text DEFAULT NULL" );
+        }
+        $imagesAllFieldsInArray2 = $wpdb->get_results( "DESCRIBE " . $wpdb->prefix . "huge_it_videogallery_galleries", ARRAY_A );
+        $fornewUpdate            = 0;
+        foreach ( $imagesAllFieldsInArray2 as $portfoliosField2 ) {
+            if ( $portfoliosField2['Field'] == 'display_type' ) {
+                $fornewUpdate = 1;
+            }
+        }
+        if ( $fornewUpdate != 1 ) {
+            $wpdb->query( "ALTER TABLE " . $wpdb->prefix . "huge_it_videogallery_galleries ADD display_type integer DEFAULT '2' " );
+            $wpdb->query( "ALTER TABLE " . $wpdb->prefix . "huge_it_videogallery_galleries ADD content_per_page integer DEFAULT '5' " );
+        }
+        $table_name = $wpdb->prefix . 'huge_it_videogallery_params';
+        if ( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) == $table_name ) {
+            $query                      = "SELECT name,value FROM " . $table_name;
+            $video_gallery_table_params = $wpdb->get_results( $query );
+        }
+        $table_name_galleries = $wpdb->prefix . "huge_it_videogallery_galleries";
+        $table_name_videos = $wpdb->prefix . "huge_it_videogallery_videos";
+        if(function_exists('issetTableColumn')) {
+            if ( ! issetTableColumn( $table_name_galleries, 'autoslide' ) ) {
+                $wpdb->query( "ALTER TABLE " . $table_name_galleries . " ADD autoslide varchar(3) DEFAULT 'on'");
+            }
+            if ( ! issetTableColumn( $table_name_videos, 'show_controls' ) ) {
+                $wpdb->query( "ALTER TABLE " . $table_name_videos . " 
+                ADD COLUMN show_controls varchar(3) DEFAULT 'on',
+                ADD COLUMN show_info varchar(3) DEFAULT 'on' " );
+            }
+        }
+    }
+
 
 	private static function create_tables() {
 		global $wpdb;
@@ -109,45 +194,5 @@ INSERT INTO `$table_name` (`id`, `name`, `sl_height`, `sl_width`, `pause_on_hove
 	/**
 	 * Update DataBase
 	 */
-	public static function db_update() {
-		global $wpdb;
-		$imagesAllFieldsInArray = $wpdb->get_results( "DESCRIBE " . $wpdb->prefix . "huge_it_videogallery_videos", ARRAY_A );
-		$forUpdate              = 0;
-		foreach ( $imagesAllFieldsInArray as $portfoliosField ) {
-			if ( $portfoliosField['Field'] == 'thumb_url' ) {
-				$forUpdate = 1;
-			}
-		}
-		if ( $forUpdate != 1 ) {
-			$wpdb->query( "ALTER TABLE " . $wpdb->prefix . "huge_it_videogallery_videos ADD thumb_url text DEFAULT NULL" );
-		}
-		$imagesAllFieldsInArray2 = $wpdb->get_results( "DESCRIBE " . $wpdb->prefix . "huge_it_videogallery_galleries", ARRAY_A );
-		$fornewUpdate            = 0;
-		foreach ( $imagesAllFieldsInArray2 as $portfoliosField2 ) {
-			if ( $portfoliosField2['Field'] == 'display_type' ) {
-				$fornewUpdate = 1;
-			}
-		}
-		if ( $fornewUpdate != 1 ) {
-			$wpdb->query( "ALTER TABLE " . $wpdb->prefix . "huge_it_videogallery_galleries ADD display_type integer DEFAULT '2' " );
-			$wpdb->query( "ALTER TABLE " . $wpdb->prefix . "huge_it_videogallery_galleries ADD content_per_page integer DEFAULT '5' " );
-		}
-		$table_name = $wpdb->prefix . 'huge_it_videogallery_params';
-		if ( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) == $table_name ) {
-			$query                      = "SELECT name,value FROM " . $table_name;
-			$video_gallery_table_params = $wpdb->get_results( $query );
-		}
-		$table_name_galleries = $wpdb->prefix . "huge_it_videogallery_galleries";
-		$table_name_videos = $wpdb->prefix . "huge_it_videogallery_videos";
-        if(function_exists('issetTableColumn')) {
-            if ( ! issetTableColumn( $table_name_galleries, 'autoslide' ) ) {
-                $wpdb->query( "ALTER TABLE " . $table_name_galleries . " ADD autoslide varchar(3) DEFAULT 'on'");
-            }
-	        if ( ! issetTableColumn( $table_name_videos, 'show_controls' ) ) {
-		        $wpdb->query( "ALTER TABLE " . $table_name_videos . " 
-                ADD COLUMN show_controls varchar(3) DEFAULT 'on',
-                ADD COLUMN show_info varchar(3) DEFAULT 'on' " );
-	        }
-        }
-	}
+
 }

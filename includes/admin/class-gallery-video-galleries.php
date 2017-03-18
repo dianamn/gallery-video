@@ -288,6 +288,7 @@ GROUP BY " . $wpdb->prefix . "huge_it_videogallery_videos.videogallery_id ";
 		$query = $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "huge_it_videogallery_videos where videogallery_id = %d order by id ASC", $row->id );
 		$rowim = $wpdb->get_results( $query );
 
+
 		foreach ( $rowim as $key => $rowimages ) {
 			if ( isset( $_POST[ "order_by_" . $rowimages->id . "" ] ) ) {
 				$table_name    = $wpdb->prefix . "huge_it_videogallery_videos";
@@ -331,6 +332,7 @@ GROUP BY " . $wpdb->prefix . "huge_it_videogallery_videos.videogallery_id ";
 					array( 'ID' => $rowimages->id )
 				);
 			}
+
 		}
 		?>
 		<div class="updated"><p><strong><?php _e( 'Item Saved' ); ?></strong></p></div>
