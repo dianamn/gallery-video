@@ -3,6 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 $lightbox_options_nonce = wp_create_nonce( 'huge_it_gallery_nonce_save_lightbox_options' );
+$gallery_video_get_option=gallery_video_get_default_general_options();
 ?>
 <div class="wrap">
     <?php require(GALLERY_VIDEO_TEMPLATES_PATH.DIRECTORY_SEPARATOR.'admin'.DIRECTORY_SEPARATOR.'gallery-video-admin-free-banner.php');?>
@@ -262,7 +263,7 @@ $lightbox_options_nonce = wp_create_nonce( 'huge_it_gallery_nonce_save_lightbox_
                     </div>
                 </label>
                 <input type="number"
-                       value="100"
+                       value="<?php echo $gallery_video_get_option['gallery_video_lightbox_width_new']; ?>"
                        class="text">
                 <span>%</span>
             </div>
@@ -276,7 +277,7 @@ $lightbox_options_nonce = wp_create_nonce( 'huge_it_gallery_nonce_save_lightbox_
                     </div>
                 </label>
                 <input type="number"
-                       value="100"
+                       value="<?php echo $gallery_video_get_option['gallery_video_lightbox_height_new']; ?>"
                        class="text">
                 <span>%</span>
             </div>
@@ -290,7 +291,7 @@ $lightbox_options_nonce = wp_create_nonce( 'huge_it_gallery_nonce_save_lightbox_
                     </div>
                 </label>
                 <input type="number"
-                       value="790"
+                       value="<?php echo $gallery_video_get_option['gallery_video_lightbox_videoMaxWidth']; ?>"
                        class="text">
                 <span>px</span>
             </div>
@@ -335,7 +336,7 @@ $lightbox_options_nonce = wp_create_nonce( 'huge_it_gallery_nonce_save_lightbox_
                 </label>
                 <input type="number" name="params[gallery_video_lightbox_slideshow_speed_new]"
                        id="gallery_video_lightbox_slideshow_speed_new"
-                       value="2500"
+                       value="<?php echo $gallery_video_get_option['gallery_video_lightbox_slideshow_speed_new']; ?>"
                        class="text">
                 <span>ms</span>
             </div>

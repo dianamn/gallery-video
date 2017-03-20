@@ -309,7 +309,6 @@ function gallery_video_get_default_general_options() {
         'gallery_video_lightbox_keyPress_new'                               => 'true',
         'gallery_video_lightbox_arrows'                                     => 'true',
         'gallery_video_lightbox_mouseWheel'                                 => 'true',
-//        'gallery_video_lightbox_download'                                   => 'false',
         'gallery_video_lightbox_showCounter'                                => 'true',
         'gallery_video_lightbox_nextHtml'                                   => '',     //not used
         'gallery_video_lightbox_prevHtml'                                   => '',     //not used
