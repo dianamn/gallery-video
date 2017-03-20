@@ -200,11 +200,11 @@ $lightbox_options_nonce = wp_create_nonce( 'huge_it_gallery_nonce_save_lightbox_
                 </label>
                 <input type="text"
                        style="width: 13%"
-                       value=""
+                       value="image"
                        class="text">
                 X <input type="text"
                          style="width: 13%"
-                         value=""
+                         value="of"
                          class="text">
                 XX
             </div>
@@ -262,7 +262,7 @@ $lightbox_options_nonce = wp_create_nonce( 'huge_it_gallery_nonce_save_lightbox_
                     </div>
                 </label>
                 <input type="number"
-                       value="<?php echo $gallery_video_get_option['gallery_video_lightbox_width_new']; ?>"
+                       value="100"
                        class="text">
                 <span>%</span>
             </div>
@@ -276,7 +276,7 @@ $lightbox_options_nonce = wp_create_nonce( 'huge_it_gallery_nonce_save_lightbox_
                     </div>
                 </label>
                 <input type="number"
-                       value="<?php echo $gallery_video_get_option['gallery_video_lightbox_height_new']; ?>"
+                       value="100"
                        class="text">
                 <span>%</span>
             </div>
@@ -290,7 +290,7 @@ $lightbox_options_nonce = wp_create_nonce( 'huge_it_gallery_nonce_save_lightbox_
                     </div>
                 </label>
                 <input type="number"
-                       value="<?php echo $gallery_video_get_option['gallery_video_lightbox_videoMaxWidth']; ?>"
+                       value="790"
                        class="text">
                 <span>px</span>
             </div>
@@ -335,7 +335,7 @@ $lightbox_options_nonce = wp_create_nonce( 'huge_it_gallery_nonce_save_lightbox_
                 </label>
                 <input type="number" name="params[gallery_video_lightbox_slideshow_speed_new]"
                        id="gallery_video_lightbox_slideshow_speed_new"
-                       value=""
+                       value="2500"
                        class="text">
                 <span>ms</span>
             </div>
