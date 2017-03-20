@@ -61,16 +61,7 @@ class Gallery_Video_Install {
 
 
         global $wpdb;
-        $updated_options = array('light_box_size_fix','light_box_width','light_box_height','light_box_maxwidth','light_box_initialwidth','light_box_initialheight');
-        foreach ( $updated_options as $updated_option ) {
-            $query = $wpdb->prepare("SELECT option_name FROM ".$wpdb->prefix."options WHERE option_name = %s",$updated_option);
-            $option_name = $wpdb->get_var($query);
-            $wpdb->update(
-                $wpdb->prefix."options",
-                array( 'option_name' => 'gallery_video_'.$option_name),
-                array( 'option_name' => $option_name )
-            );
-        }
+
         if ( ! get_option( 'gallery_video_disable_right_click' ) ) {
             update_option( 'gallery_video_disable_right_click', 'off' );
         }
