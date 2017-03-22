@@ -43,9 +43,9 @@
         loop: gallery_video_resp_lightbox_obj.gallery_video_lightbox_loop_new,
         escKey: gallery_video_resp_lightbox_obj.gallery_video_lightbox_escKey_new,
         keyPress: gallery_video_resp_lightbox_obj.gallery_video_lightbox_keyPress_new,
-        arrows: true ,
+        arrows: true,
         mouseWheel: gallery_video_resp_lightbox_obj.gallery_video_lightbox_mouseWheel,
-        showCounter:  false,
+        showCounter: false,
         defaultTitle: '',  //some text
         preload: 10,  //not for option
         showAfterLoad: true,  //not for option
@@ -156,7 +156,6 @@
         });
 
 
-
         $object.calculateDimensions();
     };
 
@@ -175,8 +174,8 @@
         var $wURL = '',
             $target = '';
 
-        if($object.settings.watermark && $object.settings.wURL && gallery_video_resp_lightbox_obj.gallery_video_lightbox_watermark_text){
-            if($object.settings.wURLnewTab){
+        if ($object.settings.watermark && $object.settings.wURL && gallery_video_resp_lightbox_obj.gallery_video_lightbox_watermark_text) {
+            if ($object.settings.wURLnewTab) {
                 $target = 'target="_blank"';
             }
             $wURL = '<a href="' + $object.settings.watermarkURL + '" class="w_url" ' + $target + '></a>';
@@ -328,7 +327,7 @@
             $inner.css('transition-duration', this.settings.speed + 'ms');
         }
 
-        switch($object.settings.lightboxView){
+        switch ($object.settings.lightboxView) {
             case 'view1':
             case 'view2':
             case 'view3':
@@ -431,7 +430,7 @@
         });
 
         var $color, $zoomTop = (document.documentElement.clientHeight - $object.objects.content.height()) / 2;
-        switch (this.settings.lightboxView){
+        switch (this.settings.lightboxView) {
             case 'view3':
                 $color = 'rgba(255,255,255,.9)';
                 break;
@@ -592,7 +591,7 @@
         shareButtons += '</ul>';
 
 
-            $('.' + this.settings.classPrefix + 'socialIcons').append(shareButtons);
+        $('.' + this.settings.classPrefix + 'socialIcons').append(shareButtons);
 
 
         setTimeout(function () {
@@ -866,46 +865,45 @@
 
         var $id = jQuery('.gallery-video-content').attr('data-gallery_video_id'),
             $autoplay = jQuery('.gallery-video-content').attr('data-gallery_autoplay'),
-            $disable_rel= jQuery('.gallery-video-content').attr('data-disable_related');
+            $disable_rel = jQuery('.gallery-video-content').attr('data-disable_related');
 
-        if($autoplay === 'on' && $disable_rel === 'on'){
-            setTimeout(function(){
+        if ($autoplay === 'on' && $disable_rel === 'on') {
+            setTimeout(function () {
                 var $iframe = jQuery('.rwd-current').find('iframe'),
                     $src = $iframe.attr('src'),
                     $src_1;
 
-                if($src.indexOf('autoplay') === -1 && $src.indexOf('rel') === -1){
+                if ($src.indexOf('autoplay') === -1 && $src.indexOf('rel') === -1) {
                     $src_1 = $src + '?rel=0&autoplay=1';
                 } else {
                     $src_1 = $src.substr(0, $src.length - 1) + '1';
                 }
 
                 $iframe.attr('src', $src_1);
-            },50);
-        }else if($autoplay === 'off' && $disable_rel === 'on'){
-            setTimeout(function(){
+            }, 50);
+        } else if ($autoplay === 'off' && $disable_rel === 'on') {
+            setTimeout(function () {
                 var $iframe = jQuery('.rwd-current').find('iframe'),
                     $src = $iframe.attr('src'), $src_1;
-                if($src.indexOf('autoplay') === -1 && $src.indexOf('rel') === -1){
+                if ($src.indexOf('autoplay') === -1 && $src.indexOf('rel') === -1) {
                     $src_1 = $src + '?rel=0&autoplay=0';
                 } else {
                     $src_1 = $src.substr(0, $src.length - 1) + '0';
                 }
                 $iframe.attr('src', $src_1);
-            },50);
-        }else if ($autoplay === 'on' && $disable_rel === 'off'){
-            setTimeout(function(){
+            }, 50);
+        } else if ($autoplay === 'on' && $disable_rel === 'off') {
+            setTimeout(function () {
                 var $iframe = jQuery('.rwd-current').find('iframe'),
                     $src = $iframe.attr('src'), $src_1;
-                if($src.indexOf('autoplay') === -1 ){
+                if ($src.indexOf('autoplay') === -1) {
                     $src_1 = $src + '?autoplay=1';
                 } else {
                     $src_1 = $src.substr(0, $src.length - 1) + '1';
                 }
                 $iframe.attr('src', $src_1);
-            },50);
+            }, 50);
         }
-
 
 
     };
@@ -938,39 +936,50 @@
                 });
             }
         }
+        setTimeout(function () {
+            var $current,
+                $iframe,
+                $src,
+                $src_0,
+                $src_1,
+                $current_prev;
 
-        var $id = jQuery('.gallery-video-content').attr('data-gallery_video_id'),
-            $autoplay = jQuery('.gallery-video-content').attr('data-gallery_autoplay');
-        if($autoplay === 'on'){
-            setTimeout(function(){
-                var $current,
-                    $iframe,
-                    $src,
-                    $src_0,
-                    $src_1,
-                    $current_prev;
+            $current = jQuery('.rwd-current');
+            $iframe = $current.find('iframe');
+            $src = $iframe.attr('src');
+            $current_prev = $current.prev().find('iframe');
 
-                $current = jQuery('.rwd-current');
-                $iframe = $current.find('iframe');
-                $src = $iframe.attr('src');
-                $current_prev = $current.prev().find('iframe');
 
-                if($current_prev.attr('src'))
-                {  $src_0 = $current_prev.attr('src').substr(0, $current_prev.attr('src').length - 1) + '0';
-                    $src_1 = $src.substr(0, $src.length - 1) + '1';
-                    $iframe.attr('src', $src_1);
-                    $current_prev.attr('src', $src_0);}
+            if ($current_prev.attr('src')) {
+                if ($current_prev.attr('src').indexOf('?') === -1) {
 
-                else  {  $current = jQuery('.rwd-container');
-                    $current_prev = $current.find('iframe:last');
-                    $src_0 = $current_prev.attr('src').substr(0, $current_prev.attr('src').length - 1) + '0';
-                    $src_1 = $src.substr(0, $src.length - 1) + '1';
-                    $iframe.attr('src', $src_1);
-                    $current_prev.attr('src', $src_0);
+                    $src_1 = '?autoplay=0';
+                }
+                else {
+                    $src_1 = '&autoplay=0';
 
                 }
-            },50);
-        }
+                $src_0 = $current_prev.attr('src') + $src_1;
+                $current_prev.attr('src', $src_0);
+            }
+
+            else {
+                $current = jQuery('.rwd-container');
+                $current_prev = $current.find('iframe:last');
+                if ($current_prev.attr('src').indexOf('?') === -1) {
+
+                    $src_1 = '?autoplay=0';
+                }
+                else {
+                    $src_1 = '&autoplay=0';
+
+                }
+                $src_0 = $current_prev.attr('src') + $src_1;
+                $current_prev.attr('src', $src_0);
+
+            }
+        }, 50);
+
     };
 
     Lightbox.prototype.goToPrevSlide = function (fromSlide) {
@@ -1002,40 +1011,48 @@
                 });
             }
         }
+        setTimeout(function () {
+            var $current,
+                $iframe,
+                $src,
+                $src_0,
+                $src_1,
+                $currents,
+                $current_next;
 
-        var $id = jQuery('.gallery-video-content').attr('data-gallery_video_id'),
-            $autoplay = jQuery('.gallery-video-content').attr('data-gallery_autoplay');
+            $current = jQuery('.rwd-current');
+            $iframe = $current.find('iframe');
+            $src = $iframe.attr('src');
+            $current_next = $current.next().find('iframe');
 
-        if($autoplay === 'on'){
-            setTimeout(function(){
-                var $current,
-                    $iframe,
-                    $src,
-                    $src_0,
-                    $src_1,
-                    $currents,
-                    $current_next;
-
-                $current = jQuery('.rwd-current');
-                $iframe = $current.find('iframe');
-                $src = $iframe.attr('src');
-                $current_next = $current.next().find('iframe');
-                if($current_next.attr('src'))
-                {  $src_0 = $current_next.attr('src').substr(0, $current_next.attr('src').length - 1) + '0';
-                    $src_1 = $src.substr(0, $src.length - 1) + '1';
-                    $iframe.attr('src', $src_1);
-                    $current_next.attr('src', $src_0);}
-
-                else  {  $current = jQuery('.rwd-container');
-                    $current_next = $current.find('iframe:first');
-                    $src_0 = $current_next.attr('src').substr(0, $current_next.attr('src').length - 1) + '0';
-                    $src_1 = $src.substr(0, $src.length - 1) + '1';
-                    $iframe.attr('src', $src_1);
-                    $current_next.attr('src', $src_0);
-
+            if ($current_next.attr('src')) {
+                if ($current_next.attr('src').indexOf('?') === -1) {
+                    $src_1 = '?autoplay=0';
                 }
-            },500);
-        }
+                else {
+                    $src_1 = '&autoplay=0';
+                }
+                $src_0 = $current_next.attr('src') + $src_1;
+                $current_next.attr('src', $src_0);
+            }
+
+
+            else {
+                $current = jQuery('.rwd-container');
+                $current_next = $current.find('iframe:first');
+                if ($current_next.attr('src').indexOf('?') === -1) {
+                    $src_1 = '?autoplay=0';
+                }
+                else {
+                    $src_1 = '&autoplay=0';
+                }
+                $src_0 = $current_next.attr('src') + $src_1;
+                $current_next.attr('src', $src_0);
+
+            }
+        }, 500);
+
+
     };
 
     Lightbox.prototype.slideShow = function () {
@@ -1256,7 +1273,7 @@
         this.thumbTotalWidth = (this.dataL.$items.length * (this.dataL.modulSettings.thumbsWidth + this.dataL.modulSettings.thumbMargin));
         this.thumbIndex = this.dataL.index;
         this.left = 0;
-        if(gallery_video_resp_lightbox_obj.gallery_video_lightbox_thumbs){
+        if (gallery_video_resp_lightbox_obj.gallery_video_lightbox_thumbs) {
             this.initThumbs();
         }
 
@@ -1408,7 +1425,7 @@
                 'min-height': '100%'
             });
         }
-        if(gallery_video_resp_lightbox_obj.gallery_video_lightbox_zoom){
+        if (gallery_video_resp_lightbox_obj.gallery_video_lightbox_zoom) {
             $('.rwd-zoomDiv').css({
                 top: '45px',
                 width: '100%'
@@ -1431,7 +1448,7 @@
             'min-width': '',
             'min-height': ''
         });
-        if(gallery_video_resp_lightbox_obj.gallery_video_lightbox_zoom){
+        if (gallery_video_resp_lightbox_obj.gallery_video_lightbox_zoom) {
             $('.rwd-zoomDiv').css({
                 top: ((document.documentElement.clientHeight - $('.rwd-container').height()) / 2) + 'px',
                 width: this.dataL.settings.width
@@ -1579,11 +1596,11 @@
 
             if (abscissa) {
                 if (endCoords.x - startCoords.x < 0) {
-                    if(distanceX <= -maxX){
+                    if (distanceX <= -maxX) {
                         distanceX = -maxX;
                     }
                 } else {
-                    if(distanceX >= maxX) {
+                    if (distanceX >= maxX) {
                         distanceX = maxX;
                     }
                 }
@@ -1593,11 +1610,11 @@
 
             if (ordinate) {
                 if (endCoords.y - startCoords.y < 0) {
-                    if(distanceY <= -(maxY + ($object.pageY - ($(window).height() - $imageObject.height()) / 2)) + 2 * $(window).scrollTop()) {
+                    if (distanceY <= -(maxY + ($object.pageY - ($(window).height() - $imageObject.height()) / 2)) + 2 * $(window).scrollTop()) {
                         distanceY = -(maxY + ($object.pageY - ($(window).height() - $imageObject.height()) / 2)) + 2 * $(window).scrollTop();
                     }
                 } else {
-                    if(distanceY >= maxY - ($object.pageY - ($(window).height() - $imageObject.height()) / 2)) {
+                    if (distanceY >= maxY - ($object.pageY - ($(window).height() - $imageObject.height()) / 2)) {
                         distanceY = maxY - ($object.pageY - ($(window).height() - $imageObject.height()) / 2);
                     }
                 }
@@ -1772,13 +1789,13 @@
 
     };
 
-    Modul.prototype.initThumbs = function() {
+    Modul.prototype.initThumbs = function () {
         var $object = this;
 
         if (this.dataL.modulSettings.thumbnail && this.dataL.$items.length > 1) {
 
             if (this.dataL.modulSettings.showByDefault) {
-                setTimeout(function(){
+                setTimeout(function () {
                     $object.dataL.$cont.addClass('rwd-thumb-open');
                 }, 100);
             }
@@ -1791,7 +1808,7 @@
 
             if ($object.dataL.modulSettings.toogleThumb) {
                 $object.$thumbCont.append('<span class="rwd-toggle-thumb rwd-icon"></span>');
-                $object.dataL.$cont.find('.rwd-toggle-thumb').on('click.rwd-container', function() {
+                $object.dataL.$cont.find('.rwd-toggle-thumb').on('click.rwd-container', function () {
                     $object.dataL.$cont.toggleClass('rwd-thumb-open');
                 });
             }
@@ -1812,10 +1829,10 @@
             var $cont_ = $('.cont-inner'),
                 $thumb_ = $('.rwd-thumb-cont'),
                 $toolbar_ = $('.rwd-toolbar');
-            setTimeout(function(){
-                switch($object.dataL.settings.lightboxView){
+            setTimeout(function () {
+                switch ($object.dataL.settings.lightboxView) {
                     case 'view1':
-                        switch($object.dataL.modulSettings.thumbPosition){
+                        switch ($object.dataL.modulSettings.thumbPosition) {
                             case '0':
                                 $cont_.css({
                                     height: 'calc(100% - ' + ($object.dataL.modulSettings.thumbsHeight + 92) + 'px)',
@@ -1842,7 +1859,7 @@
                         }
                         break;
                     case 'view2':
-                        switch($object.dataL.modulSettings.thumbPosition) {
+                        switch ($object.dataL.modulSettings.thumbPosition) {
                             case '0':
                                 $cont_.css({
                                     height: 'calc(100% - ' + ($object.dataL.modulSettings.thumbsHeight + 92) + 'px)',
@@ -1869,7 +1886,7 @@
                         }
                         break;
                     case 'view3':
-                        switch($object.dataL.modulSettings.thumbPosition) {
+                        switch ($object.dataL.modulSettings.thumbPosition) {
                             case '0':
                                 $cont_.css({
                                     height: 'calc(100% - ' + ($object.dataL.modulSettings.thumbsHeight + 92) + 'px)',
@@ -1896,7 +1913,7 @@
                         }
                         break;
                     case 'view4':
-                        switch($object.dataL.modulSettings.thumbPosition) {
+                        switch ($object.dataL.modulSettings.thumbPosition) {
                             case '0':
                                 $cont_.css({
                                     height: 'calc(100% - ' + ($object.dataL.modulSettings.thumbsHeight + 92) + 'px)'
@@ -1931,7 +1948,7 @@
                         }
                         break;
                     case 'view5':
-                        switch($object.dataL.modulSettings.thumbPosition) {
+                        switch ($object.dataL.modulSettings.thumbPosition) {
                             case '0':
                                 $cont_.css({
                                     height: 'calc(100% - ' + $object.dataL.modulSettings.thumbsHeight + 'px)'
@@ -1956,7 +1973,7 @@
         }
     };
 
-    Modul.prototype.buildThumbs = function() {
+    Modul.prototype.buildThumbs = function () {
         var $object = this;
         var thumbList = '';
         var vimeoErrorThumbSize = '';
@@ -2002,7 +2019,7 @@
             vimeoId = '';
         }
 
-        $object.dataL.$items.each(function(i) {
+        $object.dataL.$items.each(function (i) {
 
             getThumb($(this).attr('href') || $(this).attr('data-src'), $(this).find('img').attr('src'), i);
 
@@ -2012,28 +2029,28 @@
 
         $thumb = $object.dataL.$cont.find('.rwd-thumb-item');
 
-        $thumb.each(function() {
+        $thumb.each(function () {
             var $this = $(this);
             var vimeoVideoId = $this.attr('data-vimeo-id');
 
             if (vimeoVideoId) {
                 $.getJSON('//www.vimeo.com/api/v2/video/' + vimeoVideoId + '.json?callback=?', {
                     format: 'json'
-                }, function(data) {
+                }, function (data) {
                     $this.find('img').attr('src', data[0]['thumbnail_small']);
                 });
             }
         });
 
         $thumb.eq($object.dataL.index).addClass('active');
-        $object.dataL.$element.on('onBeforeSlide.rwd-container', function() {
+        $object.dataL.$element.on('onBeforeSlide.rwd-container', function () {
             $thumb.removeClass('active');
             $thumb.eq($object.dataL.index).addClass('active');
         });
 
-        $thumb.on('click.rwd-container touchend.rwd-container', function() {
+        $thumb.on('click.rwd-container touchend.rwd-container', function () {
             var _$this = $(this);
-            setTimeout(function() {
+            setTimeout(function () {
                 if ($object.activatedThumbs || !$object.dataL.effectsSupport()) {
                     $object.dataL.index = _$this.index();
                     $object.dataL.slide($object.dataL.index, false, true);
@@ -2042,12 +2059,12 @@
             }, 50);
         });
 
-        $object.dataL.$element.on('onBeforeSlide.rwd-container', function() {
+        $object.dataL.$element.on('onBeforeSlide.rwd-container', function () {
             $object.animateThumb($object.dataL.index);
         });
 
-        $(window).on('resize.rwd-container.thumb orientationchange.rwd-container.thumb', function() {
-            setTimeout(function() {
+        $(window).on('resize.rwd-container.thumb orientationchange.rwd-container.thumb', function () {
+            setTimeout(function () {
                 $object.animateThumb($object.dataL.index);
                 $object.thumbContWidth = $object.$thumbCont.width();
             }, 200);
@@ -2055,7 +2072,7 @@
 
     };
 
-    Modul.prototype.animateThumb = function(index) {
+    Modul.prototype.animateThumb = function (index) {
         var $thumb = this.dataL.$cont.find('.rwd-thumb'),
             position = (this.thumbContWidth / 2) - (this.dataL.modulSettings.thumbsWidth / 2);
 
@@ -2083,14 +2100,14 @@
                 $thumb.css('left', -this.left + 'px');
             }
         }
-        if(!$('.rwd-thumb').hasClass('thumb_move')){
+        if (!$('.rwd-thumb').hasClass('thumb_move')) {
             this.dataL.$cont.find('.rwd-thumb').css({
                 transform: 'translate3d(-' + (this.left) + 'px, 0px, 0px)'
             });
         }
     };
 
-    Modul.prototype.enableThumbDrag = function() {
+    Modul.prototype.enableThumbDrag = function () {
 
         var $object = this,
             startCoords = 0,
@@ -2102,7 +2119,7 @@
 
         $('.rwd-thumb').attr('data-left', $left_);
 
-        $object.dataL.$cont.find('.rwd-thumb').on('mousedown.rwd-container.thumb', function(e) {
+        $object.dataL.$cont.find('.rwd-thumb').on('mousedown.rwd-container.thumb', function (e) {
             if ($object.thumbTotalWidth > $object.thumbContWidth) {
                 e.preventDefault();
                 startCoords = e.pageX;
@@ -2115,12 +2132,13 @@
             }
         });
 
-        $(window).on('mousemove.rwd-container.thumb', function(e) {
+        $(window).on('mousemove.rwd-container.thumb', function (e) {
             if (isDraging) {
-                tempLeft = +$('.rwd-thumb').attr('data-left');                isMoved = true;
+                tempLeft = +$('.rwd-thumb').attr('data-left');
+                isMoved = true;
                 endCoords = e.pageX;
 
-                if(Math.abs(endCoords - startCoords) > 0 && $('.rwd-cont').hasClass('rwd-show-autoplay')){
+                if (Math.abs(endCoords - startCoords) > 0 && $('.rwd-cont').hasClass('rwd-show-autoplay')) {
                     $('.rwd-thumb').addClass('thumb_move');
                 }
 
@@ -2140,7 +2158,7 @@
             }
         });
 
-        $(window).on('mouseup.rwd-container.thumb', function() {
+        $(window).on('mouseup.rwd-container.thumb', function () {
             if (isMoved) {
                 isMoved = false;
 

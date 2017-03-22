@@ -30,10 +30,6 @@ class Gallery_Video_Install {
         do_action( 'gallery_video_installed' );
     }
 
-
-
-
-
     public static function install_options() {
 
         if( !get_option( 'gallery_video_lightbox_type' ) ) {
@@ -57,16 +53,10 @@ class Gallery_Video_Install {
                 add_option( $name, $value);
             }
         }
-
-
-
         global $wpdb;
-
         if ( ! get_option( 'gallery_video_disable_right_click' ) ) {
             update_option( 'gallery_video_disable_right_click', 'off' );
         }
-        
-        
         $imagesAllFieldsInArray = $wpdb->get_results( "DESCRIBE " . $wpdb->prefix . "huge_it_videogallery_videos", ARRAY_A );
         $forUpdate              = 0;
         foreach ( $imagesAllFieldsInArray as $portfoliosField ) {
