@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<img style="width: 100%;" src='<?php echo $path_site; ?>/Content-Video-slider-tab2.png' >
 						</li>
 						<li id="videogallery-view-options-2">
-							<img style="width: 100%;" src='<?php echo $path_site; ?>/Lightbox-tab3.png' >
+							<img style="width: 100%;" src='<?php echo $path_site; ?>/lightbox-tab3.png' >
 						</li>
 						<li id="videogallery-view-options-3">
 							<img style="width: 100%;" src='<?php echo $path_site; ?>/slider--tab4.png' >

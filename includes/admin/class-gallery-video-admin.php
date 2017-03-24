@@ -80,6 +80,7 @@ class Gallery_Video_Admin {
 			Gallery_Video()->admin->general_options,
 			'load_page'
 		) );
+
 		$this->pages[] = add_submenu_page( 'video_galleries_huge_it_video_gallery', __( 'Lightbox Options', 'gallery-video' ), __( 'Lightbox Options', 'gallery-video' ), 'delete_pages', 'Options_video_gallery_lightbox_styles', array(
 			Gallery_Video()->admin->lightbox_options,
 			'load_page'

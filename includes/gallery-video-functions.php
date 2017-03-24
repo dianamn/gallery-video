@@ -294,7 +294,55 @@ function gallery_video_get_default_general_options() {
 		'gallery_video_ht_view2_content_in_center_lightbox'              => 'off',
 		'gallery_video_video_natural_size_thumbnail'                     => 'resize',
 		'gallery_video_video_natural_size_contentpopup'                  => 'resize',
-		'gallery_video_version'                                          => '2.0.4'
+		'gallery_video_version'                                          => '2.0.4',
+        //new options
+        'gallery_video_lightbox_slideAnimationType'                         => 'effect_1',
+        'gallery_video_lightbox_lightboxView'                               => 'view1',
+        'gallery_video_lightbox_speed_new'                                  => '600',
+        'gallery_video_lightbox_width_new'                                  => '100',
+        'gallery_video_lightbox_height_new'                                 => '100',
+        'gallery_video_lightbox_videoMaxWidth'                              => '790',
+        'gallery_video_lightbox_overlayDuration'                            => '150',
+        'gallery_video_lightbox_overlayClose_new'                           => 'true',
+        'gallery_video_lightbox_loop_new'                                   => 'true',
+        'gallery_video_lightbox_escKey_new'                                 => 'true',
+        'gallery_video_lightbox_keyPress_new'                               => 'true',
+        'gallery_video_lightbox_arrows'                                     => 'true',
+        'gallery_video_lightbox_mouseWheel'                                 => 'true',
+        'gallery_video_lightbox_showCounter'                                => 'true',
+        'gallery_video_lightbox_nextHtml'                                   => '',     //not used
+        'gallery_video_lightbox_prevHtml'                                   => '',     //not used
+        'gallery_video_lightbox_sequence_info'                              => 'image',
+        'gallery_video_lightbox_sequenceInfo'                               => 'of',
+        'gallery_video_lightbox_slideshow_new'                              => 'true',
+        'gallery_video_lightbox_slideshow_auto_new'                         => 'false',
+        'gallery_video_lightbox_slideshow_speed_new'                        => '2500',
+        'gallery_video_lightbox_slideshow_start_new'                        => '',     //not used
+        'gallery_video_lightbox_slideshow_stop_new'                         => '',     //not used
+        'gallery_video_lightbox_watermark'                                  => 'false',
+        'gallery_video_lightbox_socialSharing'                              => 'true',
+        'gallery_video_lightbox_facebookButton'                             => 'true',
+        'gallery_video_lightbox_twitterButton'                              => 'true',
+        'gallery_video_lightbox_googleplusButton'                           => 'true',
+        'gallery_video_lightbox_pinterestButton'                            => 'false',
+        'gallery_video_lightbox_linkedinButton'                             => 'false',
+        'gallery_video_lightbox_tumblrButton'                               => 'false',
+        'gallery_video_lightbox_redditButton'                               => 'false',
+        'gallery_video_lightbox_bufferButton'                               => 'false',
+        'gallery_video_lightbox_diggButton'                                 => 'false',
+        'gallery_video_lightbox_vkButton'                                   => 'false',
+        'gallery_video_lightbox_yummlyButton'                               => 'false',
+        'gallery_video_lightbox_watermark_text'                             => 'WaterMark',
+        'gallery_video_lightbox_watermark_textColor'                        => 'ffffff',
+        'gallery_video_lightbox_watermark_textFontSize'                     => '30',
+        'gallery_video_lightbox_watermark_containerBackground'              => '000000',
+        'gallery_video_lightbox_watermark_containerOpacity'                 => '90',
+        'gallery_video_lightbox_watermark_containerWidth'                   => '300',
+        'gallery_video_lightbox_watermark_position_new'                     => '9',
+        'gallery_video_lightbox_watermark_opacity'                          => '70',
+        'gallery_video_lightbox_watermark_margin'                           => '10',
+        'gallery_video_lightbox_watermark_img_src_new'                      => GALLERY_VIDEO_IMAGES_URL . '/admin_images/No-image-found.jpg',
+        'gallery_video_lightbox_type'                                       => 'new_type'
 	);
 
 	return $video_gallery_default__params;
