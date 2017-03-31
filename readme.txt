@@ -1,10 +1,10 @@
-=== Gallery - Video Gallery ===
+=== Gallery - Video Gallery and Youtube Gallery ===
 Contributors: Huge-IT
 Donate link: https://huge-it.com/wordpress-video-gallery/
-Tags: video gallery, gallery, video, youtube, vimeo, youtube gallery, videos, wordpress gallery, wordpress video, WordPress Video Gallery, youtube video gallery, video gallery plugin,
+Tags: video gallery, gallery, video, youtube, youtube gallery,
 Requires at least: 3.0.1
-Tested up to: 4.7.2
-Stable tag: 2.0.8
+Tested up to: 4.7.3
+Stable tag: 2.0.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Gallery Video plugin was created and specifically designed to show video links i
 
 == Description ==
 
-**Gallery - Video Gallery**
+https://www.youtube.com/watch?v=Re16ci9iGVU
 
 ### Gallery Video plugin was created and specifically designed to show your videos from Vimeo and Youtube in an unusual splendid way.
 
@@ -24,7 +24,7 @@ Gallery Video plugin was created and specifically designed to show video links i
 * [Video Gallery Forum](https://huge-it.com/forums/forum/wordpress/wordpress-video-gallery/)
 * [Video Gallery Github Project](https://github.com/Huge-IT/gallery-video)
 
-https://www.youtube.com/watch?v=Re16ci9iGVU
+**Gallery - Video Gallery and Youtube Gallery**
 
 It provides 7 good-looking views. Each view is made for making the gallery more attractive, so select the one which will match the best for your WordPress website.
 
@@ -503,6 +503,9 @@ If you want Video Gallery to work on all your websites, you should do the follow
 If you think, that you found a bug in our [WordPress Video Gallery](https://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com).
     
 == Changelog ==
+
+= 2.0.9 =
+*  Added a new type lightbox with way more options and functionality. The lite version of the plugin includes 4 beautiful lightbox styles, option to control the speed, overlay close option as well as loop option. The Pro version includes way more options with social sharing solutions and styles.
 
 = 2.0.8 =
 * 1) fixed the issue of auto-play in Content-Popup view.
