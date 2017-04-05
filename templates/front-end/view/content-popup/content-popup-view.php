@@ -9,7 +9,7 @@
             <input type="hidden" id="total" value="<?php echo esc_attr($total); ?>"/>
             <?php
             foreach ($page_videos as $key => $row) {
-                $link = str_replace('__5_5_5__', '%', $row->sl_url);
+                $link = str_replace('__5_5_5__', '%', esc_url($row->sl_url));
                 $descnohtml = strip_tags(str_replace('__5_5_5__', '%', $row->description));
                 $result = substr($descnohtml, 0, 50);
                 $protocol = stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https://' : 'http://';
@@ -46,7 +46,7 @@
                             <?php
                         }
                         ?>
-                        <?php if (str_replace('__5_5_5__', '%', $row->sl_url) == '') {
+                        <?php if (str_replace('__5_5_5__', '%', esc_url($row->sl_url)) == '') {
                             $viwMoreButton = '';
                         } else {
                             if ($row->link_target == "on") {
@@ -101,7 +101,7 @@
         <div class="paginate5">
             <?php
             $protocol = stripos($_SERVER['SERVER_PROTOCOL'], 'https') === true ? 'https://' : 'http://';
-            $actual_link = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "";
+            $actual_link = esc_attr($protocol) . esc_url($_SERVER['HTTP_HOST']) . esc_url($_SERVER['REQUEST_URI']) . "";
             $checkREQ = '';
             $pattern = "/\?p=/";
             $pattern2 = "/&page-video[0-9]+=[0-9]+/";
@@ -134,8 +134,8 @@
     <?php
     $changePopup = 1;
     foreach ($page_videos as $key => $row) {
-        $imgurl = explode(";", $row->image_url);
-        $link = str_replace('__5_5_5__', '%', $row->sl_url);
+        $imgurl = explode(";", esc_url($row->image_url));
+        $link = str_replace('__5_5_5__', '%', esc_url($row->sl_url));
         $descnohtml = strip_tags(str_replace('__5_5_5__', '%', $row->description));
         $result = substr($descnohtml, 0, 50);
         ?>
@@ -160,7 +160,7 @@
                         <div class="hg_iframe_class">
                             <div class="hg_iframe_class_sub"></div>
                             <iframe class="hg_iframe_class"
-                                    src="//www.youtube.com/embed/<?php echo $videourl[0]; ?>" style="border: 0;"
+                                    src="//www.youtube.com/embed/<?php echo esc_url($videourl[0]); ?>" style="border: 0;"
                                     allowfullscreen></iframe>
                         </div>
                         <?php
@@ -169,7 +169,7 @@
                         <div class="hg_iframe_class">
                             <div class="hg_iframe_class_sub"></div>
                             <iframe
-                                src="//player.vimeo.com/video/<?php echo $videourl[0]; ?>?title=0&amp;byline=0&amp;portrait=0"
+                                src="//player.vimeo.com/video/<?php echo esc_url($videourl[0]); ?>?title=0&amp;byline=0&amp;portrait=0"
                                 style="border: 0;" allowfullscreen></iframe>
                         </div>
                         <?php

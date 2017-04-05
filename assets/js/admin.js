@@ -239,12 +239,6 @@ jQuery(document).ready(function () {
         },
         revert: true
     });
-
-
-    videoGalleryPopupSizes(jQuery('#light_box_size_fix'));
-    jQuery('#light_box_size_fix').change(function () {
-        videoGalleryPopupSizes(jQuery(this));
-    });
     jQuery('.def_thumb').on('click', (function () {
         jQuery(this).parents('li').find('.image-container input+input').val('');
         submitbutton('apply');
@@ -283,18 +277,6 @@ jQuery(document).ready(function () {
     });
     jQuery('#huge_it_sl_effects').change();
 });
-
-
-function videoGalleryPopupSizes(checkbox) {
-    if (checkbox.is(':checked')) {
-        jQuery('.lightbox-options-block .not-fixed-size').css({'display': 'none'});
-        jQuery('.lightbox-options-block .fixed-size').css({'display': 'block'});
-    } else {
-        jQuery('.lightbox-options-block .fixed-size').css({'display': 'none'});
-        jQuery('.lightbox-options-block .not-fixed-size').css({'display': 'block'});
-    }
-}
-
 
 function submitbutton(pressbutton) {
     if (!document.getElementById('name').value) {

@@ -106,22 +106,23 @@ class Gallery_Video_Galleries {
 				$cat_id = 0;
 			}
 		}
-
+        $query='';
 		if ( $search_tag ) {
 			$where = " WHERE name LIKE '%" . $search_tag . "%' ";
 		}
 		if ( $where ) {
 			if ( $cat_id ) {
 				$where .= " AND sl_width=" . $cat_id;
-			}
+                $query  = $wpdb->prepare("SELECT COUNT(*) FROM " . $wpdb->prefix . "huge_it_videogallery_galleries  WHERE name LIKE %s  AND sl_width=%d" ,'%'.$search_tag.'%',$cat_id);
+           }
 		} else {
 			if ( $cat_id ) {
 				$where .= " WHERE sl_width=" . $cat_id;
-			}
+                $query  = $wpdb->prepare("SELECT COUNT(*) FROM " . $wpdb->prefix . "huge_it_videogallery_galleries  WHERE sl_width=%d" ,$cat_id);
+            }
 		}
-		$cat_row_query    = "SELECT id,name FROM " . $wpdb->prefix . "huge_it_videogallery_galleries WHERE sl_width=0";
+		$cat_row_query    = $wpdb->prepare("SELECT id,name FROM " . $wpdb->prefix . "huge_it_videogallery_galleries WHERE sl_width= %d",0);
 		$cat_row          = $wpdb->get_results( $cat_row_query );
-		$query            = "SELECT COUNT(*) FROM " . $wpdb->prefix . "huge_it_videogallery_galleries" . $where;
 		$total            = $wpdb->get_var( $query );
 		$pageNav['total'] = $total;
 		$pageNav['limit'] = $limit / 20 + 1;

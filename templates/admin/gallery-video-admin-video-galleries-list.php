@@ -28,7 +28,7 @@ $huge_it_gallery_video_nonce_remove_gallery_video = wp_create_nonce( 'huge_it_ga
 				}
 				$serch_fields = '<div class="alignleft actions"">
 				<label for="search_events_by_title" style="font-size:14px">Search Gallery Video: </label>
-					<input type="text" name="search_events_by_title" value="' . $serch_value . '" id="search_events_by_title" onchange="clear_serch_texts()">
+					<input type="text" name="search_events_by_title" value="' . esc_attr($serch_value) . '" id="search_events_by_title" onchange="clear_serch_texts()">
 			</div>
 			<div class="alignleft actions">
 				<input type="button" value="Search" onclick="document.getElementById(\'page_number\').value=\'1\'; document.getElementById(\'serch_or_not\').value=\'search\';

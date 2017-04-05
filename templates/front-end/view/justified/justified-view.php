@@ -8,13 +8,13 @@
 			$videourl = gallery_video_get_video_id_from_url( $row->image_url );
 			if ( $videourl[1] == 'youtube' ) {
 				if ( empty( $row->thumb_url ) ) {
-					$thumb_pic = '//img.youtube.com/vi/' . $videourl[0] . '/mqdefault.jpg';
+					$thumb_pic = '//img.youtube.com/vi/' . esc_attr($videourl[0]) . '/mqdefault.jpg';
 				} else {
 					$thumb_pic = $row->thumb_url;
 				}
 				?>
 				<a class="vyoutube huge_it_videogallery_item group<?php echo esc_attr($gallery_videoID); ?>"
-				   href="//www.youtube.com/embed/<?php echo $videourl[0]; ?>"
+				   href="//www.youtube.com/embed/<?php echo esc_url($videourl[0]); ?>"
 				   title="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>" data-id="<?php echo esc_attr($row->id); ?>">
 					<img src="<?php echo esc_attr( $thumb_pic ); ?>"
 					     alt="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>"/>
@@ -22,7 +22,7 @@
 				</a>
 				<input type="hidden" class="pagenum" value="1"/>
 			<?php } else {
-				$hash = @unserialize( wp_remote_fopen( $protocol . "vimeo.com/api/v2/video/" . $videourl[0] . ".php" ) );
+				$hash = @unserialize( wp_remote_fopen( $protocol . "vimeo.com/api/v2/video/" . esc_url($videourl[0]) . ".php" ) );
 				if ( empty( $row->thumb_url ) ) {
 					$imgsrc = $hash[0]['thumbnail_large'];
 				} else {
@@ -30,11 +30,11 @@
 				}
 				?>
 				<a class="vvimeo huge_it_videogallery_item group<?php echo esc_attr($gallery_videoID); ?>"
-				   href="//player.vimeo.com/video/<?php echo $videourl[0]; ?>"
+				   href="//player.vimeo.com/video/<?php echo esc_url($videourl[0]); ?>"
 				   title="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>" data-id="<?php echo esc_attr($row->id); ?>">
 					<img alt="<?php echo str_replace( '__5_5_5__', '%', $row->name ); ?>"
 					     src="<?php echo esc_attr( $imgsrc ); ?>"/>
-					<div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
+					<div class="play-icon <?php echo esc_url($videourl[1]); ?>-icon"></div>
 				</a>
 				<input type="hidden" class="pagenum" value="1"/>
 				<?php
@@ -67,7 +67,7 @@
 	<div class="paginate2">
 		<?php
 		$protocol    = stripos( $_SERVER['SERVER_PROTOCOL'], 'https' ) === true ? 'https://' : 'http://';
-		$actual_link = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "";
+		$actual_link = esc_attr($protocol) . esc_url($_SERVER['HTTP_HOST']) . esc_url($_SERVER['REQUEST_URI']) . "";
 		$checkREQ    = '';
 		$pattern     = "/\?p=/";
 		$pattern2    = "/&page-video[0-9]+=[0-9]+/";
