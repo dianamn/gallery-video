@@ -272,7 +272,7 @@ class Gallery_Video_Admin {
 						)
 					);
 
-					$query    = "SELECT id FROM " . $wpdb->prefix . "huge_it_videogallery_galleries order by id ASC";
+					$query    = $wpdb->prepare( "SELECT id FROM " . $wpdb->prefix . "huge_it_videogallery_galleries order by id ASC");
 					$row_ids = $wpdb->get_col( $query );
 					$last_key = max($row_ids);
 					$table_name  = $wpdb->prefix . "huge_it_videogallery_videos";
@@ -281,10 +281,10 @@ class Gallery_Video_Admin {
 					$videos_list = "";
 					foreach ( $videos as $key => $video ) {
 						$new_video = "('";
-						$new_video .= $video->name . "','" . $last_key . "','" . $video->description . "','" . $video->image_url . "','" .
-						              $video->sl_url . "','" . $video->sl_type . "','" . $video->link_target . "','" . $video->ordering . "','" .
-						              $video->published . "','" . $video->published_in_sl_width . "','" . $video->thumb_url . "','" .
-						              $video->show_controls . "','" . $video->show_info . "')";
+						$new_video .= esc_sql($video->name) . "','" . esc_attr($last_key) . "','" . esc_sql($video->description) . "','" . esc_url($video->image_url) . "','" .
+                            esc_url($video->sl_url) . "','" . esc_attr($video->sl_type) . "','" . esc_attr($video->link_target) . "','" . esc_attr($video->ordering ). "','" .
+                            esc_attr($video->published) . "','" . esc_attr($video->published_in_sl_width) . "','" . esc_url($video->thumb_url) . "','" .
+                            esc_attr($video->show_controls) . "','" . esc_attr($video->show_info) . "')";
 						$videos_list .= $new_video ."," ;
 					}
 					$videos_list      = substr($videos_list,0,strlen($videos_list)-1);

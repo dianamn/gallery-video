@@ -10,16 +10,16 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
     <div style="margin-left: -20px;position: relative" id="poststuff">
         <p class="pro_info">
             <?php _e('These features are available in the Professional version of the plugin only.', 'gallery-video' ); ?>
-            <a href="http://huge-it.com/wordpress-video-gallery/" target="_blank" class="button button-primary">Enable</a>
+            <a href="http://huge-it.com/wordpress-video-gallery/" target="_blank" class="button button-primary"><?php _e('Enable', 'gallery-video');?></a>
         </p>
         <form
-                action="admin.php?page=Options_video_gallery_lightbox_styles&task=save&huge_it_gallery_nonce_save_lightbox_options=<?php echo $lightbox_options_nonce; ?>"
+                action="admin.php?page=Options_video_gallery_lightbox_styles&task=save&huge_it_gallery_nonce_save_lightbox_options=<?php echo esc_attr($lightbox_options_nonce); ?>"
                 method="post" id="adminForm" name="adminForm">
             <ul id="lightbox_type">
                 <li class="<?php if ( get_option('gallery_video_lightbox_type') == 'new_type' ) {
                     echo "active";
                 } ?>">
-                    <label for="new_type">New Type</label>
+                    <label for="new_type"><?php _e('New Type', 'gallery-video');?></label>
                     <input type="checkbox" name="params[gallery_video_lightbox_type]"
                            id="new_type" <?php if ( get_option('gallery_video_lightbox_type') == 'new_type' ) {
                         echo 'checked';
@@ -29,7 +29,7 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                 <li class="<?php if ( get_option('gallery_video_lightbox_type') == 'old_type' ) {
                     echo "active";
                 } ?>">
-                    <label for="old_type">Old Type</label>
+                    <label for="old_type"><?php _e('Old Type', 'gallery-video');?></label>
                     <input type="checkbox" name="params[gallery_video_lightbox_type]"
                            id="old_type" <?php if ( get_option('gallery_video_lightbox_type') == 'old_type' ) {
                         echo 'checked';
@@ -57,11 +57,11 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                 <div class="lightbox-options-block">
                     <h3>General Options</h3>
                     <div class="has-background">
-                        <label for="gallery_video_lightbox_lightboxView">Lightbox style
+                        <label for="gallery_video_lightbox_lightboxView"><?php _e('Lightbox style', 'gallery-video');?>
                             <div class="help">?
                                 <div class="help-block">
                                     <span class="pnt"></span>
-                                    <p>Choose the style of your popup</p>
+                                    <p><?php _e('Choose the style of your popup', 'gallery-video');?></p>
                                 </div>
                             </div>
                         </label>
@@ -81,11 +81,11 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                         </select>
                     </div>
                     <div>
-                        <label for="gallery_video_lightbox_speed_new">Lightbox open speed
+                        <label for="gallery_video_lightbox_speed_new"><?php _e('Lightbox open speed', 'gallery-video');?>
                             <div class="help">?
                                 <div class="help-block">
                                     <span class="pnt"></span>
-                                    <p>Set lightbox opening speed</p>
+                                    <p><?php _e('Set lightbox opening speed', 'gallery-video');?></p>
                                 </div>
                             </div>
                         </label>
@@ -95,11 +95,11 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                         <span>ms</span>
                     </div>
                     <div class="has-background">
-                        <label for="gallery_video_lightbox_overlayClose_new">Overlay close
+                        <label for="gallery_video_lightbox_overlayClose_new"><?php _e('Overlay close', 'gallery-video');?>
                             <div class="help">?
                                 <div class="help-block">
                                     <span class="pnt"></span>
-                                    <p>Check to enable close by Esc key.</p>
+                                    <p><?php _e('Check to enable close by Esc key.', 'gallery-video');?></p>
                                 </div>
                             </div>
                         </label>
@@ -110,11 +110,11 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                         } ?> name="params[gallery_video_lightbox_overlayClose_new]" value="true"/>
                     </div>
                     <div>
-                        <label for="gallery_video_lightbox_style">Loop content
+                        <label for="gallery_video_lightbox_style"><?php _e('Loop content', 'gallery-video');?>
                             <div class="help">?
                                 <div class="help-block">
                                     <span class="pnt"></span>
-                                    <p>Check to enable repeating images after one cycle.</p>
+                                    <p><?php _e('Check to enable repeating images after one cycle.', 'gallery-video');?></p>
                                 </div>
                             </div>
                         </label>
@@ -130,11 +130,11 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
             <h3>Advanced Options<img src="<?php echo GALLERY_VIDEO_IMAGES_URL.'/admin_images/video_gallery_pro_icon.png'; ?>"
                                      class="gallery_video_lightbox_pro_logo"></h3>
             <div class="has-background">
-                <label for="gallery_video_lightbox_style">EscKey close
+                <label for="gallery_video_lightbox_style"><?php _e('EscKey close', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Choose the style of your popup</p>
+                            <p><?php _e('Choose the style of your popup', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
@@ -142,11 +142,11 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                        id="gallery_video_lightbox_escKey_new"/>
             </div>
             <div>
-                <label for="gallery_video_lightbox_keyPress_new">Keyboard navigation
+                <label for="gallery_video_lightbox_keyPress_new"><?php _e('Keyboard navigation', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Choose the style of your popup</p>
+                            <p><?php _e('Choose the style of your popup', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
@@ -154,11 +154,11 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                        id="gallery_video_lightbox_keyPress_new"/>
             </div>
             <div class="has-background">
-                <label for="gallery_video_lightbox_arrows">Show Arrows
+                <label for="gallery_video_lightbox_arrows"><?php _e('Show Arrows', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Choose the style of your popup</p>
+                            <p><?php _e('Choose the style of your popup', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
@@ -166,11 +166,11 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                        id="gallery_video_lightbox_arrows" checked/>
             </div>
             <div>
-                <label for="gallery_video_lightbox_mouseWheel">Mouse Wheel Navigaion
+                <label for="gallery_video_lightbox_mouseWheel"><?php _e('Mouse Wheel Navigaion', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Choose the style of your popup</p>
+                            <p><?php _e('Choose the style of your popup', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
@@ -179,11 +179,11 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
             </div>
 
             <div>
-                <label for="gallery_video_lightbox_showCounter">Show Counter
+                <label for="gallery_video_lightbox_showCounter"><?php _e('Show Counter', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Choose the style of your popup</p>
+                            <p><?php _e('Choose the style of your popup', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
@@ -191,11 +191,11 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                        id="gallery_video_lightbox_showCounter" />
             </div>
             <div class="has-background">
-                <label for="gallery_video_lightbox_sequence_info">Sequence Info text
+                <label for="gallery_video_lightbox_sequence_info"><?php _e('Sequence Info text', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Choose the style of your popup</p>
+                            <p><?php _e('Choose the style of your popup', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
@@ -210,11 +210,11 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                 XX
             </div>
             <div class="has-background">
-                <label for="gallery_video_lightbox_slideAnimationType">Transition type
+                <label for="gallery_video_lightbox_slideAnimationType"><?php _e('Transition type', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Choose the style of your popup</p>
+                            <p><?php _e('Choose the style of your popup', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
@@ -254,44 +254,44 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
             <h3>Dimensions<img src="<?php echo GALLERY_VIDEO_IMAGES_URL.'/admin_images/video_gallery_pro_icon.png'; ?>"
                                class="gallery_video_lightbox_pro_logo"></h3>
             <div class="has-background">
-                <label for="gallery_video_lightbox_width_new">Lightbox Width
+                <label for="gallery_video_lightbox_width_new"><?php _e('Lightbox Width', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Set the width of the popup in percentages.</p>
+                            <p><?php _e('Set the width of the popup in percentages.', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
                 <input type="number"
-                       value="<?php echo $gallery_video_get_option['gallery_video_lightbox_width_new']; ?>"
+                       value="<?php echo esc_attr($gallery_video_get_option['gallery_video_lightbox_width_new']); ?>"
                        class="text">
                 <span>%</span>
             </div>
             <div>
-                <label for="gallery_video_lightbox_height_new">Lightbox Height
+                <label for="gallery_video_lightbox_height_new"><?php _e('Lightbox Height', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Set the height of the popup in percentages.</p>
+                            <p><?php _e('Set the height of the popup in percentages.', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
                 <input type="number"
-                       value="<?php echo $gallery_video_get_option['gallery_video_lightbox_height_new']; ?>"
+                       value="<?php echo esc_attr($gallery_video_get_option['gallery_video_lightbox_height_new']); ?>"
                        class="text">
                 <span>%</span>
             </div>
             <div class="has-background">
-                <label for="gallery_video_lightbox_videoMaxWidth">Lightbox Video maximum width
+                <label for="gallery_video_lightbox_videoMaxWidth"><?php _e('Lightbox Video maximum width', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Set the maximum width of the popup in pixels, the height will be fixed automatically.</p>
+                            <p><?php _e('Set the maximum width of the popup in pixels, the height will be fixed automatically.', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
                 <input type="number"
-                       value="<?php echo $gallery_video_get_option['gallery_video_lightbox_videoMaxWidth']; ?>"
+                       value="<?php echo esc_attr($gallery_video_get_option['gallery_video_lightbox_videoMaxWidth']); ?>"
                        class="text">
                 <span>px</span>
             </div>
@@ -300,11 +300,11 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
             <h3>Slideshow<img src="<?php echo GALLERY_VIDEO_IMAGES_URL.'/admin_images/video_gallery_pro_icon.png'; ?>"
                               class="gallery_video_lightbox_pro_logo"></h3>
             <div class="has-background">
-                <label for="gallery_video_lightbox_slideshow_new">Slideshow
+                <label for="gallery_video_lightbox_slideshow_new"><?php _e('Slideshow', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Set the width of popup</p>
+                            <p><?php _e('Set the width of popup', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
@@ -313,11 +313,11 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                        id="gallery_video_lightbox_slideshow_new" name="params[gallery_video_lightbox_slideshow_new]" value="true"/>
             </div>
             <div>
-                <label for="gallery_video_lightbox_slideshow_auto_new">Slideshow auto start
+                <label for="gallery_video_lightbox_slideshow_auto_new"><?php _e('Slideshow auto start', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Set the width of popup</p>
+                            <p><?php _e('Set the width of popup', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
@@ -326,42 +326,42 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                        id="gallery_video_lightbox_slideshow_auto_new" name="params[gallery_video_lightbox_slideshow_auto_new]" value="true"/>
             </div>
             <div class="has-background">
-                <label for="gallery_video_lightbox_slideshow_speed_new">Slideshow interval
+                <label for="gallery_video_lightbox_slideshow_speed_new"><?php _e('Slideshow interval', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Set the height of popup</p>
+                            <p><?php _e('Set the height of popup', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
                 <input type="number" name="params[gallery_video_lightbox_slideshow_speed_new]"
                        id="gallery_video_lightbox_slideshow_speed_new"
-                       value="<?php echo $gallery_video_get_option['gallery_video_lightbox_slideshow_speed_new']; ?>"
+                       value="<?php echo esc_attr($gallery_video_get_option['gallery_video_lightbox_slideshow_speed_new']); ?>"
                        class="text">
                 <span>ms</span>
             </div>
         </div>
 
         <div class="lightbox-options-block gallery_options_grey_overlay" >
-            <h3>Social Share Buttons<img src="<?php echo GALLERY_VIDEO_IMAGES_URL.'/admin_images/video_gallery_pro_icon.png'; ?>"
+            <h3><?php _e('Social Share Buttons', 'gallery-video');?><img src="<?php echo GALLERY_VIDEO_IMAGES_URL.'/admin_images/video_gallery_pro_icon.png'; ?>"
                                          class="gallery_video_lightbox_pro_logo"></h3>
             <div class="has-background">
-                <label for="gallery_video_lightbox_socialSharing">Social Share Buttons
+                <label for="gallery_video_lightbox_socialSharing"><?php _e('Social Share Buttons', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Set the width of popup</p>
+                            <p><?php _e('Set the width of popup', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>
                 <input type="checkbox"  id="gallery_video_lightbox_socialSharing"  />
             </div>
             <div class="social-buttons-list">
-                <label>Social Share Buttons List
+                <label><?php _e('Social Share Buttons List', 'gallery-video');?>
                     <div class="help">?
                         <div class="help-block">
                             <span class="pnt"></span>
-                            <p>Choose the style of your popup</p>
+                            <p><?php _e('Choose the style of your popup', 'gallery-video');?></p>
                         </div>
                     </div>
                 </label>

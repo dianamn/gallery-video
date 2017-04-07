@@ -333,5 +333,7 @@ class Gallery_Video_Frontend_Scripts {
 		wp_localize_script( 'jquery.vgcolorbox-js', 'lightbox_obj', $lightbox );
 		wp_localize_script( 'gallery-video-custom-js', 'galleryVideoId', $id );
 		wp_localize_script( 'video-jusiifed-js', 'justified_obj', $justified );
-	}
+        wp_localize_script( 'gallery-video-custom-js', 'gallery_video_view', $view_slug );
+
+    }
 }

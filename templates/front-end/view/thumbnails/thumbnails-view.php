@@ -4,21 +4,21 @@
     <input type="hidden" class="pagenum" value="1"/>
     <ul id="huge_it_videogallery" class="huge_it_videogallery view-<?php echo esc_attr($view_slug); ?>">
         <li id="fullPreview"></li>
-        <input type="hidden" id="total" value="<?php echo $total; ?>"/>
+        <input type="hidden" id="total" value="<?php echo esc_attr($total); ?>"/>
         <?php foreach ($page_videos as $key => $row) { ?>
             <li class="huge_it_big_li" data-id="<?php echo esc_attr($row->id); ?>">
                 <?php
                 $videourl = gallery_video_get_video_id_from_url($row->image_url);
-                $thumb_pic = "//img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg";
+                $thumb_pic = '//img.youtube.com/vi/' . esc_attr($videourl[0]) .'/mqdefault.jpg';
                 if ($videourl[1] == 'youtube') {
                     if (empty($row->thumb_url)) {
-                        $thumb_pic = '//img.youtube.com/vi/' . $videourl[0] . '/mqdefault.jpg';
+                        $thumb_pic = '//img.youtube.com/vi/' . esc_attr($videourl[0]) . '/mqdefault.jpg';
                     } else {
                         $thumb_pic = $row->thumb_url;
                     }
                     ?>
                     <a class="vyoutube huge_it_videogallery_item group<?php echo $gallery_videoID; ?>"
-                       href="//www.youtube.com/embed/<?php echo $videourl[0]; ?>"
+                       href="//www.youtube.com/embed/<?php echo esc_attr($videourl[0]); ?>"
                        title="<?php echo str_replace('__5_5_5__', '%', $row->name); ?>"
                        data-id="<?php echo esc_attr($row->id); ?>"></a>
                     <img src="<?php echo esc_attr($thumb_pic); ?>"
@@ -33,7 +33,7 @@
                     }
                     ?>
                     <a class="vvimeo huge_it_videogallery_item group<?php echo $gallery_videoID; ?>"
-                       href="//player.vimeo.com/video/<?php echo $videourl[0]; ?>"
+                       href="//player.vimeo.com/video/<?php echo esc_attr($videourl[0]); ?>"
                        title="<?php echo str_replace('__5_5_5__', '%', $row->name); ?>"
                        data-id="<?php echo esc_attr($row->id); ?>"></a>
                     <img src="<?php echo esc_attr($imgsrc); ?>"
@@ -86,7 +86,7 @@
         ?>
         <div class="paginate3">
             <?php
-            $actual_link = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "";
+            $actual_link = esc_attr($protocol) . esc_url($_SERVER['HTTP_HOST']) . esc_url($_SERVER['REQUEST_URI']) . "";
             $checkREQ = '';
             $pattern = "/\?p=/";
             $pattern2 = "/&page-video[0-9]+=[0-9]+/";
