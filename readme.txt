@@ -4,7 +4,7 @@ Donate link: https://huge-it.com/wordpress-video-gallery/
 Tags: video gallery, gallery, video, youtube, youtube gallery,
 Requires at least: 3.0.1
 Tested up to: 4.7.3
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -503,6 +503,10 @@ If you want Video Gallery to work on all your websites, you should do the follow
 If you think, that you found a bug in our [WordPress Video Gallery](https://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com).
     
 == Changelog ==
+
+= 2.1.1 =
+*  We have received a support on this issue and fixed this.
+*  We have done the following fixes "esc_url()s in the free version of Video Galley plugin.
 
 = 2.1.0 =
 * 1) Fixed the bug with Content Slider View where the checked loop content moved the videos to the left and right multiple times.
