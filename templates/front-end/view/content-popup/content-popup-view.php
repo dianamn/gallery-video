@@ -160,7 +160,7 @@
                         <div class="hg_iframe_class">
                             <div class="hg_iframe_class_sub"></div>
                             <iframe class="hg_iframe_class"
-                                    src="//www.youtube.com/embed/<?php echo $videourl[0]; ?>" style="border: 0;"
+                                    src="<?php  echo esc_url("//www.youtube.com/embed/". $videourl[0]); ?>" style="border: 0;"
                                     allowfullscreen></iframe>
                         </div>
                         <?php
@@ -169,7 +169,7 @@
                         <div class="hg_iframe_class">
                             <div class="hg_iframe_class_sub"></div>
                             <iframe
-                                src="//player.vimeo.com/video/<?php echo $videourl[0]; ?>?title=0&amp;byline=0&amp;portrait=0"
+                                src="<?php echo esc_url("//player.vimeo.com/video/".$videourl[0]); ?>?title=0&amp;byline=0&amp;portrait=0"
                                 style="border: 0;" allowfullscreen></iframe>
                         </div>
                         <?php
