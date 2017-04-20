@@ -129,7 +129,7 @@
 
         $object.structure();
 
-        $object.lightboxModul['modul'] = new $.fn.lightbox.lightboxModul['modul']($object.el);
+        $object.lightboxModul['modul'] = new $.fn.lightboxVideo.lightboxModul['modul']($object.el);
 
         $object.slide(index, false, false);
 
@@ -1236,7 +1236,7 @@
         window.scrollTo(0, $object.$_y_);
     };
 
-    $.fn.lightbox = function (options) {
+    $.fn.lightboxVideo = function (options) {
         return this.each(function () {
             if (!$.data(this, 'lightbox')) {
                 $.data(this, 'lightbox', new Lightbox(this, options));
@@ -1244,7 +1244,7 @@
         });
     };
 
-    $.fn.lightbox.lightboxModul = {};
+    $.fn.lightboxVideo.lightboxModul = {};
 
     var Modul = function (element) {
 
@@ -2196,7 +2196,7 @@
         }
     };
 
-    $.fn.lightbox.lightboxModul.modul = Modul;
+    $.fn.lightboxVideo.lightboxModul.modul = Modul;
 
     var WaterMark = function (element) {
         this.element = element;
