@@ -41,10 +41,10 @@
         slideAnimation: true, //not for option
         overlayClose: gallery_video_resp_lightbox_obj.gallery_video_lightbox_overlayClose_new,
         loop: gallery_video_resp_lightbox_obj.gallery_video_lightbox_loop_new,
-        escKey: gallery_video_resp_lightbox_obj.gallery_video_lightbox_escKey_new,
-        keyPress: gallery_video_resp_lightbox_obj.gallery_video_lightbox_keyPress_new,
+        escKey: false,
+        keyPress: false,
         arrows: true,
-        mouseWheel: gallery_video_resp_lightbox_obj.gallery_video_lightbox_mouseWheel,
+        mouseWheel: false,
         showCounter: false,
         defaultTitle: '',  //some text
         preload: 10,  //not for option
