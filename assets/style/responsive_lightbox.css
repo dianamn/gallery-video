@@ -21,7 +21,7 @@
 .rwd-view6 .rwd-bar .rwd-download > .download_bg:hover,.rwd-view6 .rwd-toolbar .rwd-download > .download_bg:hover {stroke: #000}
 .rwd-title,.rwd-toolbar{background-color:rgba(0,0,0,.9)}
 .rwd-description{font-size:15px;background:none; position:relative;top:90px;left:0;padding:10px 40px;right:0;height:auto;min-height:45px;max-height:calc(100% - 150px)}
-.rwd-view6 .rwd-description{top:50px}
+.rwd-view6 .rwd-description{top:50px;width:80%}
 .rwd-description-text{color:white;white-space:initial;position:relative;max-height:calc(100% - 150px);overflow:hidden;word-wrap: break-word}
 .rwd-view5 .rwd-toolbar, .rwd-view6 .rwd-toolbar{background:none;z-index:1202;width:40%;left:60%;}
 .rwd-arrows .rwd-next,.rwd-arrows .rwd-prev{background-color:rgba(0,0,0,.9);border-radius:2px;color:#999;cursor:pointer;display:block;font-size:22px;margin-top:-10px;padding:8px 8px 7px;position:absolute;z-index:1080}
@@ -143,7 +143,7 @@ a#rwd-share-yummly:hover{background:url('../../assets/images/admin_images/share(
 .rwd-cont .rwd-container{height:100%;width:100%;position:relative;overflow:hidden;margin-left:auto;margin-right:auto;top:50%}
 .rwd-cont .cont-inner{width:100%;height:100%;position:absolute;left:0;top:0;white-space:nowrap}
 .rwd-cont .contInner{width:40%;height:100%;position:absolute;left:60%;white-space:nowrap;z-index: 1200;background: black}
-.rwd-view6 .contInner{width:35%;left:60%;background: white}
+.rwd-view6 .contInner{width:40%;left:60%;background: white}
 @media screen and (max-width: 1024px){.rwd-cont .contInner{width:100%;height:40%;position:absolute;left:0;top:60%}}
 .contInner .rwd-title{font-size:25px;top:90px;background:none;position:relative;text-align:left}
 .rwd-view6 .contInner .rwd-title{top:50px}
