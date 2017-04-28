@@ -324,11 +324,7 @@
             this.settings.speed = 0;
         }
 
-
-        var $effect = (this.settings.lightboxView !== 'view5' && this.settings.lightboxView !== 'view6') ? this.settings.slideAnimationType : 'effect_2';
-
-
-        this.$cont.addClass($effect);
+        this.$cont.addClass(this.settings.slideAnimationType);
 
         ((this.settings.showAfterLoad) && (this.$cont.addClass(this.settings.classPrefix + 'show-after-load')));
 
