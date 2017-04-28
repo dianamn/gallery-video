@@ -143,7 +143,7 @@ a#rwd-share-yummly:hover{background:url('../../assets/images/admin_images/share(
 .rwd-cont .rwd-container{height:100%;width:100%;position:relative;overflow:hidden;margin-left:auto;margin-right:auto;top:50%}
 .rwd-cont .cont-inner{width:100%;height:100%;position:absolute;left:0;top:0;white-space:nowrap}
 .rwd-cont .contInner{width:40%;height:100%;position:absolute;left:60%;white-space:nowrap;z-index: 1200;background: black}
-.rwd-view6 .contInner{width:20%;left:70%;background: white}
+.rwd-view6 .contInner{width:35%;left:60%;background: white}
 @media screen and (max-width: 1024px){.rwd-cont .contInner{width:100%;height:40%;position:absolute;left:0;top:60%}}
 .contInner .rwd-title{font-size:25px;top:90px;background:none;position:relative;text-align:left}
 .rwd-view6 .contInner .rwd-title{top:50px}
@@ -151,7 +151,7 @@ a#rwd-share-yummly:hover{background:url('../../assets/images/admin_images/share(
 @media screen and (max-width: 1024px){.contInner .rwd-title{top:0}}
 .contInner #rwd-counter{position:absolute;bottom:15px;right:15px}
 .rwd-view5, rwd-view6 {background: black}
-.rwd-view5 .cont-inner, .rwd-view6 .cont-inner{width: 80%}
+.rwd-view5 .cont-inner, .rwd-view6 .cont-inner{width: 60%}
 @media screen and (max-width: 1024px){
     .rwd-view5 .cont-inner, .rwd-view6 .cont-inner{width: 100% !important;height:60% !important}
     .rwd-view5 .rwd-toolbar, .rwd-view6 .rwd-toolbar {width:100%;left:0}

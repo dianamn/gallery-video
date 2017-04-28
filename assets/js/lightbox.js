@@ -285,7 +285,7 @@
             '</div>' +
             controls +
             '<div class="' + this.settings.classPrefix + 'bar">' +
-            close2 + subHtmlCont1 + socialIcons + '</div>' +
+            close2 + subHtmlCont1 + '</div>' +
             '</div>' +
             '</div>';
 
