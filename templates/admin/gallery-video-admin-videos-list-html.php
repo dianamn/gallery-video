@@ -296,6 +296,10 @@ $add_video_nonce                               = wp_create_nonce( 'huge_it_galle
 												echo 'selected';
 											} ?> value="7"><?php _e('Blog Style Gallery', 'gallery-video');?>
 											</option>
+                                            <option <?php if ( $row->huge_it_sl_effects == '8' ) {
+                                                echo 'selected';
+                                            } ?> value="8">Playlist
+                                            </option>
 										</select>
 									</li>
 									<li id="videogallery-current-options-0"

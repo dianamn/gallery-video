@@ -26,6 +26,20 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
          * @var float
          */
         public $version = '2.2.0';
+        /**
+         * @var int
+         */
+        private $project_id = 5;
+
+        /**
+         * @var string
+         */
+        private $project_plan = 'free';
+
+        /**
+         * @var string
+         */
+        private $slug = 'gallery-video';
 
         /**
          * Instance of Gallery_Video_Admin class to manage admin
@@ -74,9 +88,18 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
         }
 
         /**
+         * @var Hugeit_video_gallery_Tracking
+         */
+        public $tracking;
+
+        /**
          * Gallery_Video Constructor.
          */
         private function __construct() {
+
+            require_once "includes/tracking/class-hugeit-video-gallery-tracking.php";
+            $this->tracking = new Hugeit_Video_Gallery_Tracking();
+
             $this->define_constants();
             $this->includes();
             $this->init_hooks();
@@ -94,6 +117,9 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
             add_action( 'init', array( $this, 'init' ), 0 );
             add_action( 'plugins_loaded', array($this,'load_plugin_textdomain') );
             add_action( 'widgets_init', array( 'Gallery_Video_Widgets', 'init' ) );
+
+            add_action('init',array($this,'schedule_tracking'),0);
+            add_filter('cron_schedules',array($this,'custom_cron_job_recurrence'));
         }
 
         /**
@@ -150,6 +176,24 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
             if ( $this->is_request( 'admin' ) ) {
                 include_once( 'includes/admin/gallery-video-admin-functions.php' );
             }
+            require_once "includes/tracking/class-hugeit-video-gallery-deactivation-feedback.php";
+        }
+
+        public function schedule_tracking()
+        {
+            if ( ! wp_next_scheduled( 'hugeit_video_gallery_opt_in_cron' ) ) {
+                $this->tracking->track_data();
+                wp_schedule_event( current_time( 'timestamp' ), 'hugeit-video-gallery-weekly', 'hugeit_video_gallery_opt_in_cron' );
+            }
+        }
+
+        public function custom_cron_job_recurrence($schedules)
+        {
+            $schedules['hugeit-video-gallery-weekly'] = array(
+                'display' => __( 'Once per week', 'hugeit-video-gallery' ),
+                'interval' => 604800
+            );
+            return $schedules;
         }
 
         /**
@@ -165,6 +209,8 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
         public function init() {
             // Before init action.
             do_action( 'before_Gallery_Video_init' );
+
+            new Hugeit_Video_Gallery_Deactivation_Feedback();
 
             $this->template_loader = new Gallery_Video_Template_Loader();
 
@@ -210,6 +256,40 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
          */
         public function plugin_url(){
             return plugins_url('', __FILE__ );
+        }
+
+        /**
+         * @return int
+         */
+        public function get_project_id()
+        {
+            return $this->project_id;
+        }
+
+        /**
+         * @return string
+         */
+        public function get_project_plan()
+        {
+            return $this->project_plan;
+        }
+
+        public function get_slug()
+        {
+            return $this->slug;
+        }
+        /**
+         * Get plugin version.
+         *
+         * @return string
+         */
+        public function get_version() {
+            return $this->version;
+        }
+
+        public function template_path()
+        {
+            return apply_filters('gallery_video_template_path', 'gallery-video/');
         }
     }
 
