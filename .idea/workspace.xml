@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c090596d-a08a-4cbd-bd24-781bf03ac4a1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/05-bottom-line.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/05-bottom-line.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/Content popup tab1.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/Content popup tab1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/Content-Video-slider-tab2.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/Content-Video-slider-tab2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/Huge-It-logo.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/Huge-It-logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/Video-gallery.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/Video-gallery.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/arrow.dark.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/arrow.dark.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/arrow.light.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/arrow.light.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/blank.gif" afterPath="$PROJECT_DIR$/assets/images/admin_images/blank.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/block-tab-7.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/block-tab-7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/blockstyle-tab7.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/blockstyle-tab7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/border.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/border.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/close.popup.dark.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/close.popup.dark.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/close.popup.light.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/close.popup.light.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/content-slider-tab-2.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/content-slider-tab-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/controls.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/controls.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/divider.line.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/divider.line.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/dragable.gif" afterPath="$PROJECT_DIR$/assets/images/admin_images/dragable.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/edit.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/edit.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/f.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/f.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/fields.opt.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/fields.opt.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/gallery-active-left.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/gallery-active-left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/gallery-active.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/gallery-active.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/gallery-passive.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/gallery-passive.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/general_opt.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/general_opt.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/gradient.black.to.white.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/gradient.black.to.white.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/icon-user-manual.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/icon-user-manual.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/image-reset-icon.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/image-reset-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/justified-tab-6.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/justified-tab-6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/justified-tab6.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/justified-tab6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/left.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/lightbox-tab3.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/lightbox-tab3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/lightbox_opt.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/lightbox_opt.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/loading-resp.gif" afterPath="$PROJECT_DIR$/assets/images/admin_images/loading-resp.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/loading.gif" afterPath="$PROJECT_DIR$/assets/images/admin_images/loading.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/loading.white.gif" afterPath="$PROJECT_DIR$/assets/images/admin_images/loading.white.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/loading_background.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/loading_background.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/menu.dark.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/menu.dark.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/menu.light.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/menu.light.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/noimage.jpg" afterPath="$PROJECT_DIR$/assets/images/admin_images/noimage.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/open-close.dark.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/open-close.dark.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/open-close.light.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/open-close.light.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/overlay.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/overlay.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/pdf.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/pdf.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/play.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/play.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/play.vimeo.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/play.vimeo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/play.youtube.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/play.youtube.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/pop-up.jpg" afterPath="$PROJECT_DIR$/assets/images/admin_images/pop-up.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/pop_pdf.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/pop_pdf.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/popup-tab-1.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/popup-tab-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/post.button.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/post.button.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/right.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/share1.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/share1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/slider--tab4.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/slider--tab4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/slider-tab4.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/slider-tab4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/sprite-featured.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/sprite-featured.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/stop.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/stop.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/stverlist.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/stverlist.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/stverlist2.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/stverlist2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/thumbnails-tab-5.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/thumbnails-tab-5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/thumbnails-tab5.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/thumbnails-tab5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/video.icon.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/video.icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/video.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/video.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/video_gallery_icon.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/video_gallery_icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/video_gallery_pro_icon.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/video_gallery_pro_icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/view_list.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/view_list.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/view_thumbs.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/view_thumbs.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/wp_banner_bg.jpg" afterPath="$PROJECT_DIR$/assets/images/admin_images/wp_banner_bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/wp_shop.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/wp_shop.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/zoom.dark.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/zoom.dark.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/admin_images/zoom.light.png" afterPath="$PROJECT_DIR$/assets/images/admin_images/zoom.light.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/style/admin.style.css" afterPath="$PROJECT_DIR$/assets/style/admin.style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/admin/class-gallery-video-admin-assets.php" afterPath="$PROJECT_DIR$/includes/admin/class-gallery-video-admin-assets.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/admin/class-gallery-video-admin.php" afterPath="$PROJECT_DIR$/includes/admin/class-gallery-video-admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/class-gallery-video-ajax.php" afterPath="$PROJECT_DIR$/includes/class-gallery-video-ajax.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/class-gallery-video-template-loader.php" afterPath="$PROJECT_DIR$/includes/class-gallery-video-template-loader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/gallery-video-functions.php" afterPath="$PROJECT_DIR$/includes/gallery-video-functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/gallery-video-admin-free-banner.php" afterPath="$PROJECT_DIR$/templates/admin/gallery-video-admin-free-banner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/gallery-video-admin-general-options-html.php" afterPath="$PROJECT_DIR$/templates/admin/gallery-video-admin-general-options-html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/gallery-video-admin-inline-popup-content-html.php" afterPath="$PROJECT_DIR$/templates/admin/gallery-video-admin-inline-popup-content-html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/gallery-video-admin-licensing.php" afterPath="$PROJECT_DIR$/templates/admin/gallery-video-admin-licensing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/gallery-video-admin-videos-list-html.php" afterPath="$PROJECT_DIR$/templates/admin/gallery-video-admin-videos-list-html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/video-gallery.php" afterPath="$PROJECT_DIR$/video-gallery.php" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="gallery-video-admin-inline-popup-content-html.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/admin/gallery-video-admin-inline-popup-content-html.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="53" column="29" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>hugeit-slider</find>
+      <find>slider</find>
+      <find>free_version_banner</find>
+      <find>fb</find>
+      <find>fa-twitter</find>
+      <find>fa-facebook</find>
+      <find>facebook</find>
+      <find>help_element</find>
+      <find>hg_social_link_buttons</find>
+      <find>tracking-optin-info</find>
+      <find>playlist-thumb-desc</find>
+      <find>data-desc</find>
+      <find>photo-gallery</find>
+      <find>-hugeit</find>
+      <find>deactivation-reason</find>
+      <find>hugeit-modal</find>
+      <find>tracking</find>
+      <find>deactivation-feedback</find>
+      <find>none</find>
+      <find>Gallery to insert into post</find>
+      <find>-modal</find>
+      <find>-optin-links</find>
+      <find>hugeit-tracking-optin-links</find>
+      <find>-hugeit-modal</find>
+      <find>&lt;?php if (!strlen($row-&gt;description)) {echo 'empty_desc';}?&gt;</find>
+      <find>30</find>
+      <find>shorten</find>
+      <find>img</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>gallery-video</replace>
+      <replace>video-gallery</replace>
+      <replace>video-gallery-tracking-optin-links</replace>
+      <replace>video-gallery-modal</replace>
+      <replace>&lt;?php if (!strlen($row-&gt;name) &amp;&amp; !strlen($row-&gt;description)) {echo 'empty_desc';}?&gt;</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/assets/js/deactivation-feedback.js" />
+        <option value="$PROJECT_DIR$/templates/admin/gallery-video-admin-licensing.php" />
+        <option value="$USER_HOME$/Desktop/test.php" />
+        <option value="$PROJECT_DIR$/assets/style/free-banner.css" />
+        <option value="$PROJECT_DIR$/templates/admin/gallery-video-admin-free-banner.php" />
+        <option value="$PROJECT_DIR$/templates/admin/gallery-video-admin-general-options-html.php" />
+        <option value="$PROJECT_DIR$/templates/front-end/view/playlist/playlist-view.php" />
+        <option value="$PROJECT_DIR$/includes/tracking/class-hugeit-video-gallery-tracking.php" />
+        <option value="$PROJECT_DIR$/templates/admin/tracking/deactivation-feedback/show.php" />
+        <option value="$PROJECT_DIR$/assets/style/admin.tracking.css" />
+        <option value="$PROJECT_DIR$/includes/admin/class-gallery-video-admin-assets.php" />
+        <option value="$PROJECT_DIR$/assets/style/hugeit-modal.css" />
+        <option value="$PROJECT_DIR$/assets/js/hugeit-modal.js" />
+        <option value="$PROJECT_DIR$/assets/js/view-playlist.js" />
+        <option value="$PROJECT_DIR$/templates/front-end/view/playlist/playlist-view.css.php" />
+        <option value="$PROJECT_DIR$/templates/admin/tracking/banner/show.php" />
+        <option value="$PROJECT_DIR$/templates/admin/gallery-video-admin-inline-popup-content-html.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1924" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gallery-video" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gallery-video" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gallery-video" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gallery-video" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gallery-video" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gallery-video" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gallery-video" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gallery-video" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="js.eslint.eslintPackage" value="" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c090596d-a08a-4cbd-bd24-781bf03ac4a1" name="Default" comment="" />
+      <created>1498133306536</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1498133306536</updated>
+      <workItem from="1498133307784" duration="5548000" />
+      <workItem from="1498140560215" duration="7335000" />
+      <workItem from="1498214105614" duration="11760000" />
+      <workItem from="1498481083214" duration="5602000" />
+      <workItem from="1498648993067" duration="418000" />
+      <workItem from="1498650131703" duration="29000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="30692000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26530612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/templates/admin/gallery-video-admin-inline-popup-content-html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/view-playlist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="150" column="59" lean-forward="false" selection-start-line="150" selection-start-column="59" selection-end-line="150" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/front-end/view/playlist/playlist-view.css.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="135" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/tracking/banner/show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/front-end/view/content-popup/content-popup-view.css.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="70" column="55" lean-forward="false" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/deactivation-feedback.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="41" column="21" lean-forward="true" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/gallery-video-admin-licensing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="60" column="30" lean-forward="false" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/style/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="3" column="8340" lean-forward="false" selection-start-line="3" selection-start-column="8329" selection-end-line="3" selection-end-column="8340" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/style/css/font-awesome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="414" column="1" lean-forward="false" selection-start-line="414" selection-start-column="1" selection-end-line="414" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/style/free-banner.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1669">
+          <caret line="540" column="20" lean-forward="false" selection-start-line="540" selection-start-column="20" selection-end-line="540" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="86" column="6" lean-forward="false" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/gallery-video-admin-free-banner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="178" lean-forward="false" selection-start-line="8" selection-start-column="178" selection-end-line="8" selection-end-column="178" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/gallery-video-admin-general-options-html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="69" column="100" lean-forward="false" selection-start-line="69" selection-start-column="100" selection-end-line="69" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/gallery-video-functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5575">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/style/licensing.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="89" column="29" lean-forward="true" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/tracking/class-hugeit-video-gallery-deactivation-feedback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-332">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/tracking/class-hugeit-video-gallery-tracking.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="61" column="68" lean-forward="false" selection-start-line="59" selection-start-column="10" selection-end-line="61" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/admin/class-gallery-video-admin-assets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/style/admin.tracking.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="764">
+          <caret line="151" column="16" lean-forward="true" selection-start-line="151" selection-start-column="16" selection-end-line="151" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/hugeit-modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="67" lean-forward="false" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/tracking/deactivation-feedback/show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="5" column="78" lean-forward="false" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/style/hugeit-modal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1632">
+          <caret line="96" column="20" lean-forward="false" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/front-end/view/playlist/playlist-view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="168" column="154" lean-forward="false" selection-start-line="168" selection-start-column="51" selection-end-line="168" selection-end-column="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/tracking/banner/show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="102" lean-forward="false" selection-start-line="10" selection-start-column="102" selection-end-line="10" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/front-end/view/playlist/playlist-view.css.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="135" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/view-playlist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="150" column="59" lean-forward="false" selection-start-line="150" selection-start-column="59" selection-end-line="150" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/gallery-video-admin-inline-popup-content-html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="53" column="29" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

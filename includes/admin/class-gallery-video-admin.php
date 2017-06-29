@@ -40,6 +40,13 @@ class Gallery_Video_Admin {
 	 */
 	public $featured_plugins = null;
 
+
+    /**
+     * @return mixed
+     */
+    public function get_pages() {
+        return $this->pages;
+    }
 	/**
 	 * Gallery_Video_Admin constructor.
 	 */

@@ -342,7 +342,17 @@ function gallery_video_get_default_general_options() {
         'gallery_video_lightbox_watermark_opacity'                          => '70',
         'gallery_video_lightbox_watermark_margin'                           => '10',
         'gallery_video_lightbox_watermark_img_src_new'                      => GALLERY_VIDEO_IMAGES_URL . '/admin_images/No-image-found.jpg',
-        'gallery_video_lightbox_type'                                       => 'new_type'
+        'gallery_video_lightbox_type'                                       => 'new_type',
+        //// playlist options
+        'gallery_video_ht_view10_container_width'                           =>'650',
+        'gallery_video_ht_view10_thumb_position'                            =>'right',
+        'gallery_video_ht_view10_thumb_scroll'                              =>'on',
+        'gallery_video_ht_view10_search'                                    =>'on',
+        'gallery_video_ht_view10_search_criteria'                           =>'both',
+        'gallery_video_playlist_socialSharing'                              =>'true',
+        'gallery_video_playlist_facebookButton'                             =>'true',
+        'gallery_video_playlist_twitterButton'                              =>'false',
+        'gallery_video_playlist_googleplusButton'                           =>'false'
 	);
 
 	return $video_gallery_default__params;
@@ -381,6 +391,9 @@ function gallery_video_get_view_slag_by_id( $id ) {
 		case 7:
 			$slug = 'blog-style-gallery';
 			break;
+        case 8:
+            $slug = 'playlist';
+            break;
 	}
 
 	return $slug;

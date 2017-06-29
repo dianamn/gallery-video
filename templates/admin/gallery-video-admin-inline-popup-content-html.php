@@ -48,6 +48,10 @@
 						echo 'selected';
 					} ?> value="7"><?php _e('Blog Style Gallery', 'gallery-video');?>
 					</option>
+                    <option <?php if ( $row->huge_it_sl_effects == '8' ) {
+                        echo 'selected';
+                    } ?> value="8"><?php _e('Playlist Gallery', 'gallery-video');?>
+                    </option>
 				</select>
 			</li>
 			<div id="videogallery-current-options-0"

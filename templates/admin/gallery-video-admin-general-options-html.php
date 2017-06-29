@@ -27,6 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<li><a href="#videogallery-view-options-4"><?php _e('Thumbnails', 'gallery-video');?></a></li>
 						<li><a href="#videogallery-view-options-5"><?php _e('Justified', 'gallery-video');?></a></li>
 						<li><a href="#videogallery-view-options-6"><?php _e('Blog Style Gallery', 'gallery-video');?></a></li>
+                        <li><a href="#videogallery-view-options-7"><?php _e('Playlist', 'gallery-video');?></a></li>
 					</ul>
 					<ul class="options-block" id="videogallery-view-tabs-contents">
 						<div class="gallery_options_grey_overlay"></div>
@@ -51,6 +52,86 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<li id="videogallery-view-options-6">
 							<img style="width: 100%;" src='<?php echo esc_url($path_site); ?>/blockstyle-tab7.png' >
 						</li>
+
+                        <li id="videogallery-view-options-7">
+                            <div class="playlist_option_cont">
+                                <div>
+                                    <h3><?php _e('Playlist Container', 'gallery-video'); ?></h3>
+                                    <div class="has-background">
+                                        <label for="gallery_video_ht_view10_container_width"><?php _e('Container Width', 'gallery-video'); ?></label>
+                                        <input type="number" name="param"
+                                               id="gallery_video_ht_view10_container_width"
+                                               value="650"
+                                               class="text" min="220">
+                                        <span>px</span>
+                                    </div>
+                                    <div>
+                                        <label for="gallery_video_ht_view10_thumb_scroll"><?php _e('Playlist Scroll', 'gallery-video'); ?></label>
+                                        <select id="gallery_video_ht_view10_thumb_scroll" name="para">
+                                            <option  value="on">on</option>
+                                        </select>
+                                    </div>
+                                    <div class="has-background">
+                                        <label for="gallery_video_ht_view10_thumb_position"><?php _e('Playlist Position', 'gallery-video'); ?></label>
+                                        <select id="gallery_video_ht_view10_thumb_position" name="para">
+                                            <option  value="left">right</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="gallery_video_ht_view10_search"><?php _e('Search', 'gallery-video'); ?></label>
+                                        <select id="gallery_video_ht_view10_search" name="param">
+                                            <option  value="on">off</option>
+                                        </select>
+                                    </div>
+                                    <div class="has-background">
+                                        <label for="gallery_video_ht_view10_search_criteria"><?php _e('Search By', 'gallery-video'); ?></label>
+                                        <select id="gallery_video_ht_view10_search_criteria" name="param">
+                                            <option value="both">both</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="lightbox-options-block" >
+                                    <h3><?php _e('Social Share Buttons', 'gallery-video');?></h3>
+
+                                    <div class="has-background social-buttons-list">
+                                        <label><?php _e('Social Share Buttons List', 'gallery-video');?>
+                                            <div class="help">?
+                                                <div class="help-block">
+                                                    <span class="pnt"></span>
+                                                    <p><?php _e('Check to activate your preferable ones.', 'gallery-video');?></p>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <div>
+                                            <table width="100%">
+                                                <tr>
+                                                    <td>
+                                                        <label for="gallery_video_playlist_facebookButton">Facebook
+                                                            <input type="hidden" value="false" name="param" />
+                                                            <input type="checkbox" id="gallery_video_playlist_facebookButton" name="params[gallery_video_playlist_facebookButton]" value="true"/></label>
+                                                    </td>
+                                                    <td>
+                                                        <label for="gallery_video_playlist_twitterButton">Twitter
+                                                            <input type="hidden" value="false" name="params[gallery_video_playlist_twitterButton]" />
+                                                            <input type="checkbox"
+                                                                   id="gallery_video_playlist_twitterButton" name="param" value="true"/></label>
+                                                    </td>
+                                                    <td>
+                                                        <label for="gallery_video_playlist_googleplusButton">Google Plus
+                                                            <input type="hidden" value="false" name="param" />
+                                                            <input type="checkbox"
+                                                                   id="gallery_video_playlist_googleplusButton" name="param" value="true"/></label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </li>
 					</ul>
 
 					<div id="post-body-footer">
