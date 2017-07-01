@@ -32,15 +32,19 @@ ul#vid-list .playlist-thumb-container a {
 }
 ul#vid-list .vid-thumb img{
     box-shadow: none;
-
 }
 .empty_desc {
     padding: 23px !important;
 }
+ul#vid-list .active_li .playlist-thumb-desc{
+    background-color:#434343;
+}
+ul#vid-list .active_li {
+    background-color:#434343;
+}
 
 
-
-/*THUMBS LEFT */
+/*THUMBS LEFT RIGHT*/
 .playlist-scroll {
     float: <?php if ($gallery_video_get_option['gallery_video_ht_view10_thumb_position']=='left' ) { echo 'right';} else {echo 'left';} ;?>;
     width: 33%;
@@ -48,7 +52,9 @@ ul#vid-list .vid-thumb img{
 .video-wrapper {
     float: <?php if ($gallery_video_get_option['gallery_video_ht_view10_thumb_position']=='left' ) { echo 'right';} else {echo 'left';} ;?>;
     width: 67%;
+    max-height:<?php echo $gallery_video_get_option['gallery_video_ht_view10_container_width']*9/16?>px;
 }
+
 ul#vid-list {
     overflow-y: <?php if ($gallery_video_get_option['gallery_video_ht_view10_thumb_scroll']=='on') { echo 'scroll';} else {echo 'hidden';} ?>;
     max-height:<?php echo ($gallery_video_get_option['gallery_video_ht_view10_container_width'])*9/16?>px;
@@ -61,7 +67,6 @@ ul#vid-list .playlist-thumb-container {
     white-space: normal;
     vertical-align: middle;
 }
-
 ul#vid-list {
     margin:0;
     padding:0;
@@ -95,7 +100,7 @@ ul#vid-list  img{
 }
 ul#vid-list .vid-thumb {
     float: left;
-    width: 30%;
+    width: 50px;
     box-sizing: border-box;
 }
 ul#vid-list .vid-thumb-title {
@@ -103,17 +108,13 @@ ul#vid-list .vid-thumb-title {
     font-size: 13px;
     font-weight: bold;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
 }
 ul#vid-list .playlist-thumb-desc {
     font-size: 11px;
     line-height: 15px;
     color: #ddd;
-    padding: 0 5px 0 10px;
-
-    width: 70%;
+    padding: 0 5px 0 5px;
+    width: calc(100% - 50px);
     float: right;
     overflow: hidden;
     box-sizing: border-box;
