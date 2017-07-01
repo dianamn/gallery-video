@@ -12,10 +12,13 @@ $autoload = 'off';
                 <ul id="vid-list" class="playlist-thumbs">
                     <?php
                     foreach ($videos as $key => $row) {
+                        echo $row->description;
                         $imgurl = explode(";", $row->image_url);
                         $link = str_replace('__5_5_5__', '%', $row->sl_url);
                         $descnohtml = strip_tags(str_replace('__5_5_5__', '%', $row->description));
-                        $result = substr($descnohtml, 0, 50);
+
+                        $result = substr($descnohtml, 0, 80);
+
                         $videourl = gallery_video_get_video_id_from_url($row->image_url);
                         if ($videourl[1] == 'youtube') {
 
@@ -107,7 +110,7 @@ $autoload = 'off';
                            $imgurl = explode(";", $row->image_url);
                            $link = str_replace('__5_5_5__', '%', $row->sl_url);
                            $descnohtml = strip_tags(str_replace('__5_5_5__', '%', $row->description));
-                           $result = substr($descnohtml, 0, 50);
+                           $result = substr($descnohtml, 0, 80);
                            $videourl = gallery_video_get_video_id_from_url($row->image_url);
                            if ($videourl[1] == 'youtube') {
 

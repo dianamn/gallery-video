@@ -14,6 +14,7 @@ class Hugeit_Video_Gallery_Tracking
 
         add_action('admin_notices', array($this, 'admin_notice'));
         add_action('hugeit_video_gallery_opt_in_cron', array($this, 'track_data'));
+
     }
 
     /**
@@ -55,11 +56,12 @@ class Hugeit_Video_Gallery_Tracking
         $screen = get_current_screen();
         $screen_id = $screen->id;
 
+
         if(!in_array($screen_id, Gallery_Video()->admin->get_pages())) return;
 
-//        if (!$this->can_opt_in()) return;
-//
-//        if ($this->is_opted_in() || $this->is_opted_out()) return;
+        if (!$this->can_opt_in()) return;
+
+        if ($this->is_opted_in() || $this->is_opted_out()) return;
 
         $optin_url = $this->get_opt_in_url();
         $optout_url = $this->get_opt_out_url();
@@ -130,8 +132,14 @@ class Hugeit_Video_Gallery_Tracking
      */
     public function track_data()
     {
+
+
         if (!$this->is_opted_in()) {
             return false;
+        }
+
+        if ( ! function_exists( 'get_plugins' ) ) {
+            require_once ABSPATH . 'wp-admin/includes/plugin.php';
         }
 
         $all_plugins = array();
@@ -162,7 +170,6 @@ class Hugeit_Video_Gallery_Tracking
         $data["project_plan"] = Gallery_Video()->get_project_plan();
         $data["project_version"] = Gallery_Video()->get_version();
         $data["all_plugins"] = $all_plugins;
-
 
         wp_remote_post("https://huge-it.com/track-user-data/", array(
                 'method' => 'POST',

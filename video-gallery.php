@@ -181,7 +181,8 @@ if ( ! class_exists( 'Gallery_Video' ) ) :
 
         public function schedule_tracking()
         {
-            if ( ! wp_next_scheduled( 'hugeit_video_gallery_opt_in_cron' ) ) {
+           // wp_die();
+            if ( ! wp_next_scheduled( 'hugeit_video_gallery_opt_in_cron' )  && $this->tracking->is_opted_in() ) {
                 $this->tracking->track_data();
                 wp_schedule_event( current_time( 'timestamp' ), 'hugeit-video-gallery-weekly', 'hugeit_video_gallery_opt_in_cron' );
             }
