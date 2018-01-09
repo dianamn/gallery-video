@@ -53,10 +53,10 @@
 				</div>
 				<div class="right-block">
 					<div><h2 class="title"><?php echo str_replace( '__5_5_5__', '%', $row->name ); ?></h2></div>
-					<?php if ( $gallery_video_get_option["gallery_video_ht_view5_show_description"] == 'on' ) { ?>
+					<?php if ( $gallery_video_get_option["gallery_video_ht_view5_show_description"] == 'on'  && strlen($row->description) > 0  ) { ?>
 						<div
 							class="description"><?php echo str_replace( '__5_5_5__', '%', $row->description ); ?></div><?php } ?>
-					<?php if ( $gallery_video_get_option["gallery_video_ht_view5_show_linkbutton"] == 'on' ) { ?>
+					<?php if ( $gallery_video_get_option["gallery_video_ht_view5_show_linkbutton"] == 'on' && strlen(esc_attr($link)) > 0) { ?>
 						<div class="button-block">
 							<a href="<?php echo esc_attr($link); ?>"
 							   data-id="b<?php echo $row->id; ?>" <?php if ( $row->link_target == "on" ) {

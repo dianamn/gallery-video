@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
              src="<?php echo GALLERY_VIDEO_IMAGES_URL ?><?php echo DIRECTORY_SEPARATOR ?>admin_images<?php echo DIRECTORY_SEPARATOR ?>free-banner<?php echo DIRECTORY_SEPARATOR ?>plugin_logo.png"
              alt="user manual"/>
         <p class="usermanual_text"><?php _e('Wordpress Video Gallery', 'gallery-video'); ?></p>
-        <a class="get_full_version" href="https://huge-it.com/wordpress-photo-gallery/" target="_blank">
+        <a class="get_full_version" href="https://huge-it.com/wordpress-video-gallery/" target="_blank">
             <?php _e('GO PRO', 'gallery-video'); ?>
         </a>
         <p class="close_banner">Close for now</p>
