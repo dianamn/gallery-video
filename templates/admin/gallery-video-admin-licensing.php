@@ -74,7 +74,7 @@ or dividing all your projects into several pages.",
             </div>
             <p><?php echo $val["text"]; ?></p>
             <div class="col-footer">
-                <a href="http://huge-it.com/wordpress-video-gallery/" class="a-upgrate">Upgrade</a>
+                <a href="http://huge-it.com/wordpress-video-gallery/" target="_blank" class="a-upgrate">Upgrade</a>
             </div>
         </div>
     <?php } ?>
