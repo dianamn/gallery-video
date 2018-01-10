@@ -4,7 +4,7 @@ Donate link: https://huge-it.com/wordpress-video-gallery/
 Tags: video gallery, gallery, video, youtube, youtube gallery,
 Requires at least: 3.0.1
 Tested up to: 4.9.1
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,7 +17,7 @@ https://www.youtube.com/watch?v=Re16ci9iGVU
 ### Gallery Video plugin was created and specifically designed to show your videos from Vimeo and Youtube in an unusual splendid way.
 
 * [Wordpress Video Gallery](https://huge-it.com/wordpress-video-gallery/)
-* [Demo Video Gallery](https://huge-it.com/wordpress-video-gallery-demo-1-content-popup/)
+* [Demo Video Gallery](https://demo.huge-it.com/wordpress-plugins-video-gallery-justified)
 * [FAQ Video Gallery](https://huge-it.com/wordpress-video-gallery-faq/)
 * [User Manual Video Gallery](https://huge-it.com/wordpress-video-gallery-user-manual/)
 * [Video Gallery Support](https://huge-it.com/contact-us/)
@@ -265,19 +265,19 @@ If you need to show more information about the gallery videos in this case you a
 
 > #### Demos 
 >
->[Content-Popup Video Gallery Demo](https://huge-it.com/wordpress-video-gallery-demo-1-content-popup/#plugin_demo_wrapper)
+>[Content-Popup Video Gallery Demo](https://demo.huge-it.com/wordpress-plugins-video-gallery-content-popup)
 >
->[Content Video Slider Demo](https://huge-it.com/wordpress-video-gallery-demo-2-content-video-slider/#plugin_demo_wrapper)
+>[Content Video Slider Demo](https://demo.huge-it.com/wordpress-plugins-video-gallery-content-video-slider)
 >
->[Lightbox Gallery  Demo](https://huge-it.com/wordpress-video-gallery-demo-3-lightbox-video-gallery/#plugin_demo_wrapper)
+>[Lightbox Gallery Demo](https://demo.huge-it.com/wordpress-plugins-video-gallery-lightbox)
 >
->[Video Slider Demo](https://huge-it.com/wordpress-video-gallery-demo-4-video-slider/#plugin_demo_wrapper)
+>[Video Slider Demo](https://demo.huge-it.com/wordpress-plugins-video-gallery-video-slider)
 >
->[Thumbnails Demo](https://huge-it.com/wordpress-video-gallery-demo-5-thumbnails/#plugin_demo_wrapper)
+>[Thumbnails Demo](https://demo.huge-it.com/wordpress-plugins-video-gallery-thumbnails)
 >
->[Custom Thumbnails Demo](https://huge-it.com/wordpress-video-gallery-demo-6-custom-thumbnails/#plugin_demo_wrapper)
+>[Justified Demo](https://demo.huge-it.com/wordpress-plugins-video-gallery-justified)
 >
->[Blog Style View With pagination  Demo](https://huge-it.com/wordpress-video-gallery-demo-7-block-style-view/#plugin_demo_wrapper)
+>[Blog Style View With pagination  Demo](https://demo.huge-it.com/wordpress-plugins-video-gallery-blog-style)
 
 > #### FAQ & User Manual
 >
@@ -323,17 +323,16 @@ Now you can set your Video Gallery options, images and use our Video Gallery.
 
 == Screenshots ==
 
-1.  [WordPress Video Gallery view 1](https://huge-it.com/wordpress-video-gallery-demo-1-content-popup/#plugin_demo_wrapper) - Video Gallery / Content Popup
-11.  [WordPress Video Gallery view 1](https://huge-it.com/wordpress-video-gallery-demo-1-content-popup/#plugin_demo_wrapper) - Video Gallery / Content Popup
-2.  [WordPress Video Gallery view 2](https://huge-it.com/wordpress-video-gallery-demo-2-content-video-slider/#plugin_demo_wrapper) - Content Video Slider
-3.  [WordPress Video Gallery view 3](https://huge-it.com/wordpress-video-gallery-demo-3-lightbox-video-gallery/#plugin_demo_wrapper) - Lightbox Video Gallery
-32.  [WordPress Video Gallery view 3](https://huge-it.com/wordpress-video-gallery-demo-3-lightbox-video-gallery/#plugin_demo_wrapper) - Lightbox Video Gallery
-4.  [WordPress Video Gallery view 4](https://huge-it.com/wordpress-video-gallery-demo-4-video-slider/#plugin_demo_wrapper) - Video Slider
-5.  [WordPress Video Gallery view 5](https://huge-it.com/wordpress-video-gallery-demo-5-thumbnails/#plugin_demo_wrapper) - Video Gallery - Thumbnails
-51.  [WordPress Video Gallery view 5](https://huge-it.com/wordpress-video-gallery-demo-5-thumbnails/#plugin_demo_wrapper) - Video Gallery - Thumbnails
-52.  [WordPress Video Gallery view 5](https://huge-it.com/wordpress-video-gallery-demo-5-thumbnails/#plugin_demo_wrapper) - Video Gallery - Thumbnails
-53.  [WordPress Video Gallery view 6](https://huge-it.com/wordpress-video-gallery-demo-6-custom-thumbnails/#plugin_demo_wrapper) - Video Gallery - Custom Thumbnails
-54.  [WordPress Video Gallery view 7](https://huge-it.com/wordpress-video-gallery-demo-7-block-style-view/#plugin_demo_wrapper) - Video Gallery - Block Style View
+1.  [WordPress Video Gallery view 1](https://demo.huge-it.com/wordpress-plugins-video-gallery-justified) - Justified
+2.  [WordPress Video Gallery view 2](https://demo.huge-it.com/wordpress-plugins-video-gallery-video-slider) - Content Video Slider
+3.  [WordPress Video Gallery view 3](https://demo.huge-it.com/wordpress-plugins-video-gallery-content-popup) - Content Popup
+32.  [WordPress Video Gallery view 3](https://demo.huge-it.com/wordpress-plugins-video-gallery-content-popup) - Content Popup
+4.  [WordPress Video Gallery view 4](https://demo.huge-it.com/wordpress-plugins-video-gallery-lightbox) - Lightbox
+42.  [WordPress Video Gallery view 4](https://demo.huge-it.com/wordpress-plugins-video-gallery-lightbox) - Lightbox
+5.  [WordPress Video Gallery view 5](https://demo.huge-it.com/wordpress-plugins-video-gallery-content-video-slider) - Content Video Slider
+51.  [WordPress Video Gallery view 6](https://demo.huge-it.com/wordpress-plugins-video-gallery-thumbnails) - Video Gallery - Thumbnails
+52.  [WordPress Video Gallery view 6](https://demo.huge-it.com/wordpress-plugins-video-gallery-thumbnails) - Video Gallery - Thumbnails
+53.  [WordPress Video Gallery view 7](https://demo.huge-it.com/wordpress-plugins-video-gallery-blog-style) - Video Gallery - Blog Style
 6.  [WordPress Video Gallery Admin Page](https://wordpress.org/plugins/gallery-video/) - Video Gallery
 62.  [WordPress Video Gallery Admin Page](https://wordpress.org/plugins/gallery-video/) - Video Gallery
 63.  [WordPress Video Gallery Admin Page](https://wordpress.org/plugins/gallery-video/) - Lightbox video gallery Options
@@ -503,6 +502,11 @@ If you want Video Gallery to work on all your websites, you should do the follow
 If you think, that you found a bug in our [WordPress Video Gallery](https://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com).
     
 == Changelog ==
+
+= 2.2.2 =
+* 1) fixed invalid links in admin
+* 2) fixed bug related to slider view
+* 3) admin styles minor optimized
 
 = 2.2.1 =
 *  Added playlists view, which enables users to show their video galleries in playlist.

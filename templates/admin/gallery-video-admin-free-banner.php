@@ -31,7 +31,7 @@ if (!defined('ABSPATH')) {
         <div class="hg_view_plugins_block">
             <ul class="inline_menu">
                 <li>
-                    <a target="_blank" href="https://huge-it.com/wordpress-video-gallery-demo-1-content-popup/">
+                    <a target="_blank" href="https://demo.huge-it.com/wordpress-plugins-video-gallery-justified">
                         <?php _e('Demo', 'gallery-video'); ?>
                     </a>
                 </li>
