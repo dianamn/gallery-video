@@ -92,7 +92,7 @@
 		<div class="plugin">
 			<div class="image-block video-player"><a href="http://huge-it.com/video-player/" target="_blank"></a></div>
 			<div class="info-block">
-				<h2><a href="http://huge-it.com/video-player/" target="_blank"><?php _e('Video', 'gallery-video' ); ?> Player</a></h2>
+				<h2><a href="http://huge-it.com/video-player/" target="_blank"><?php _e('Video Player', 'gallery-video' ); ?></a></h2>
 				<p><?php _e('Create and customize your video player using advanced options, select skins and themes for your player.', 'gallery-video' ); ?></p>
 				<a href="http://huge-it.com/video-player/" class="view" target="_blank"><?php _e('View Plugin', 'gallery-video' ); ?></a>
 			</div>

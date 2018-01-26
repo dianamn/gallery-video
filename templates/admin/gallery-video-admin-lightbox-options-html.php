@@ -55,7 +55,7 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                  } ?>">
                 <div class="gallery_options_grey_overlay"></div>
                 <div class="lightbox-options-block">
-                    <h3>General Options</h3>
+                    <h3><?php _e('General Options', 'gallery-video' ); ?></h3>
                     <div class="has-background">
                         <label for="gallery_video_lightbox_lightboxView"><?php _e('Lightbox style', 'gallery-video');?>
                             <div class="help">?
@@ -226,31 +226,31 @@ $gallery_video_get_option=gallery_video_get_default_general_options();
                 </label>
                 <select id="gallery_video_lightbox_slideAnimationType" >
                     <option <?php selected( 'effect_1', $gallery_video_get_option['gallery_video_lightbox_slideAnimationType'] ); ?>
-                            value="effect_1">Effect 1
+                            value="effect_1"><?php _e('Effect', 'gallery-video' ); ?> 1
                     </option>
                     <option <?php selected( 'effect_2', $gallery_video_get_option['gallery_video_lightbox_slideAnimationType'] ); ?>
-                            value="effect_2">Effect 2
+                            value="effect_2"><?php _e('Effect', 'gallery-video' ); ?> 2
                     </option>
                     <option <?php selected( 'effect_3', $gallery_video_get_option['gallery_video_lightbox_slideAnimationType'] ); ?>
-                            value="effect_3">Effect 3
+                            value="effect_3"><?php _e('Effect', 'gallery-video' ); ?> 3
                     </option>
                     <option <?php selected( 'effect_4', $gallery_video_get_option['gallery_video_lightbox_slideAnimationType'] ); ?>
-                            value="effect_4">Effect 4
+                            value="effect_4"><?php _e('Effect', 'gallery-video' ); ?> 4
                     </option>
                     <option <?php selected( 'effect_5', $gallery_video_get_option['gallery_video_lightbox_slideAnimationType'] ); ?>
-                            value="effect_5">Effect 5
+                            value="effect_5"><?php _e('Effect', 'gallery-video' ); ?> 5
                     </option>
                     <option <?php selected( 'effect_6', $gallery_video_get_option['gallery_video_lightbox_slideAnimationType'] ); ?>
-                            value="effect_6">Effect 6
+                            value="effect_6"><?php _e('Effect', 'gallery-video' ); ?> 6
                     </option>
                     <option <?php selected( 'effect_7', $gallery_video_get_option['gallery_video_lightbox_slideAnimationType'] ); ?>
-                            value="effect_7">Effect 7
+                            value="effect_7"><?php _e('Effect', 'gallery-video' ); ?> 7
                     </option>
                     <option <?php selected( 'effect_8', $gallery_video_get_option['gallery_video_lightbox_slideAnimationType'] ); ?>
-                            value="effect_8">Effect 8
+                            value="effect_8"><?php _e('Effect', 'gallery-video' ); ?> 8
                     </option>
                     <option <?php selected( 'effect_9', $gallery_video_get_option['gallery_video_lightbox_slideAnimationType'] ); ?>
-                            value="effect_9">Effect 9
+                            value="effect_9"><?php _e('Effect', 'gallery-video' ); ?> 9
                     </option>
                 </select>
             </div>

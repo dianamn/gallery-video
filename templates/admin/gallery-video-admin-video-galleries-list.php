@@ -13,9 +13,9 @@ $huge_it_gallery_video_nonce_remove_gallery_video = wp_create_nonce( 'huge_it_ga
 		<div id="videogallerys-list-page">
 			<form method="post" onkeypress="doNothing()" action="admin.php?page=video_galleries_huge_it_video_gallery"
 			      id="admin_form" name="admin_form">
-				<h2>Huge-IT Video Galleries
+				<h2><?php _e('Huge-IT Video Galleries', 'gallery-video' ); ?>
 					<a onclick="window.location.href='admin.php?page=video_galleries_huge_it_video_gallery&task=add_cat&huge_it_gallery_video_nonce_add_gallery_video=<?php echo $huge_it_gallery_video_nonce_add_gallery_video; ?>'"
-					   class="add-new-h2">Add New Video Gallery</a>
+					   class="add-new-h2"><?php _e('Add New Video Gallery', 'gallery-video' ); ?></a>
 				</h2>
 				<?php
 				$serch_value = '';
@@ -41,17 +41,17 @@ $huge_it_gallery_video_nonce_remove_gallery_video = wp_create_nonce( 'huge_it_ga
 				<table class="wp-list-table widefat fixed pages" style="width:95%">
 					<thead>
 					<tr>
-						<th scope="col" id="id" style="width:30px"><span>ID</span><span
+						<th scope="col" id="id" style="width:30px"><span><?php _e('ID', 'gallery-video' ); ?></span><span
 								class="sorting-indicator"></span></th>
-						<th scope="col" id="name" style="width:85px"><span>Name</span><span
+						<th scope="col" id="name" style="width:85px"><span><?php _e('Name', 'gallery-video' ); ?></span><span
 								class="sorting-indicator"></span></th>
-                        <th scope="col" id="shortcode" style="width:85px"><span>Shortcode</span><span
+                        <th scope="col" id="shortcode" style="width:85px"><span><?php _e('Shortcode', 'gallery-video' ); ?></span><span
                                     class="sorting-indicator"></span></th>
-						<th scope="col" id="prod_count" style="width:40px;"><span>Videos</span><span
+						<th scope="col" id="prod_count" style="width:40px;"><span><?php _e('Videos', 'gallery-video' ); ?></span><span
 								class="sorting-indicator"></span></th>
-						<th style="width:40px"><span>Duplicate</span><span
+						<th style="width:40px"><span><?php _e('Duplicate', 'gallery-video' ); ?></span><span
 								class="sorting-indicator"></span></th>
-						<th style="width:40px"><span>Delete</span><span
+						<th style="width:40px"><span><?php _e('Delete', 'gallery-video' ); ?></span><span
 								class="sorting-indicator"></span></th>
 					</tr>
 					</thead>

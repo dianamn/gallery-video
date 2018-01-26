@@ -86,7 +86,7 @@ class Gallery_Video_Shortcode {
 		$title        = __( 'Select Huge-IT Gallery Video to insert into post', 'gallery-video' );
 		$context .= '<a class="button thickbox" title="' . $title . '" href="#TB_inline?width=400&inlineId=' . $container_id . '">
         <span class="wp-media-buttons-icon" style="background: url(' . $img . '); background-repeat: no-repeat; background-position: left bottom;"></span>'.
-    __("Add Gallery Video").
+    __("Add Gallery Video", 'gallery-video').
     '</a>';
 
 		return $context;

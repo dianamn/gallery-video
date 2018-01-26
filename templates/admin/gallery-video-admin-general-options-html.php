@@ -14,8 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php $path_site = GALLERY_VIDEO_IMAGES_URL.'/admin_images'; ?>
 		<div id="post-body-content" class="videogallery-options">
 			<div id="post-body-heading">
-				<h3>General Options</h3>
-				<a href="#" class="save-videogallery-options button-primary">Save</a>
+				<h3><?php _e('General Options', 'gallery-video' ); ?></h3>
+				<a href="#" class="save-videogallery-options button-primary"><?php _e('Save', 'gallery-video' ); ?></a>
 			</div>
 			<form action="admin.php?page=Options_video_gallery_styles&task=save" method="post" id="adminForm" name="adminForm">
 				<div id="videogallery-options-list">
@@ -68,25 +68,25 @@ if ( ! defined( 'ABSPATH' ) ) {
                                     <div>
                                         <label for="gallery_video_ht_view10_thumb_scroll"><?php _e('Playlist Scroll', 'gallery-video'); ?></label>
                                         <select id="gallery_video_ht_view10_thumb_scroll" name="para">
-                                            <option  value="on">on</option>
+                                            <option  value="on"><?php _e('on', 'gallery-video' ); ?></option>
                                         </select>
                                     </div>
                                     <div class="has-background">
                                         <label for="gallery_video_ht_view10_thumb_position"><?php _e('Playlist Position', 'gallery-video'); ?></label>
                                         <select id="gallery_video_ht_view10_thumb_position" name="para">
-                                            <option  value="left">right</option>
+                                            <option  value="left"><?php _e('right', 'gallery-video' ); ?></option>
                                         </select>
                                     </div>
                                     <div>
                                         <label for="gallery_video_ht_view10_search"><?php _e('Search', 'gallery-video'); ?></label>
                                         <select id="gallery_video_ht_view10_search" name="param">
-                                            <option  value="on">off</option>
+                                            <option  value="on"><?php _e('off', 'gallery-video' ); ?></option>
                                         </select>
                                     </div>
                                     <div class="has-background">
                                         <label for="gallery_video_ht_view10_search_criteria"><?php _e('Search By', 'gallery-video'); ?></label>
                                         <select id="gallery_video_ht_view10_search_criteria" name="param">
-                                            <option value="both">both</option>
+                                            <option value="both"><?php _e('both', 'gallery-video' ); ?></option>
                                         </select>
                                     </div>
 
